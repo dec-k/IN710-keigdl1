@@ -30,11 +30,15 @@ namespace TTO
                 for (int c = 0; c < columnCount; c++)
                     for (int r = 0; r < rowCount; r++)
                     {
-                        //Add code here. DO NOT declare any new variables
-                        char tempC = twoDimensional[c,r];
-                        char tempR;
-                        
-                        oneDimensional[c] =
+                        //Code here
+                        if (r == 0)
+                        {
+                            oneDimensional[r + c] = twoDimensional[r, c];
+                        }
+                        else
+                        {
+                            oneDimensional[c + 1] = twoDimensional[r, c];
+                        }
                     }
 
                 //printing one dimensional array
