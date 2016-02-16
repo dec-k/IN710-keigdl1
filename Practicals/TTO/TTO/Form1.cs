@@ -33,11 +33,11 @@ namespace TTO
                         //Code here
                         if (r == 0)
                         {
-                            oneDimensional[r + c] = twoDimensional[r, c];
+                            oneDimensional[c * rowCount] = twoDimensional[c, r];
                         }
                         else
                         {
-                            oneDimensional[c + 1] = twoDimensional[r, c];
+                            oneDimensional[c * rowCount + r] = twoDimensional[c, r];
                         }
                     }
 

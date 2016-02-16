@@ -16,3 +16,12 @@ C:\Users\Decura\Documents\GitHub\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.
 C:\Users\Decura\Documents\GitHub\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.csproj.GenerateResource.Cache
 C:\Users\Decura\Documents\GitHub\IN710-keigdl1\Practicals\TTO\TTO\bin\Debug\TTO.exe
 C:\Users\Decura\Documents\GitHub\IN710-keigdl1\Practicals\TTO\TTO\bin\Debug\TTO.pdb
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\bin\Debug\TTO.exe.config
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.exe
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.pdb
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\bin\Debug\TTO.exe
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\bin\Debug\TTO.pdb
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.csprojResolveAssemblyReference.cache
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.Form1.resources
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.Properties.Resources.resources
+H:\Github\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.csproj.GenerateResource.Cache
