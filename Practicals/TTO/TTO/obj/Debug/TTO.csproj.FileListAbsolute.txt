@@ -1,0 +1,12 @@
+H:\oosd\TTO\TTO\bin\Debug\TTO.exe.config
+H:\oosd\TTO\TTO\bin\Debug\TTO.exe
+H:\oosd\TTO\TTO\bin\Debug\TTO.pdb
+H:\oosd\TTO\TTO\obj\Debug\TTO.csprojResolveAssemblyReference.cache
+H:\oosd\TTO\TTO\obj\Debug\TTO.Form1.resources
+H:\oosd\TTO\TTO\obj\Debug\TTO.Properties.Resources.resources
+H:\oosd\TTO\TTO\obj\Debug\TTO.csproj.GenerateResource.Cache
+H:\oosd\TTO\TTO\obj\Debug\TTO.exe
+H:\oosd\TTO\TTO\obj\Debug\TTO.pdb
+C:\Users\Decura\Documents\GitHub\IN710-keigdl1\Practicals\TTO\TTO\bin\Debug\TTO.exe.config
+C:\Users\Decura\Documents\GitHub\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.exe
+C:\Users\Decura\Documents\GitHub\IN710-keigdl1\Practicals\TTO\TTO\obj\Debug\TTO.pdb
