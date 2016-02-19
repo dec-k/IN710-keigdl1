@@ -57,13 +57,12 @@ namespace BridgeDealer
                     }
                 }
 
+                //Write out each string of cards to the listbox.
                 lb.Items.Add(spades);
                 lb.Items.Add(hearts);
                 lb.Items.Add(diamonds);
                 lb.Items.Add(clubs);
                 lb.Items.Add("");
-
-                
             }
         }
 
