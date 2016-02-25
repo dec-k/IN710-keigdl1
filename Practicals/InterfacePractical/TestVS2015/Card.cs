@@ -17,7 +17,7 @@ namespace TestVS2015
     }
 
     // Note the different ways to use the Property (get;set;) synntax feature
-    public class Card
+    public class Card : IComparable<Card>
     {
         // A read-write Property
         public SuitValue Suit {  get; set;}
@@ -103,6 +103,15 @@ namespace TestVS2015
         public override string ToString()
         {
             return (Rank.ToString() + " of " + Suit.ToString());
+        }
+
+        public int CompareTo(Card other)
+        {
+            if (other is Card)
+            {
+                return other.Rank.CompareTo(this.Rank);
+            }
+            throw new ArgumentException("Object is not of type Card.");
         }
     }
 }

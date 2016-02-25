@@ -33,6 +33,7 @@ namespace TestVS2015
             List<Hand> deal = mainDeck.Deal(4, 13);
 
             PlayingCardPrinter playingCardPrinter = new PlayingCardPrinter();
+            
 
             playingCardPrinter.PrintDeal(lstDisplay, deal);
 
