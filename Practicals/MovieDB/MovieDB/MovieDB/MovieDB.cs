@@ -32,6 +32,14 @@ namespace MovieDB
             movieTable.Add(movie4.Year, movie4);
         }
 
+        public List<KeyValuePair<int, Movie>> movSort(Dictionary<int, Movie> movieTable)
+        {
+            //Using a LINQ query, takes a key from movieTable and arranged it into the order specified.
+            //In this case, orderby.key has been specified - in descending order.
+            List<KeyValuePair<int, Movie>> sortedKey = (from entry in movieTable orderby entry.Key ascending select entry).ToList();
+            return sortedKey;
+         }
+
         internal Dictionary<int, Movie> MovieTable
         {
             get { return movieTable; }

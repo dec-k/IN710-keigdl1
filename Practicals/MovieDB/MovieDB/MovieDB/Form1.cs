@@ -61,7 +61,8 @@ namespace MovieDB
             lbShowAll.Items.Clear();
 
             //Load up the box with every kvp in the MovieDB's dictionary.
-            foreach(KeyValuePair<int,Movie> currentMovie in movDB.MovieTable){
+            //Note the call to the movSort method.
+            foreach(KeyValuePair<int,Movie> currentMovie in movDB.movSort(movDB.MovieTable)){
                 lbShowAll.Items.Add("--------------------------------------");
                 lbShowAll.Items.Add(currentMovie.Key.ToString());
                 lbShowAll.Items.Add(currentMovie.Value.ToString());
