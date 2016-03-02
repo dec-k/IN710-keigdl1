@@ -122,7 +122,22 @@ namespace RainbowChicken2016
         //==============================================================================
         public void DeleteOne(Pellet pelletToDelete)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            Pellet listWalker = headPointer;
+
+            while (listWalker != null)
+            {
+                //Call the listWalker's reference's TestOutOfBounds() method determine
+                //if the pellet is still present on the form.
+                if (listWalker.TestOutOfBounds(boundsRectangle) == true)
+                {
+                    //Flag that pellet's isAlive property as false.
+                    listWalker.IsAlive = false;
+                }
+                //Continue checking the rest of the list.
+                count++;
+                listWalker = listWalker.Next;
+            }
         }
 
         //==============================================================================
@@ -138,7 +153,17 @@ namespace RainbowChicken2016
         //==============================================================================
         public void Draw()
         {
-            throw new NotImplementedException();
+            int count = 0;
+            Pellet listWalker = headPointer;
+
+            while (listWalker != null)
+            {
+                //Call listwalker's reference's draw method.
+                listWalker.Draw();
+                //Continue checking the rest of the list.
+                count++;
+                listWalker = listWalker.Next;
+            }
         }
     }
 }
