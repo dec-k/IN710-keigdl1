@@ -36,7 +36,20 @@ namespace RainbowChicken2016
         //==============================================================================
         public void addPellet(Pellet newPellet)
         {
-            throw new NotImplementedException();
+            //First, check if we are attempting to add to an empty list
+            if (headPointer == null)
+            {
+                //Then we assign the new pellet as both head & tail - now we have a list
+                //which is 1 pellet long.
+                headPointer = newPellet;
+                tailPointer = newPellet;
+            }
+            else 
+            {
+                //If the list isn't empty, append the new pellet to the end of the list
+                tailPointer.Next = newPellet;
+                tailPointer = newPellet;
+            }
         }
 
         //==============================================================================
@@ -54,7 +67,7 @@ namespace RainbowChicken2016
                 listWalker = listWalker.Next;
                 //Explanation of listWalker.next:
                 //Fetches the referred-to value of listWalker, and gets its "next" value, if it
-                //returns null at any point, this means the end of the list has been reached.
+                //returns nullptr at any point, this means the end of the list has been reached.
             }
             
             //Return count - which will be the total size of the list.
@@ -66,7 +79,16 @@ namespace RainbowChicken2016
         //==============================================================================
         public void Move()
         {
-            throw new NotImplementedException();
+            int count = 0;
+            Pellet listWalker = headPointer;
+
+            while (listWalker != null)
+            {
+                //Call the listWalker's reference's move() method to animate it across the form.
+                listWalker.Move();
+                count++;
+                listWalker = listWalker.Next;
+            }
         }
 
         //==============================================================================
@@ -75,7 +97,22 @@ namespace RainbowChicken2016
         //==============================================================================
         public void KillOutOfBounds()
         {
-            throw new NotImplementedException();
+            int count = 0;
+            Pellet listWalker = headPointer;
+
+            while (listWalker != null)
+            {
+                //Call the listWalker's reference's TestOutOfBounds() method determine
+                //if the pellet is still present on the form.
+                if (listWalker.TestOutOfBounds(boundsRectangle) == true)
+                {
+                    //Flag that pellet's isAlive property as false.
+                    listWalker.IsAlive = false;
+                }
+                //Continue checking the rest of the list.
+                count++;
+                listWalker = listWalker.Next;
+            }
         }
 
         //==============================================================================
