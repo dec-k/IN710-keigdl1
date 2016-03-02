@@ -122,22 +122,18 @@ namespace RainbowChicken2016
         //==============================================================================
         public void DeleteOne(Pellet pelletToDelete)
         {
-            int count = 0;
+            //Create a nodewalker as usual
             Pellet listWalker = headPointer;
 
-            while (listWalker != null)
+            //Step through with the walker as usual, but the condition is not
+            //set to find the node before the one set to be deleted.
+            while (listWalker.Next != pelletToDelete)
             {
-                //Call the listWalker's reference's TestOutOfBounds() method determine
-                //if the pellet is still present on the form.
-                if (listWalker.TestOutOfBounds(boundsRectangle) == true)
-                {
-                    //Flag that pellet's isAlive property as false.
-                    listWalker.IsAlive = false;
-                }
-                //Continue checking the rest of the list.
-                count++;
-                listWalker = listWalker.Next;
+                listWalker = listWalker.Next; //Not found, step to the next pellet.
             }
+
+            //Found the pelletToDelete, cut it out of memory and leave it for the GC. Savage.
+            listWalker.Next = pelletToDelete.Next;
         }
 
         //==============================================================================
@@ -145,7 +141,21 @@ namespace RainbowChicken2016
         //==============================================================================
         public void DeleteNotAlive()
         {
-            throw new NotImplementedException();
+            int count = 0;
+            Pellet listWalker = headPointer;
+
+            while (listWalker != null)
+            {
+                //Scan the list, finding any pellets flagged for deletion.
+                if (listWalker.IsAlive == false)
+                {
+                    //Run the delete method on the currently active pellet.
+                    DeleteOne(listWalker);
+                }
+                //Continue checking the rest of the list.
+                count++;
+                listWalker = listWalker.Next;
+            }
         }
 
         //==============================================================================
