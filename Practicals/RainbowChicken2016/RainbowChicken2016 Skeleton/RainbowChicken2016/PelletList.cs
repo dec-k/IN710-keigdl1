@@ -8,16 +8,26 @@ namespace RainbowChicken2016
 {
     public class PelletList
     {
+        //Head and tail pointers for the collection
         Pellet headPointer = null;
         Pellet tailPointer = null;
+
+        //Required vars to setup a list of pellets.
+        const int MAX_PELLETS_DISPLAY = 1000;
+        int pelletCount;
+        Pellet[] pelletList;
 
         Rectangle boundsRectangle;
 
         //==============================================================================
-        // Ctor
+        // Constructor
         //==============================================================================
         public PelletList(Rectangle boundsRectangle)
         {
+            //Important! Set head & tail to null at init otherwise things go boom. Big boom.
+            headPointer = null;
+            tailPointer = null;
+
             this.boundsRectangle = boundsRectangle;
         }
 
@@ -34,7 +44,21 @@ namespace RainbowChicken2016
         //==============================================================================
         public int Count()
         {
-            throw new NotImplementedException();
+            //Setup a count and a nodewalker which is used to step-through the linked list.
+            int count = 0;
+            Pellet listWalker = headPointer; //This is a reference to the pellet currently assigned as head. I think.
+            
+            //Step through the list, and so long as listWalker doesn't become null the count will increment.
+            while(listWalker != null){
+                count++;
+                listWalker = listWalker.Next;
+                //Explanation of listWalker.next:
+                //Fetches the referred-to value of listWalker, and gets its "next" value, if it
+                //returns null at any point, this means the end of the list has been reached.
+            }
+            
+            //Return count - which will be the total size of the list.
+            return count;
         }
 
         //==============================================================================
