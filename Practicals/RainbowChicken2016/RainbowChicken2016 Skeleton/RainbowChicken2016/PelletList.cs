@@ -125,15 +125,35 @@ namespace RainbowChicken2016
             //Create a nodewalker as usual
             Pellet listWalker = headPointer;
 
-            //Step through with the walker as usual, but the condition is not
-            //set to find the node before the one set to be deleted.
-            while (listWalker.Next != pelletToDelete)
+            //Case for when the current listwalker is a headpointer.
+            if (listWalker == headPointer)
             {
-                listWalker = listWalker.Next; //Not found, step to the next pellet.
+                //If the next item in the list is null...
+                if (listWalker.Next == null)
+                {
+                    //...set both head and tail ptr to null.
+                    headPointer = null;
+                    tailPointer = null;
+                }
+                else //Otherwise, continue walking through the list.
+                {
+                    headPointer = listWalker.Next;
+                }
             }
-
-            //Found the pelletToDelete, cut it out of memory and leave it for the GC. Savage.
-            listWalker.Next = pelletToDelete.Next;
+            else
+            {
+                //Step through with the walker as usual, but the condition is not
+                //set to find the node before the one set to be deleted.
+                while (listWalker.Next != pelletToDelete)
+                {
+                    listWalker = listWalker.Next; //Not found, step to the next pellet. 
+                }
+                listWalker.Next = pelletToDelete.Next;
+                if (listWalker.Next == null)
+                {
+                    tailPointer = listWalker;
+                }
+            }
         }
 
         //==============================================================================
