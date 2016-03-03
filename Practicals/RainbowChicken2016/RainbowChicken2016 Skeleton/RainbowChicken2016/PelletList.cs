@@ -79,14 +79,12 @@ namespace RainbowChicken2016
         //==============================================================================
         public void Move()
         {
-            int count = 0;
             Pellet listWalker = headPointer;
 
             while (listWalker != null)
             {
                 //Call the listWalker's reference's move() method to animate it across the form.
                 listWalker.Move();
-                count++;
                 listWalker = listWalker.Next;
             }
         }
@@ -97,7 +95,6 @@ namespace RainbowChicken2016
         //==============================================================================
         public void KillOutOfBounds()
         {
-            int count = 0;
             Pellet listWalker = headPointer;
 
             while (listWalker != null)
@@ -110,7 +107,6 @@ namespace RainbowChicken2016
                     listWalker.IsAlive = false;
                 }
                 //Continue checking the rest of the list.
-                count++;
                 listWalker = listWalker.Next;
             }
         }
@@ -146,9 +142,10 @@ namespace RainbowChicken2016
                 //set to find the node before the one set to be deleted.
                 while (listWalker.Next != pelletToDelete)
                 {
-                    listWalker = listWalker.Next; //Not found, step to the next pellet. 
+                    listWalker = listWalker.Next; //Not found, step to the next pellet.
+                    listWalker.Next = pelletToDelete.Next;
                 }
-                listWalker.Next = pelletToDelete.Next;
+
                 if (listWalker.Next == null)
                 {
                     tailPointer = listWalker;
@@ -161,7 +158,6 @@ namespace RainbowChicken2016
         //==============================================================================
         public void DeleteNotAlive()
         {
-            int count = 0;
             Pellet listWalker = headPointer;
 
             while (listWalker != null)
@@ -173,7 +169,6 @@ namespace RainbowChicken2016
                     DeleteOne(listWalker);
                 }
                 //Continue checking the rest of the list.
-                count++;
                 listWalker = listWalker.Next;
             }
         }
@@ -183,7 +178,6 @@ namespace RainbowChicken2016
         //==============================================================================
         public void Draw()
         {
-            int count = 0;
             Pellet listWalker = headPointer;
 
             while (listWalker != null)
@@ -191,7 +185,6 @@ namespace RainbowChicken2016
                 //Call listwalker's reference's draw method.
                 listWalker.Draw();
                 //Continue checking the rest of the list.
-                count++;
                 listWalker = listWalker.Next;
             }
         }
