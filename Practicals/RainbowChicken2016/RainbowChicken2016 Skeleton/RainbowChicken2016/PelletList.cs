@@ -138,7 +138,6 @@ namespace RainbowChicken2016
                 while (listWalker.Next != pelletToDelete)
                 {
                     listWalker = listWalker.Next; //Not found, step to the next pellet.
-                    
                 }
 
                 listWalker.Next = pelletToDelete.Next;
