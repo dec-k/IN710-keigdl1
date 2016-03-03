@@ -117,7 +117,7 @@ namespace RainbowChicken2016
             Pellet listWalker = headPointer;
 
             //Case for when the current listwalker is a headpointer.
-            if (listWalker == headPointer)
+            if (pelletToDelete == headPointer) //Goddamnit. Spent three hours on this line. Used to be listWalker == headpointer.
             {
                 //When the pellet we want to delete is the only pellet.
                 if (listWalker.Next == null)
