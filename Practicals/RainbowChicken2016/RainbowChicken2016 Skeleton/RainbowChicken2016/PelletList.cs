@@ -119,28 +119,29 @@ namespace RainbowChicken2016
             //Case for when the current listwalker is a headpointer.
             if (listWalker == headPointer)
             {
-                //If the next item in the list is null...
+                //When the pellet we want to delete is the only pellet.
                 if (listWalker.Next == null)
                 {
-                    //...set both head and tail ptr to null.
+                    //Kill it.
                     headPointer = null;
                     tailPointer = null;
                 }
-                else //Otherwise, continue walking through the list.
+                else 
                 {
+                    //Otherwise, continue walking through the list.
                     headPointer = listWalker.Next;
                 }
             }
             else
             {
-                //Step through with the walker as usual, but the condition is not
-                //set to find the node before the one set to be deleted.
+                //While loop to delete things sitting in the lists interior (swoop)
                 while (listWalker.Next != pelletToDelete)
                 {
                     listWalker = listWalker.Next; //Not found, step to the next pellet.
-                    listWalker.Next = pelletToDelete.Next;
+                    
                 }
 
+                listWalker.Next = pelletToDelete.Next;
                 if (listWalker.Next == null)
                 {
                     tailPointer = listWalker;
