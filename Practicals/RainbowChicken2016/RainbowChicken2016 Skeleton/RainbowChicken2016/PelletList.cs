@@ -12,11 +12,6 @@ namespace RainbowChicken2016
         Pellet headPointer = null;
         Pellet tailPointer = null;
 
-        //Required vars to setup a list of pellets.
-        const int MAX_PELLETS_DISPLAY = 1000;
-        int pelletCount;
-        Pellet[] pelletList;
-
         Rectangle boundsRectangle;
 
         //==============================================================================
