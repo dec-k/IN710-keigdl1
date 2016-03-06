@@ -55,14 +55,14 @@ namespace StackUnitTests
         public String Pop()
         {
             //create a string, used to show user output.
-            string mostRecentItem = stack[iterator];
+            string mostRecentItem = stack[iterator - 1];
 
             //Determine if you can remove an item from the top of the stack.
             if (stack[iterator - 1] != null)
             {
                 //Clear the currently watched part of the stack and reduce the iterator.
                 stack[--iterator] = null;
-                return "'" + mostRecentItem + "' has been removed from the stack.";
+                return mostRecentItem + " was removed from stack.";
             }
             else //Case handles when you cannot remove.
             {
@@ -74,9 +74,9 @@ namespace StackUnitTests
         public String Peek()
         {
             //create a string, used to show user output.
-            string mostRecentItem = stack[iterator];
+            string mostRecentItem = stack[iterator - 1];
 
-            return "'" + mostRecentItem + "' was the last item added to the stack.";
+            return mostRecentItem + " was the most recent item added to stack.";
         }
 
         //Returns the count of items in the stack.

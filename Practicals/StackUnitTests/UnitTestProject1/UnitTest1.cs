@@ -39,7 +39,6 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        
         public void Peek_OnEmptyStack_ReturnsExceptionHandler()
         {
             //Near-arbitrary stack size for the creation of the stack:
@@ -49,6 +48,55 @@ namespace UnitTestProject1
 
             bool expected = true;
             bool actual = target.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+
+        public void Peek_OnStackWithItems_ReturnsLastAdded()
+        {
+            //Near-arbitrary stack size for the creation of the stack:
+            int stackTestSize = 5;
+            Stack target = new Stack(stackTestSize);
+
+            //Push stub data to stack
+            target.Push("A");
+            target.Push("B");
+            target.Push("C");
+
+            string expected = "C was the most recent item added to stack.";
+            string actual = target.Peek();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_OnEmptyStack_ReturnsZero()
+        {
+            //Near-arbitrary stack size for the creation of the stack:
+            int stackTestSize = 5;
+            Stack target = new Stack(stackTestSize);
+
+            int expected = 0;
+            int actual = target.Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_OnStackWithItems_ReturnsTwo()
+        {
+            //Near-arbitrary stack size for the creation of the stack:
+            int stackTestSize = 5;
+            Stack target = new Stack(stackTestSize);
+
+            //Push stub data
+            target.Push("a");
+            target.Push("a");
+
+            int expected = 2;
+            int actual = target.Count();
 
             Assert.AreEqual(expected, actual);
         }
