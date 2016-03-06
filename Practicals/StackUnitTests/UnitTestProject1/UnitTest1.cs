@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StackUnitTests;
 
 namespace UnitTestProject1
 {
@@ -14,7 +15,7 @@ namespace UnitTestProject1
             Stack target = new Stack(stackTestSize);
 
             bool expected = true;
-            bool actual = stackTestSize.IsEmpty();
+            bool actual = target.IsEmpty();
 
             Assert.AreEqual(expected, actual);
         }

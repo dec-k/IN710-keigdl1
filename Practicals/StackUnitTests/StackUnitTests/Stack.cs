@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StackUnitTests
 {
-    class Stack
+    public class Stack
     {
         //Array of strings for the stack
         //Note to self: If you get extra time, rewrite this as a linked list. Arrays are overly simple. :(
@@ -17,7 +17,7 @@ namespace StackUnitTests
         int boundary; //Again, only really needed because it's an array not a linked list.
 
         //ctor
-        public Stack(int stackSize /*This isn't needed if using a linked list.*/)
+        public Stack(int stackSize)
         {
             stack = new string[stackSize];
             iterator = 0;
@@ -71,7 +71,9 @@ namespace StackUnitTests
         public bool IsEmpty()
         {
             //Checks if the iterator is zero, and if the content at zero is blank.
-            if (iterator == 0 && stack[iterator] == "")
+            //== null is used when the stack is fresh and hasnt had anything put in it yet,
+            //== "" is used when something was there, but has been removed from the stack.
+            if (iterator == 0 && (stack[iterator] == null || stack[iterator] == ""))
             {
                 return true;
             }
