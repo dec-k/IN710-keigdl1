@@ -12,9 +12,27 @@ namespace StackUnitTests
 {
     public partial class Form1 : Form
     {
+        //Init a stack for testing
+        Stack testStack = new Stack(5);
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            testStack.Push("TestItem");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(testStack.Pop());
+        }
+
+        private void btnPeek_Click(object sender, EventArgs e)
+        {
+            testStack.Peek();
         }
     }
 }
