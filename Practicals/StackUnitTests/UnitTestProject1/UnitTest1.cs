@@ -39,17 +39,15 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException),"You have attempted to Peek an empty stack.")]
         public void Peek_OnEmptyStack_ReturnsExceptionHandler()
         {
             //Near-arbitrary stack size for the creation of the stack:
             int stackTestSize = 5;
             Stack target = new Stack(stackTestSize);
+
+            //Peek on an empty stack - will throw an exception in the test.
             target.Peek();
-
-            bool expected = true;
-            bool actual = target.IsEmpty();
-
-            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -85,6 +83,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        
         public void Count_OnStackWithItems_ReturnsTwo()
         {
             //Near-arbitrary stack size for the creation of the stack:

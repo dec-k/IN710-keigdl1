@@ -75,7 +75,6 @@ namespace StackUnitTests
         {
             //create a string, used to show user output.
             string mostRecentItem = stack[iterator - 1];
-
             return mostRecentItem + " was the most recent item added to stack.";
         }
 
