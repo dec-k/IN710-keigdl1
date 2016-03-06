@@ -7,8 +7,16 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void IsEmpty_EmptyStack_ReturnsTrue()
         {
+            //Near-arbitrary stack size for the creation of the stack:
+            int stackTestSize = 5;
+            Stack target = new Stack(stackTestSize);
+
+            bool expected = true;
+            bool actual = stackTestSize.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }
