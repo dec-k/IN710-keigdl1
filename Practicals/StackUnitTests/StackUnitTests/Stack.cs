@@ -24,7 +24,7 @@ namespace StackUnitTests
             boundary = stackSize;
         }
 
-        //functions
+        //function to add an item to the top of a stack.
         public void Push(string newString)
         {
             //Case to check if stack is full before adding an item to the array.
@@ -39,6 +39,26 @@ namespace StackUnitTests
                 //Feedback to let user know the stack was full
                 //ADD ME
             }
+        }
+
+        //Pops off the most recently item added to the stack.
+        public String Pop()
+        {
+            //create a string, used to show user output.
+            string mostRecentItem = stack[iterator];
+
+            stack[--iterator] = ""; //Reduce the iterator, gets the most recently assigned slot, and means that the push method will overwrite in the right place later.
+            //Note: As I wrote this, I became aware that having an array almost defeats the point of the stack. The memory doesn't de-allocate for the 'blank' array slots..
+            return mostRecentItem + " has been removed from the stack.";
+        }
+
+        //Returns the most recently added item in the stack, but doesn't remove it.
+        public String Peek()
+        {
+            //create a string, used to show user output.
+            string mostRecentItem = stack[iterator];
+
+            return mostRecentItem + " was the last item added to the stack.";
         }
 
     }
