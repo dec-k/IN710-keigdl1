@@ -24,5 +24,22 @@ namespace StackUnitTests
             boundary = stackSize;
         }
 
+        //functions
+        public void Push(string newString)
+        {
+            //Case to check if stack is full before adding an item to the array.
+            if (iterator == boundary) 
+            {
+                //Put argument string into the stack & increment the iterator
+                stack[iterator] = newString;
+                iterator++;
+            }
+            else
+            {
+                //Feedback to let user know the stack was full
+                //ADD ME
+            }
+        }
+
     }
 }
