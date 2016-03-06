@@ -23,18 +23,19 @@ namespace StackUnitTests
         private void button1_Click(object sender, EventArgs e)
         {
             testStack.Push("TestItem");
-            lbOutput.Items.Add("item added.");
+            lbOutput.Items.Add("item added." + testStack.Iterator + "/" + testStack.Stack1.Length + " slots used.");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(testStack.Pop());
-            lbOutput.Items.Add("item removed.");
+            testStack.Pop();
+            lbOutput.Items.Add("item removed." + testStack.Iterator + "/" + testStack.Stack1.Length + " slots used.");
         }
 
         private void btnPeek_Click(object sender, EventArgs e)
         {
             testStack.Peek();
+            lbOutput.Items.Add("Item #" + testStack.Iterator + " added last. " + testStack.Iterator + "/" + testStack.Stack1.Length + " slots used.");
         }
     }
 }
