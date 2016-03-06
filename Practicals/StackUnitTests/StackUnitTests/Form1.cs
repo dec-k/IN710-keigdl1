@@ -23,11 +23,13 @@ namespace StackUnitTests
         private void button1_Click(object sender, EventArgs e)
         {
             testStack.Push("TestItem");
+            lbOutput.Items.Add("item added.");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show(testStack.Pop());
+            lbOutput.Items.Add("item removed.");
         }
 
         private void btnPeek_Click(object sender, EventArgs e)

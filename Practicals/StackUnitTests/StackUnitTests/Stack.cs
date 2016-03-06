@@ -15,6 +15,18 @@ namespace StackUnitTests
         //Iterator keeps count of the stacks size
         int iterator;
 
+        //Getsets
+        public string[] Stack1
+        {
+            get { return stack; }
+            set { stack = value; }
+        }
+        public int Iterator
+        {
+            get { return iterator; }
+            set { iterator = value; }
+        }
+
         //ctor
         public Stack(int stackSize)
         {
@@ -25,40 +37,36 @@ namespace StackUnitTests
         //function to add an item to the top of a stack.
         public void Push(string newString)
         {
-
-                //Case to check if stack is full before adding an item to the array.
-                if (iterator < stack.Length)
-                {
-                    //Put argument string into the stack & increment the iterator
-                    stack[iterator] = newString;
-                    iterator++;
-                }
-                else
-                {
-                    //Feedback to let user know the stack was full
-                    //ADD ME
-                }
-
-              
+            //Case to check if stack is full before adding an item to the array.
+            if (iterator < stack.Length)
+            {
+                //Put argument string into the stack & increment the iterator
+                stack[iterator] = newString;
+                iterator++;
+            }
+            else
+            {
+                //Feedback to let user know the stack was full
+                //ADD ME
+            }
         }
 
         //Pops off the most recently item added to the stack.
         public String Pop()
         {
-            try
-            {
-                //create a string, used to show user output.
-                string mostRecentItem = stack[iterator];
+            //create a string, used to show user output.
+            string mostRecentItem = stack[iterator];
 
-                //Clear the currently watched part of the stack.
-                stack[iterator] = null;
+            //Determine if you can remove an item from the top of the stack.
+            if (stack[iterator - 1] != null)
+            {
+                //Clear the currently watched part of the stack and reduce the iterator.
+                stack[--iterator] = null;
                 return "'" + mostRecentItem + "' has been removed from the stack.";
             }
-            catch (IndexOutOfRangeException)
+            else //Case handles when you cannot remove.
             {
-                //Reset the iterator value to prevent a crash.
-                iterator = +1;
-                return "You attempted to pop when the stack was empty.";
+                return "You are attempting to pop from an empty stack.";
             }
         }
 

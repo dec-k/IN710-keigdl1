@@ -31,6 +31,7 @@
             this.btnPush = new System.Windows.Forms.Button();
             this.btnPop = new System.Windows.Forms.Button();
             this.btnPeek = new System.Windows.Forms.Button();
+            this.lbOutput = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnPush
@@ -63,11 +64,20 @@
             this.btnPeek.UseVisualStyleBackColor = true;
             this.btnPeek.Click += new System.EventHandler(this.btnPeek_Click);
             // 
+            // lbOutput
+            // 
+            this.lbOutput.FormattingEnabled = true;
+            this.lbOutput.Location = new System.Drawing.Point(115, 12);
+            this.lbOutput.Name = "lbOutput";
+            this.lbOutput.Size = new System.Drawing.Size(266, 82);
+            this.lbOutput.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(120, 110);
+            this.ClientSize = new System.Drawing.Size(393, 110);
+            this.Controls.Add(this.lbOutput);
             this.Controls.Add(this.btnPeek);
             this.Controls.Add(this.btnPop);
             this.Controls.Add(this.btnPush);
@@ -82,6 +92,7 @@
         private System.Windows.Forms.Button btnPush;
         private System.Windows.Forms.Button btnPop;
         private System.Windows.Forms.Button btnPeek;
+        private System.Windows.Forms.ListBox lbOutput;
     }
 }
 
