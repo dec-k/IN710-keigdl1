@@ -37,18 +37,9 @@ namespace StackUnitTests
         //function to add an item to the top of a stack.
         public void Push(string newString)
         {
-            //Case to check if stack is full before adding an item to the array.
-            if (iterator < stack.Length)
-            {
-                //Put argument string into the stack & increment the iterator
-                stack[iterator] = newString;
-                iterator++;
-            }
-            else
-            {
-                //Feedback to let user know the stack was full
-                //ADD ME
-            }
+            //Put argument string into the stack & increment the iterator
+            stack[iterator] = newString;
+            iterator++;
         }
 
         //Pops off the most recently item added to the stack.

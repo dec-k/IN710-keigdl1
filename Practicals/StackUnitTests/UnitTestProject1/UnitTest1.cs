@@ -99,5 +99,33 @@ namespace UnitTestProject1
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException),"You have attempted to Pop an empty stack.")]
+        public void Pop_OnEmptyStack_ReturnsExceptionHandler()
+        {
+            //Near-arbitrary stack size for the creation of the stack:
+            int stackTestSize = 5;
+            Stack target = new Stack(stackTestSize);
+
+            //Attempt to pop an empty stack - will return outofrange exception with a message.
+            target.Pop();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException), "You have attempted to Push to a stack with no available space.")]
+        public void Push_OnFullArray_ReturnsExceptionHandler()
+        {
+            //Set stack size low for easy testing.
+            int stackTestSize = 2;
+            Stack target = new Stack(stackTestSize);
+
+            //Push stub data
+            target.Push("a");
+            target.Push("a");
+
+            //This push will overflow the array and throw an exception.
+            target.Push("a");
+        }
     }
 }
