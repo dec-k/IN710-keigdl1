@@ -49,7 +49,7 @@ namespace StackUnitTests
 
             stack[--iterator] = ""; //Reduce the iterator, gets the most recently assigned slot, and means that the push method will overwrite in the right place later.
             //Note: As I wrote this, I became aware that having an array almost defeats the point of the stack. The memory doesn't de-allocate for the 'blank' array slots..
-            return mostRecentItem + " has been removed from the stack.";
+            return "'" + mostRecentItem + "' has been removed from the stack.";
         }
 
         //Returns the most recently added item in the stack, but doesn't remove it.
@@ -58,7 +58,27 @@ namespace StackUnitTests
             //create a string, used to show user output.
             string mostRecentItem = stack[iterator];
 
-            return mostRecentItem + " was the last item added to the stack.";
+            return "'" + mostRecentItem + "' was the last item added to the stack.";
+        }
+
+        //Returns the count of items in the stack.
+        public int Count()
+        {
+            return iterator;
+        }
+
+        //Checks if the stack is empty
+        public bool IsEmpty()
+        {
+            //Checks if the iterator is zero, and if the content at zero is blank.
+            if (iterator == 0 && stack[iterator] == "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }
