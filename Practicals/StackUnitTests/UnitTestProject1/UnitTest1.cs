@@ -124,9 +124,71 @@ namespace UnitTestProject1
             target.Push("a");
             target.Push("a");
             
-
             //This push will overflow the array and throw an exception.
             target.Push("a");
+        }
+
+        [TestMethod]
+        public void Peek_OnFullStackArray_ReturnCorrectItem()
+        {
+            //Assemble
+            int stackTestSize = 2;
+            Stack target = new Stack(stackTestSize);
+
+            //Act
+            target.Push("a");
+            target.Push("B");
+
+            string expected = target.Peek();
+            string actual = "B was the most recent item added to stack.";
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Peek_OnFilledThenEmptiedStack_ReturnCorrectItem()
+        {
+            //Assemble
+            int stackTestSize = 3;
+            Stack target = new Stack(stackTestSize);
+
+            //Act
+            target.Push("A");
+            target.Push("B");
+            target.Push("C");
+
+            //Pop all but one item from the stack.
+            target.Pop();
+            target.Pop();
+
+            string expected = target.Peek();
+            string actual = "A was the most recent item added to stack.";
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Count_OnFilledThenEmptiedStack_ReturnsOne()
+        {
+            //Assemble
+            int stackTestSize = 3;
+            Stack target = new Stack(stackTestSize);
+
+            //Act
+            target.Push("A");
+            target.Push("B");
+
+            //Pop all but one item from the stack.
+            target.Pop();
+
+            //Verify that count has returned value of 1.
+            int expected = target.Count();
+            int actual = 1;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }

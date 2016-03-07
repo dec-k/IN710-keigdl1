@@ -72,9 +72,17 @@ namespace StackUnitTests
         //Returns the most recently added item in the stack, but doesn't remove it.
         public String Peek()
         {
-            //create a string, used to show user output.
-            string mostRecentItem = stack[iterator - 1];
-            return mostRecentItem + " was the most recent item added to stack.";
+            try
+            {
+                //create a string, used to show user output.
+                string mostRecentItem = stack[iterator - 1];
+                return mostRecentItem + " was the most recent item added to stack.";
+            }
+            catch (IndexOutOfRangeException)
+            {
+                System.IndexOutOfRangeException exString = new System.IndexOutOfRangeException("You have attempted to peek an empty stack.");
+                throw exString;
+            }
         }
 
         //Returns the count of items in the stack.
