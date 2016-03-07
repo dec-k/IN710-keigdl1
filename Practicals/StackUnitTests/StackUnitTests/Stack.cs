@@ -37,27 +37,35 @@ namespace StackUnitTests
         //function to add an item to the top of a stack.
         public void Push(string newString)
         {
-            //Put argument string into the stack & increment the iterator
-            stack[iterator] = newString;
-            iterator++;
+            try
+            {
+                //Put argument string into the stack & increment the iterator
+                stack[iterator] = newString;
+                iterator++;
+            }
+            catch (IndexOutOfRangeException)
+            {
+                //Throws an exception if the stack is already full and provides feedback.
+                System.IndexOutOfRangeException exString = new System.IndexOutOfRangeException("You attempted to push to a full stack.");
+                throw exString;
+            }
         }
 
         //Pops off the most recently item added to the stack.
         public String Pop()
         {
-            //create a string, used to show user output.
-            string mostRecentItem = stack[iterator - 1];
+            try { 
+                //create a string, used to show user output.
+                string mostRecentItem = stack[iterator - 1];
 
-            //Determine if you can remove an item from the top of the stack.
-            if (stack[iterator - 1] != null)
-            {
                 //Clear the currently watched part of the stack and reduce the iterator.
                 stack[--iterator] = null;
                 return mostRecentItem + " was removed from stack.";
             }
-            else //Case handles when you cannot remove.
+            catch (IndexOutOfRangeException)
             {
-                return "You are attempting to pop from an empty stack.";
+                System.IndexOutOfRangeException exString = new System.IndexOutOfRangeException("You attempted to pop from an empty stack.");
+                throw exString;
             }
         }
 

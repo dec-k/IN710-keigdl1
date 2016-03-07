@@ -101,7 +101,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException),"You have attempted to Pop an empty stack.")]
+        [ExpectedExceptionAttribute(typeof(IndexOutOfRangeException),"You have attempted to Pop an empty stack.")]
         public void Pop_OnEmptyStack_ReturnsExceptionHandler()
         {
             //Near-arbitrary stack size for the creation of the stack:
@@ -123,6 +123,7 @@ namespace UnitTestProject1
             //Push stub data
             target.Push("a");
             target.Push("a");
+            
 
             //This push will overflow the array and throw an exception.
             target.Push("a");
