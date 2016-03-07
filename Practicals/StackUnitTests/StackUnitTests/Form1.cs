@@ -37,5 +37,11 @@ namespace StackUnitTests
             testStack.Peek();
             lbOutput.Items.Add("Item #" + testStack.Iterator + " added last. " + testStack.Iterator + "/" + testStack.Stack1.Length + " slots used.");
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            lbOutput.Items.Add("IsEmpty returned: " + testStack.IsEmpty());
+        }
     }
 }

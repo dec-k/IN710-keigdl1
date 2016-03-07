@@ -184,8 +184,53 @@ namespace UnitTestProject1
             target.Pop();
 
             //Verify that count has returned value of 1.
-            int expected = target.Count();
-            int actual = 1;
+            int expected = 1;
+            int actual = target.Count();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Is this test redundant because of the one above?
+        [TestMethod]
+        public void Count_OnFilledMinusOneStack_ReturnsFour()
+        {
+            //Assemble
+            int stackTestSize = 5;
+            Stack target = new Stack(stackTestSize);
+
+            //Act
+            target.Push("A");
+            target.Push("B");
+            target.Push("C");
+            target.Push("D");
+            target.Push("E");
+
+            //Pop the last item from the stack.
+            target.Pop();
+
+            //Verify that count has returned value of 4.
+            int expected = 4;
+            int actual = target.Count();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Is this test redundant because of the one above?
+        [TestMethod]
+        public void IsEmpty_OnStackWithItems_ReturnsFalse()
+        {
+            //Assemble
+            int stackTestSize = 5;
+            Stack target = new Stack(stackTestSize);
+
+            //Act
+            target.Push("A");
+
+            //Verify that count has returned value of 4.
+            bool expected = false;
+            bool actual = target.IsEmpty();
 
             //Assert
             Assert.AreEqual(expected, actual);
