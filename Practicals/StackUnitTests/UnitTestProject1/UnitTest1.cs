@@ -217,7 +217,6 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
 
-        //Is this test redundant because of the one above?
         [TestMethod]
         public void IsEmpty_OnStackWithItems_ReturnsFalse()
         {
@@ -231,6 +230,24 @@ namespace UnitTestProject1
             //Verify that count has returned value of 4.
             bool expected = false;
             bool actual = target.IsEmpty();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Pop_OnStackWithOneItem_ReturnsCorrectFeedback()
+        {
+            //Assemble
+            int stackTestSize = 1;
+            Stack target = new Stack(stackTestSize);
+
+            //Act
+            target.Push("A");
+
+            //Verify that pop has given the correct user-friendly feedback.
+            string expected = "A was removed from stack.";
+            string actual = target.Pop();
 
             //Assert
             Assert.AreEqual(expected, actual);
