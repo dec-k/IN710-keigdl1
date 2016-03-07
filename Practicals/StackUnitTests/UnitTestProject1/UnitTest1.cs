@@ -227,7 +227,6 @@ namespace UnitTestProject1
             //Act
             target.Push("A");
 
-            //Verify that count has returned value of 4.
             bool expected = false;
             bool actual = target.IsEmpty();
 
@@ -248,6 +247,47 @@ namespace UnitTestProject1
             //Verify that pop has given the correct user-friendly feedback.
             string expected = "A";
             string actual = target.Pop();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Pop_OnStackThatUsedToHaveItems_Returns()
+        {
+            //Assemble
+            int stackTestSize = 3;
+            Stack target = new Stack(stackTestSize);
+
+            //Act
+            target.Push("A");
+            target.Push("B");
+            target.Push("C");
+            target.Pop();
+            target.Pop();
+
+            //Verify that an array can be filled and then all elements can be popped from it.
+            string expected = "A";
+            string actual = target.Pop();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void IsEmpty_OnFullStack_ReturnsFalse()
+        {
+            //Assemble
+            int stackTestSize = 3;
+            Stack target = new Stack(stackTestSize);
+
+            //Act
+            target.Push("A");
+            target.Push("B");
+            target.Push("C");
+
+            bool expected = false;
+            bool actual = target.IsEmpty();
 
             //Assert
             Assert.AreEqual(expected, actual);
