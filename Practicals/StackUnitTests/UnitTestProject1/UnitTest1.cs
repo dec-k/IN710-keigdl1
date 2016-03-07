@@ -63,7 +63,7 @@ namespace UnitTestProject1
             target.Push("B");
             target.Push("C");
 
-            string expected = "C was the most recent item added to stack.";
+            string expected = "C";
             string actual = target.Peek();
 
             Assert.AreEqual(expected, actual);
@@ -140,7 +140,7 @@ namespace UnitTestProject1
             target.Push("B");
 
             string expected = target.Peek();
-            string actual = "B was the most recent item added to stack.";
+            string actual = "B";
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -163,7 +163,7 @@ namespace UnitTestProject1
             target.Pop();
 
             string expected = target.Peek();
-            string actual = "A was the most recent item added to stack.";
+            string actual = "A";
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -246,7 +246,7 @@ namespace UnitTestProject1
             target.Push("A");
 
             //Verify that pop has given the correct user-friendly feedback.
-            string expected = "A was removed from stack.";
+            string expected = "A";
             string actual = target.Pop();
 
             //Assert

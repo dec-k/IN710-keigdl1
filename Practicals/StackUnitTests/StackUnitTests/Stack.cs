@@ -60,7 +60,7 @@ namespace StackUnitTests
 
                 //Clear the currently watched part of the stack and reduce the iterator.
                 stack[--iterator] = null;
-                return mostRecentItem + " was removed from stack.";
+                return mostRecentItem;
             }
             catch (IndexOutOfRangeException)
             {
@@ -76,7 +76,7 @@ namespace StackUnitTests
             {
                 //create a string, used to show user output.
                 string mostRecentItem = stack[iterator - 1];
-                return mostRecentItem + " was the most recent item added to stack.";
+                return mostRecentItem;
             }
             catch (IndexOutOfRangeException)
             {
