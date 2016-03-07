@@ -32,6 +32,7 @@
             this.btnPop = new System.Windows.Forms.Button();
             this.btnPeek = new System.Windows.Forms.Button();
             this.lbOutput = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPush
@@ -69,14 +70,25 @@
             this.lbOutput.FormattingEnabled = true;
             this.lbOutput.Location = new System.Drawing.Point(115, 12);
             this.lbOutput.Name = "lbOutput";
-            this.lbOutput.Size = new System.Drawing.Size(266, 82);
+            this.lbOutput.Size = new System.Drawing.Size(266, 108);
             this.lbOutput.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 99);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "IsEmpty?";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 110);
+            this.ClientSize = new System.Drawing.Size(393, 135);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbOutput);
             this.Controls.Add(this.btnPeek);
             this.Controls.Add(this.btnPop);
@@ -93,6 +105,7 @@
         private System.Windows.Forms.Button btnPop;
         private System.Windows.Forms.Button btnPeek;
         private System.Windows.Forms.ListBox lbOutput;
+        private System.Windows.Forms.Button button1;
     }
 }
 
