@@ -31,10 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdTroll = new System.Windows.Forms.RadioButton();
+            this.rdSorc = new System.Windows.Forms.RadioButton();
+            this.rdCleric = new System.Windows.Forms.RadioButton();
+            this.rdBandit = new System.Windows.Forms.RadioButton();
             this.rdKnight = new System.Windows.Forms.RadioButton();
-            this.rdQueen = new System.Windows.Forms.RadioButton();
-            this.rdKing = new System.Windows.Forms.RadioButton();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnAddCharacter = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -85,10 +85,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rdTroll);
+            this.groupBox1.Controls.Add(this.rdSorc);
+            this.groupBox1.Controls.Add(this.rdCleric);
+            this.groupBox1.Controls.Add(this.rdBandit);
             this.groupBox1.Controls.Add(this.rdKnight);
-            this.groupBox1.Controls.Add(this.rdQueen);
-            this.groupBox1.Controls.Add(this.rdKing);
             this.groupBox1.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(272, 18);
             this.groupBox1.Name = "groupBox1";
@@ -97,53 +97,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Character Type";
             // 
-            // rdTroll
+            // rdSorc
             // 
-            this.rdTroll.AutoSize = true;
-            this.rdTroll.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdTroll.Location = new System.Drawing.Point(13, 103);
-            this.rdTroll.Name = "rdTroll";
-            this.rdTroll.Size = new System.Drawing.Size(67, 25);
-            this.rdTroll.TabIndex = 3;
-            this.rdTroll.TabStop = true;
-            this.rdTroll.Text = "Troll";
-            this.rdTroll.UseVisualStyleBackColor = true;
+            this.rdSorc.AutoSize = true;
+            this.rdSorc.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdSorc.Location = new System.Drawing.Point(13, 103);
+            this.rdSorc.Name = "rdSorc";
+            this.rdSorc.Size = new System.Drawing.Size(100, 25);
+            this.rdSorc.TabIndex = 3;
+            this.rdSorc.TabStop = true;
+            this.rdSorc.Text = "Sorceror";
+            this.rdSorc.UseVisualStyleBackColor = true;
+            // 
+            // rdCleric
+            // 
+            this.rdCleric.AutoSize = true;
+            this.rdCleric.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdCleric.Location = new System.Drawing.Point(13, 78);
+            this.rdCleric.Name = "rdCleric";
+            this.rdCleric.Size = new System.Drawing.Size(77, 25);
+            this.rdCleric.TabIndex = 2;
+            this.rdCleric.TabStop = true;
+            this.rdCleric.Text = "Cleric";
+            this.rdCleric.UseVisualStyleBackColor = true;
+            // 
+            // rdBandit
+            // 
+            this.rdBandit.AutoSize = true;
+            this.rdBandit.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdBandit.Location = new System.Drawing.Point(13, 53);
+            this.rdBandit.Name = "rdBandit";
+            this.rdBandit.Size = new System.Drawing.Size(87, 25);
+            this.rdBandit.TabIndex = 1;
+            this.rdBandit.TabStop = true;
+            this.rdBandit.Text = "Bandit";
+            this.rdBandit.UseVisualStyleBackColor = true;
             // 
             // rdKnight
             // 
             this.rdKnight.AutoSize = true;
             this.rdKnight.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdKnight.Location = new System.Drawing.Point(13, 78);
+            this.rdKnight.Location = new System.Drawing.Point(13, 28);
             this.rdKnight.Name = "rdKnight";
             this.rdKnight.Size = new System.Drawing.Size(89, 25);
-            this.rdKnight.TabIndex = 2;
+            this.rdKnight.TabIndex = 0;
             this.rdKnight.TabStop = true;
             this.rdKnight.Text = "Knight";
             this.rdKnight.UseVisualStyleBackColor = true;
-            // 
-            // rdQueen
-            // 
-            this.rdQueen.AutoSize = true;
-            this.rdQueen.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdQueen.Location = new System.Drawing.Point(13, 53);
-            this.rdQueen.Name = "rdQueen";
-            this.rdQueen.Size = new System.Drawing.Size(80, 25);
-            this.rdQueen.TabIndex = 1;
-            this.rdQueen.TabStop = true;
-            this.rdQueen.Text = "Queen";
-            this.rdQueen.UseVisualStyleBackColor = true;
-            // 
-            // rdKing
-            // 
-            this.rdKing.AutoSize = true;
-            this.rdKing.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdKing.Location = new System.Drawing.Point(13, 28);
-            this.rdKing.Name = "rdKing";
-            this.rdKing.Size = new System.Drawing.Size(71, 25);
-            this.rdKing.TabIndex = 0;
-            this.rdKing.TabStop = true;
-            this.rdKing.Text = "King";
-            this.rdKing.UseVisualStyleBackColor = true;
             // 
             // txtName
             // 
@@ -162,6 +162,7 @@
             this.btnAddCharacter.TabIndex = 8;
             this.btnAddCharacter.Text = "Create New Character";
             this.btnAddCharacter.UseVisualStyleBackColor = true;
+            this.btnAddCharacter.Click += new System.EventHandler(this.btnAddCharacter_Click);
             // 
             // panel2
             // 
@@ -375,10 +376,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdTroll;
+        private System.Windows.Forms.RadioButton rdSorc;
+        private System.Windows.Forms.RadioButton rdCleric;
+        private System.Windows.Forms.RadioButton rdBandit;
         private System.Windows.Forms.RadioButton rdKnight;
-        private System.Windows.Forms.RadioButton rdQueen;
-        private System.Windows.Forms.RadioButton rdKing;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnAddCharacter;
         private System.Windows.Forms.Panel panel2;
