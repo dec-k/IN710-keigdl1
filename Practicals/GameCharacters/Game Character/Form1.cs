@@ -15,31 +15,15 @@ namespace Game_Character
         //Declare a list of characters
         List<Character> charList = new List<Character>();
 
-        //Add some dummy characters
-
-        //Update the lists at init
-
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //This button is just for debugging simple stuff and will be removed later.
-
-            Character tootie = new Knight("Seigmeyer of Catarina");
-            listBox2.Items.Add(tootie.outputName());
-            listBox2.Items.Add(tootie.outputType());
-            listBox2.Items.Add(tootie.useCharactersWeapon());
-
-            Character frooty = new Bandit("Mild-Mannered Pate");
-            listBox2.Items.Add(frooty.outputName());
-            listBox2.Items.Add(frooty.outputType());
-            listBox2.Items.Add(frooty.useCharactersWeapon());
-
-            //output an item from the list
-            listBox2.Items.Add(charList[0].useCharactersWeapon());
+            charList.Add(new Bandit("Mild-Mannered Pate"));
+            charList.Add(new Sorceror("Yuria the Witch"));
+            charList.Add(new Bandit("Creighton the Wanderer"));
+            charList.Add(new Cleric("Allfather Lloyd"));
+            charList.Add(new Knight("Seigmeyer of Catarina"));
+            updateForm();
         }
 
         private void btnAddCharacter_Click(object sender, EventArgs e)
@@ -130,6 +114,61 @@ namespace Game_Character
                     MessageBox.Show("You haven't selected a weapon.");
                 }
             }
+        }
+
+        private void btnBattle_Click(object sender, EventArgs e)
+        {
+            //Calls the battle method
+            battle();
+        }
+
+        //Battle() sets up the combatants and determines them before passing to another method which writes out the combatants strings.
+        public void battle()
+        {
+            //Combatant indices
+            int combatant1 = 0;
+            int combatant2 = 0;
+
+            //Setup iterator to determine which combatant to add where
+            int iterator = 0;
+
+            //Determine which checkboxes are selected (crashes if more than 2 selected)
+            foreach (int checkedIndex in checkedListBox1.CheckedIndices)
+            {
+                //If iterator has yet to increase, assign that indice as the first combatant.
+                if (iterator == 0)
+                {
+                    combatant1 = checkedIndex;
+                    iterator++;
+                }
+                else
+                {
+                    combatant2 = checkedIndex;
+                }
+            }
+
+            //Generate the battlestrings in another method
+            battleStrings(combatant1, combatant2);
+            
+        }
+
+        public void battleStrings(int combatant1, int combatant2)
+        {
+            //Clear the listbox before putting more content in
+            listBox1.Items.Clear();
+
+            //Output combatant1's strings
+            listBox1.Items.Add(charList[combatant1].outputName());
+            listBox1.Items.Add(charList[combatant1].outputType());
+            listBox1.Items.Add(charList[combatant1].useCharactersWeapon());
+
+            //Divider for clarity
+            listBox1.Items.Add("************************");
+
+            //Output combatant2's strings
+            listBox1.Items.Add(charList[combatant2].outputName());
+            listBox1.Items.Add(charList[combatant2].outputType());
+            listBox1.Items.Add(charList[combatant2].useCharactersWeapon());
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Game_Character
             : base(name)
         {
             //Bandits start with a spear
-            weapon = new mace();
+            weapon = new spear();
         }
 
         public override string outputType()
