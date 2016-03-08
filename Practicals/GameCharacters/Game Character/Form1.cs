@@ -110,20 +110,20 @@ namespace Game_Character
         public void changeWeapons()
         {
             //Retrieve checked items in the listbox
-            foreach (Character checkedChar in checkedListBox2.CheckedItems)
+            foreach (int checkedIndex in checkedListBox2.CheckedIndices)
             {
                 //Determine which rdobutton has been checked
                 if (rdSword.Checked == true)
                 {
-                    checkedChar.weapon = new sword();
+                    charList[checkedIndex].weapon = new sword();
                 }
                 else if (rdMace.Checked == true)
                 {
-                    checkedChar.weapon = new mace();
+                    charList[checkedIndex].weapon = new mace();
                 }
                 else if (rdMace.Checked == true)
                 {
-                    checkedChar.weapon = new spear();
+                    charList[checkedIndex].weapon = new spear();
                 }
                 else
                 {
