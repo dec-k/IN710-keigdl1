@@ -74,13 +74,13 @@ namespace Game_Character
         //Method used to Update the listboxes on the form
         public void updateForm()
         {
+            //Clear checklistBoxes to prevent duplication.
+            checkedListBox1.Items.Clear();
+            checkedListBox2.Items.Clear();
+
             //Update relevant listboxes on the form so they display current information
             foreach (Character c in charList)
             {
-                //Clear checklistBoxes to prevent duplication.
-                checkedListBox1.Items.Clear();
-                checkedListBox2.Items.Clear();
-
                 //Re-add characters to the boxes.
                 checkedListBox1.Items.Add(c.characterName);
                 checkedListBox2.Items.Add(c.characterName);
