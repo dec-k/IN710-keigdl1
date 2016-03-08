@@ -15,6 +15,10 @@ namespace Game_Character
         //Declare a list of characters
         List<Character> charList = new List<Character>();
 
+        //Add some dummy characters
+
+        //Update the lists at init
+
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +37,9 @@ namespace Game_Character
             listBox2.Items.Add(frooty.outputName());
             listBox2.Items.Add(frooty.outputType());
             listBox2.Items.Add(frooty.useCharactersWeapon());
+
+            //output an item from the list
+            listBox2.Items.Add(charList[0].useCharactersWeapon());
         }
 
         private void btnAddCharacter_Click(object sender, EventArgs e)
@@ -93,6 +100,36 @@ namespace Game_Character
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Run the changeWeapon method when button clicked
+            changeWeapons();
+        }
 
+        //Method to retrieve a list of all checked characters and swap their weapon to the selected choice
+        public void changeWeapons()
+        {
+            //Retrieve checked items in the listbox
+            foreach (Character checkedChar in checkedListBox2.CheckedItems)
+            {
+                //Determine which rdobutton has been checked
+                if (rdSword.Checked == true)
+                {
+                    checkedChar.weapon = new sword();
+                }
+                else if (rdMace.Checked == true)
+                {
+                    checkedChar.weapon = new mace();
+                }
+                else if (rdMace.Checked == true)
+                {
+                    checkedChar.weapon = new spear();
+                }
+                else
+                {
+                    MessageBox.Show("You haven't selected a weapon.");
+                }
+            }
+        }
     }
 }
