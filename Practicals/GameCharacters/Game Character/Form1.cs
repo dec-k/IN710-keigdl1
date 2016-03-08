@@ -37,6 +37,31 @@ namespace Game_Character
 
         private void btnAddCharacter_Click(object sender, EventArgs e)
         {
+            //Create a new character
+            addNewCharacter();
+
+            //Update forms to reflect newly created character
+            updateForm();
+        }
+
+        //Method used to Update the listboxes on the form
+        public void updateForm()
+        {
+            //Clear checklistBoxes to prevent duplication.
+            checkedListBox1.Items.Clear();
+            checkedListBox2.Items.Clear();
+
+            //Update relevant listboxes on the form so they display current information
+            foreach (Character c in charList)
+            {
+                //Re-add characters to the boxes.
+                checkedListBox1.Items.Add(c.characterName);
+                checkedListBox2.Items.Add(c.characterName);
+            }
+        }
+
+        public void addNewCharacter()
+        {
             //Begin creating a character
             Character newCharacter;
 
@@ -66,25 +91,8 @@ namespace Game_Character
             {
                 MessageBox.Show("You have not selected a Character class.");
             }
-
-            //Update forms to reflect newly created character
-            updateForm();
         }
 
-        //Method used to Update the listboxes on the form
-        public void updateForm()
-        {
-            //Clear checklistBoxes to prevent duplication.
-            checkedListBox1.Items.Clear();
-            checkedListBox2.Items.Clear();
 
-            //Update relevant listboxes on the form so they display current information
-            foreach (Character c in charList)
-            {
-                //Re-add characters to the boxes.
-                checkedListBox1.Items.Add(c.characterName);
-                checkedListBox2.Items.Add(c.characterName);
-            }
-        }
     }
 }
