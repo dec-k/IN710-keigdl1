@@ -105,7 +105,7 @@ namespace Game_Character
                 {
                     charList[checkedIndex].weapon = new mace();
                 }
-                else if (rdMace.Checked == true)
+                else if (rdSpear.Checked == true)
                 {
                     charList[checkedIndex].weapon = new spear();
                 }
