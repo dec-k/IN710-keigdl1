@@ -10,7 +10,7 @@ namespace Game_Character
     {
         //Attributes shared between children
         protected string characterName;
-        protected IWeapon weapon;
+        public IWeapon weapon;
 
         //Ctor
         public Character(string characterName)
@@ -26,7 +26,13 @@ namespace Game_Character
             return "My name is " + characterName + "!";
         }
 
+        //Returns the characters "weapon usage" string.
+        public string useCharactersWeapon()
+        {
+            return weapon.useWeapon();
+        }
+
         //Method stub which means children must have an implementation of this method.
-        public virtual string outputType();
+        public  abstract string outputType();
     }
 }

@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Game_Character
 {
-    public interface IWeapon
+    class spear : IWeapon
     {
-        string useWeapon();
+        public string useWeapon()
+        {
+            return "I lunge at you with my spear!";
+        }
     }
 }
