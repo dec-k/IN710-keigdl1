@@ -9,8 +9,15 @@ namespace Game_Character
     public abstract class Character
     {
         //Attributes shared between children
-        protected string characterName;
+        public string characterName;
         public IWeapon weapon;
+
+        //GetSet for name
+        protected string CharacterName
+        {
+            get { return characterName; }
+            set { characterName = value; }
+        }
 
         //Ctor
         public Character(string characterName)

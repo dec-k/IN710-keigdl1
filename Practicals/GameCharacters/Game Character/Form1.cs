@@ -40,41 +40,46 @@ namespace Game_Character
             //Begin creating a character
             Character newCharacter;
 
-            //Create a different class depending on the checked rdobtn
+            //Create a different class depending on the checked rdo button.
+            //Then adds the character to checklists on the form.
             if (rdKnight.Checked == true)
             {
                 newCharacter = new Knight(txtName.Text);
-                //Add the just created character to the list
                 charList.Add(newCharacter);
             }
             else if (rdBandit.Checked == true)
             {
                 newCharacter = new Bandit(txtName.Text);
-                //Add the just created character to the list
                 charList.Add(newCharacter);
             }
             else if (rdCleric.Checked == true)
             {
                 newCharacter = new Bandit(txtName.Text);
-                //Add the just created character to the list
                 charList.Add(newCharacter);
             }
             else if (rdSorc.Checked == true)
             {
                 newCharacter = new Knight(txtName.Text);
-                //Add the just created character to the list
                 charList.Add(newCharacter);
             }
             else
             {
                 MessageBox.Show("You have not selected a Character class.");
             }
+
+            //Update forms to reflect newly created character
+            updateForm();
         }
 
         //Method used to Update the listboxes on the form
         public void updateForm()
         {
-
+            //Update relevant listboxes on the form so they display current information
+            foreach (Character c in charList)
+            {
+                checkedListBox1.Items.Add(c.characterName);
+                checkedListBox2.Items.Add(c.characterName);
+            }
         }
     }
 }
