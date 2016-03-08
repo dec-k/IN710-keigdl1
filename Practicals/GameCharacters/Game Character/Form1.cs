@@ -77,6 +77,11 @@ namespace Game_Character
             //Update relevant listboxes on the form so they display current information
             foreach (Character c in charList)
             {
+                //Clear checklistBoxes to prevent duplication.
+                checkedListBox1.Items.Clear();
+                checkedListBox2.Items.Clear();
+
+                //Re-add characters to the boxes.
                 checkedListBox1.Items.Add(c.characterName);
                 checkedListBox2.Items.Add(c.characterName);
             }

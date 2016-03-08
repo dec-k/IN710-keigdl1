@@ -45,8 +45,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rdBow = new System.Windows.Forms.RadioButton();
-            this.rdKnife = new System.Windows.Forms.RadioButton();
+            this.rdSpear = new System.Windows.Forms.RadioButton();
+            this.rdMace = new System.Windows.Forms.RadioButton();
             this.rdSword = new System.Windows.Forms.RadioButton();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -247,8 +247,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rdBow);
-            this.groupBox2.Controls.Add(this.rdKnife);
+            this.groupBox2.Controls.Add(this.rdSpear);
+            this.groupBox2.Controls.Add(this.rdMace);
             this.groupBox2.Controls.Add(this.rdSword);
             this.groupBox2.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(16, 334);
@@ -258,29 +258,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "New Weapon";
             // 
-            // rdBow
+            // rdSpear
             // 
-            this.rdBow.AutoSize = true;
-            this.rdBow.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdBow.Location = new System.Drawing.Point(13, 78);
-            this.rdBow.Name = "rdBow";
-            this.rdBow.Size = new System.Drawing.Size(65, 25);
-            this.rdBow.TabIndex = 2;
-            this.rdBow.TabStop = true;
-            this.rdBow.Text = "Bow";
-            this.rdBow.UseVisualStyleBackColor = true;
+            this.rdSpear.AutoSize = true;
+            this.rdSpear.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdSpear.Location = new System.Drawing.Point(13, 78);
+            this.rdSpear.Name = "rdSpear";
+            this.rdSpear.Size = new System.Drawing.Size(77, 25);
+            this.rdSpear.TabIndex = 2;
+            this.rdSpear.TabStop = true;
+            this.rdSpear.Text = "Spear";
+            this.rdSpear.UseVisualStyleBackColor = true;
             // 
-            // rdKnife
+            // rdMace
             // 
-            this.rdKnife.AutoSize = true;
-            this.rdKnife.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdKnife.Location = new System.Drawing.Point(13, 53);
-            this.rdKnife.Name = "rdKnife";
-            this.rdKnife.Size = new System.Drawing.Size(77, 25);
-            this.rdKnife.TabIndex = 1;
-            this.rdKnife.TabStop = true;
-            this.rdKnife.Text = "Knife";
-            this.rdKnife.UseVisualStyleBackColor = true;
+            this.rdMace.AutoSize = true;
+            this.rdMace.Font = new System.Drawing.Font("Lucida Calligraphy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdMace.Location = new System.Drawing.Point(13, 53);
+            this.rdMace.Name = "rdMace";
+            this.rdMace.Size = new System.Drawing.Size(76, 25);
+            this.rdMace.TabIndex = 1;
+            this.rdMace.TabStop = true;
+            this.rdMace.Text = "Mace";
+            this.rdMace.UseVisualStyleBackColor = true;
             // 
             // rdSword
             // 
@@ -393,8 +393,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rdBow;
-        private System.Windows.Forms.RadioButton rdKnife;
+        private System.Windows.Forms.RadioButton rdSpear;
+        private System.Windows.Forms.RadioButton rdMace;
         private System.Windows.Forms.RadioButton rdSword;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button2;
