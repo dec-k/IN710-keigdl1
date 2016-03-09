@@ -56,6 +56,7 @@
             this.txtEncString.Name = "txtEncString";
             this.txtEncString.Size = new System.Drawing.Size(253, 20);
             this.txtEncString.TabIndex = 1;
+            this.txtEncString.Text = "Sample Text";
             // 
             // panel1
             // 
