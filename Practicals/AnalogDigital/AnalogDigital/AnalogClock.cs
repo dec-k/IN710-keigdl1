@@ -7,36 +7,37 @@ using System.Windows.Forms;
 
 namespace AnalogDigital
 {
-    public class DigitalClock : IClock
+    class AnalogClock : IClock
     {
-        //Attributes specific to a digital clock
-        Label timeDisplay;
+        //Note Here: AnalogClock was a bad class name, it is ambiguous as AnalogClockControl uses the same name for its clock object.
+        //Attr
         Timer timer;
+        AnalogClockControl.AnalogClock clock;
 
         //Ctor
-        public DigitalClock(Label timeDisplay, Timer timer){
-            this.timeDisplay = timeDisplay;
+        public AnalogClock(AnalogClockControl.AnalogClock clock, Timer timer){
             this.timer = timer;
+            this.clock = clock;
         }
 
         public void On()
         {
-            timer.Enabled = true;
+            throw new NotImplementedException();
         }
 
         public void Off()
         {
-            timer.Enabled = false;
+            throw new NotImplementedException();
         }
 
         public void Update()
         {
-            timeDisplay.Text = DateTime.Now.ToShortTimeString();
+            throw new NotImplementedException();
         }
 
         public void Show()
         {
-            timeDisplay.Visible = true;
+            throw new NotImplementedException();
         }
 
         public void Hide()

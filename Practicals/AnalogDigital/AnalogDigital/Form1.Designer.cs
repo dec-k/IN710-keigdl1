@@ -36,7 +36,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.rdoDigital = new System.Windows.Forms.RadioButton();
             this.rdoAnalog = new System.Windows.Forms.RadioButton();
-            this.btnStartStop = new System.Windows.Forms.Button();
+            this.btnMode = new System.Windows.Forms.Button();
+            this.btnStartClock = new System.Windows.Forms.Button();
+            this.btnStopClock = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,15 +66,14 @@
             this.lblDigiTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDigiTime.Location = new System.Drawing.Point(66, 201);
             this.lblDigiTime.Name = "lblDigiTime";
-            this.lblDigiTime.Size = new System.Drawing.Size(85, 29);
+            this.lblDigiTime.Size = new System.Drawing.Size(0, 29);
             this.lblDigiTime.TabIndex = 1;
-            this.lblDigiTime.Text = "label1";
             this.lblDigiTime.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 12);
+            this.label1.Location = new System.Drawing.Point(3, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 2;
@@ -81,19 +82,20 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnStartStop);
+            this.panel1.Controls.Add(this.btnMode);
             this.panel1.Controls.Add(this.rdoAnalog);
             this.panel1.Controls.Add(this.rdoDigital);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(191, 100);
+            this.panel1.Size = new System.Drawing.Size(191, 77);
             this.panel1.TabIndex = 3;
             // 
             // rdoDigital
             // 
             this.rdoDigital.AutoSize = true;
-            this.rdoDigital.Location = new System.Drawing.Point(16, 33);
+            this.rdoDigital.Checked = true;
+            this.rdoDigital.Location = new System.Drawing.Point(6, 27);
             this.rdoDigital.Name = "rdoDigital";
             this.rdoDigital.Size = new System.Drawing.Size(54, 17);
             this.rdoDigital.TabIndex = 3;
@@ -104,28 +106,50 @@
             // rdoAnalog
             // 
             this.rdoAnalog.AutoSize = true;
-            this.rdoAnalog.Location = new System.Drawing.Point(111, 33);
+            this.rdoAnalog.Location = new System.Drawing.Point(6, 50);
             this.rdoAnalog.Name = "rdoAnalog";
             this.rdoAnalog.Size = new System.Drawing.Size(58, 17);
             this.rdoAnalog.TabIndex = 4;
-            this.rdoAnalog.TabStop = true;
             this.rdoAnalog.Text = "Analog";
             this.rdoAnalog.UseVisualStyleBackColor = true;
             // 
-            // btnStartStop
+            // btnMode
             // 
-            this.btnStartStop.Location = new System.Drawing.Point(16, 68);
-            this.btnStartStop.Name = "btnStartStop";
-            this.btnStartStop.Size = new System.Drawing.Size(153, 24);
-            this.btnStartStop.TabIndex = 5;
-            this.btnStartStop.Text = "Start";
-            this.btnStartStop.UseVisualStyleBackColor = true;
+            this.btnMode.Location = new System.Drawing.Point(95, 11);
+            this.btnMode.Name = "btnMode";
+            this.btnMode.Size = new System.Drawing.Size(80, 56);
+            this.btnMode.TabIndex = 5;
+            this.btnMode.Text = "Confirm Mode";
+            this.btnMode.UseVisualStyleBackColor = true;
+            this.btnMode.Click += new System.EventHandler(this.btnStartStop_Click);
+            // 
+            // btnStartClock
+            // 
+            this.btnStartClock.Enabled = false;
+            this.btnStartClock.Location = new System.Drawing.Point(12, 95);
+            this.btnStartClock.Name = "btnStartClock";
+            this.btnStartClock.Size = new System.Drawing.Size(74, 23);
+            this.btnStartClock.TabIndex = 4;
+            this.btnStartClock.Text = "Start Clock";
+            this.btnStartClock.UseVisualStyleBackColor = true;
+            // 
+            // btnStopClock
+            // 
+            this.btnStopClock.Enabled = false;
+            this.btnStopClock.Location = new System.Drawing.Point(128, 95);
+            this.btnStopClock.Name = "btnStopClock";
+            this.btnStopClock.Size = new System.Drawing.Size(75, 23);
+            this.btnStopClock.TabIndex = 5;
+            this.btnStopClock.Text = "Stop Clock";
+            this.btnStopClock.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(218, 319);
+            this.Controls.Add(this.btnStopClock);
+            this.Controls.Add(this.btnStartClock);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDigiTime);
             this.Controls.Add(this.analogClock1);
@@ -145,9 +169,11 @@
         private System.Windows.Forms.Label lblDigiTime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnStartStop;
+        private System.Windows.Forms.Button btnMode;
         private System.Windows.Forms.RadioButton rdoAnalog;
         private System.Windows.Forms.RadioButton rdoDigital;
+        private System.Windows.Forms.Button btnStartClock;
+        private System.Windows.Forms.Button btnStopClock;
 
     }
 }
