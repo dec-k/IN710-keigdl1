@@ -27,23 +27,51 @@ namespace AnalogDigital
 
         private void btnStartStop_Click(object sender, EventArgs e)
         {
-            //Enable the pause/start buttons
+            //Enable the stop button
             btnStopClock.Enabled = true;
-            btnStartClock.Enabled = true;
+            btnStartClock.Enabled = false;
 
-            //Determine which rdo is checked & then instantiate the correct clock.
+            //Determine which rdo is checked
             if (rdoDigital.Checked == true)
             {
+                //Hide the other clock
+                analogClock1.Visible = false;
+
+                //Instantiate a digital clock.
                 clock = new DigitalClock(lblDigiTime, timer1);
                 clock.Show();
                 clock.On();
             }
             else
             {
+                //Hide the other clock
+                lblDigiTime.Visible = false;
+
+                //Instantiate an Analog clock.
                 clock = new AnalogClock(analogClock1, timer1);
                 clock.Show();
                 clock.On();
             }
+        }
+
+        private void btnStopClock_Click(object sender, EventArgs e)
+        {
+            //Turn off the clocks ticking
+            clock.Off();
+
+            //Swap on/off controls
+            btnStopClock.Enabled = false;
+            btnStartClock.Enabled = true;
+        }
+
+        private void btnStartClock_Click(object sender, EventArgs e)
+        {
+            //Turn off the clocks ticking
+            clock.On();
+
+            //Swap on/off controls
+            btnStopClock.Enabled = true;
+            btnStartClock.Enabled = false;
         }
     }
 }

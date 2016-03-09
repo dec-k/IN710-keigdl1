@@ -22,27 +22,28 @@ namespace AnalogDigital
 
         public void On()
         {
-            throw new NotImplementedException();
+            clock.Start();
         }
 
         public void Off()
         {
-            throw new NotImplementedException();
+            clock.Stop();
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            //AnalogClockControl doesn't rely on a timer to update, it can just be handled
+            //with On/off controls so this one feels redundant.
         }
 
         public void Show()
         {
-            throw new NotImplementedException();
+            clock.Visible = true;
         }
 
         public void Hide()
         {
-            throw new NotImplementedException();
+            clock.Visible = false;
         }
     }
 }

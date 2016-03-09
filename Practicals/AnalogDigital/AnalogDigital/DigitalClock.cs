@@ -19,6 +19,7 @@ namespace AnalogDigital
             this.timer = timer;
         }
 
+        //On/off for digi just turn the timer on or off, because their time is tethered to a tickrate.
         public void On()
         {
             timer.Enabled = true;
@@ -41,7 +42,7 @@ namespace AnalogDigital
 
         public void Hide()
         {
-            throw new NotImplementedException();
+            timeDisplay.Visible = false;
         }
     }
 }

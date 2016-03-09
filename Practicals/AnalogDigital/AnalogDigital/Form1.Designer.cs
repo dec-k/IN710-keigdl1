@@ -132,6 +132,7 @@
             this.btnStartClock.TabIndex = 4;
             this.btnStartClock.Text = "Start Clock";
             this.btnStartClock.UseVisualStyleBackColor = true;
+            this.btnStartClock.Click += new System.EventHandler(this.btnStartClock_Click);
             // 
             // btnStopClock
             // 
@@ -142,6 +143,7 @@
             this.btnStopClock.TabIndex = 5;
             this.btnStopClock.Text = "Stop Clock";
             this.btnStopClock.UseVisualStyleBackColor = true;
+            this.btnStopClock.Click += new System.EventHandler(this.btnStopClock_Click);
             // 
             // Form1
             // 
