@@ -31,34 +31,26 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
         //=======================================================================
         public List<Critter> CritterQuery(string speciesName)
         {
-            //Setup a critterList
-            List<Critter> critterOut = new List<Critter>();
-            //Instance of enum
-            ESpecies especies;
+            //Declare a list only used for this method,
+            //Holds a list of animals of the arg's species.
+            List<Critter> critSpecies = new List<Critter>();
 
-            foreach (string specSeek in Enum.GetNames(typeof(ESpecies)))
+            //Instantiate an enum and then parse it so it can be used properly further down.
+            //(Credit to Leonard for helping me work this out, I had a lot of trouble on my own.)
+            ESpecies currentSpecies = (ESpecies)System.Enum.Parse(typeof(ESpecies), speciesName);
+ 
+            //Loop through critterList
+            foreach (Critter c in critterList)
             {
-                critterOut.Add(critterList[]);
-            }
-
-            //Iterate through the critter list and seek critters that match the arg
-            for (int i = 0; i < critterList.Count; i++)
-            {
-
-
-                if (critterList[i].Species == Enum.Parse(typeof(ESpecies), speciesName))
+                //When arg's specie-type matches a critter, add it to the passed-out list.
+                if (c.Species == currentSpecies)
                 {
-
-                }
-
-                if(Enum.TryParse<ESpecies>(speciesName, out especies) == true)
-                {
-                    critterOut.Add(critterList[i]);
+                    critSpecies.Add(c);
                 }
             }
-
-            //Return list
-            return critterOut;
+            
+            //Return
+            return critSpecies;
         }
 
 
