@@ -31,8 +31,34 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
         //=======================================================================
         public List<Critter> CritterQuery(string speciesName)
         {
-            /* YOUR CODE HERE */
-            throw new NotImplementedException();    // Remove after you write the method
+            //Setup a critterList
+            List<Critter> critterOut = new List<Critter>();
+            //Instance of enum
+            ESpecies especies;
+
+            foreach (string specSeek in Enum.GetNames(typeof(ESpecies)))
+            {
+                critterOut.Add(critterList[]);
+            }
+
+            //Iterate through the critter list and seek critters that match the arg
+            for (int i = 0; i < critterList.Count; i++)
+            {
+
+
+                if (critterList[i].Species == Enum.Parse(typeof(ESpecies), speciesName))
+                {
+
+                }
+
+                if(Enum.TryParse<ESpecies>(speciesName, out especies) == true)
+                {
+                    critterOut.Add(critterList[i]);
+                }
+            }
+
+            //Return list
+            return critterOut;
         }
 
 
