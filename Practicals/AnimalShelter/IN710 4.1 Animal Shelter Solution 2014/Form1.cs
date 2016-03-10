@@ -27,14 +27,14 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pictureBoxList.Add(pictureBox1);
-            pictureBoxList.Add(pictureBox2);
-            pictureBoxList.Add(pictureBox3);
-            pictureBoxList.Add(pictureBox4);
+            pictureBoxList.Add(pb1);
+            pictureBoxList.Add(pb2);
+            pictureBoxList.Add(pb3);
+            pictureBoxList.Add(pb4);
 
             mainCatalogue = new CritterCatalogue("animalList.txt");
             pictureDisplayMachine = new PictureDisplay(pictureBoxList);
-            textDisplayMachine = new TextDisplay(listBox1);
+            textDisplayMachine = new TextDisplay(lbOut);
 
             displayMachine = pictureDisplayMachine; // default
         }
@@ -88,7 +88,7 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
         //================================================================================
         private void clearFormControls()
         {
-            listBox1.Items.Clear();
+            lbOut.Items.Clear();
             foreach (PictureBox p in pictureBoxList)
                 p.Image = null;
         }
