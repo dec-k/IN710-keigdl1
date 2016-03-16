@@ -53,7 +53,11 @@ namespace AnimalWorld
 
                 //Create a rectangle so pictures get resized to fit on screen.
                 Rectangle container = new Rectangle(20, 20+(i*105),200,100);
-                Rectangle src = new Rectangle(20, 20, 200, 100);
+                Rectangle src = new Rectangle(20, 20, 600, 300);
+
+                //How I think this works (Might be wrong):
+                //Container is the bounds of the canvas.
+                //src is the amount of pixels (width & width) that are put into the container? So in my code it's squeezing 600px of the image into 100px of the container.
 
                 //Define the unit of measurement for the above values, pixels.
                 GraphicsUnit units = GraphicsUnit.Pixel;

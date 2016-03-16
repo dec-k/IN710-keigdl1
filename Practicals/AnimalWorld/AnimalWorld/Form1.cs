@@ -40,12 +40,20 @@ namespace AnimalWorld
 
         private void btnAU_Click(object sender, EventArgs e)
         {
+            //Clear the graphics before redrawing
+            canvas.Clear(Form1.ActiveForm.BackColor);
+
+            //Clear the listbox
             lbDisplayBox.Items.Clear();
             au.runSim();
         }
 
         private void btnNA_Click(object sender, EventArgs e)
         {
+            //Clear the graphics before redrawing
+            canvas.Clear(Form1.ActiveForm.BackColor);
+
+            //Clear the listbox
             lbDisplayBox.Items.Clear();
             na.runSim();
         }
