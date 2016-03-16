@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace AnimalWorld
 {
-    class Crocodile : Animal
+    class Penguin : Animal
     {
         //ctor
-        public Crocodile()
+        public Penguin()
         {
-            name = "Crocodile";
+            name = "Penguin";
             family = "Carnivore";
-            food = "tha meat";
-            image = new Bitmap("crocodile.jpg");
+            food = "Fish";
+            image = new Bitmap("penguin.jpg");
         }
     }
 }
