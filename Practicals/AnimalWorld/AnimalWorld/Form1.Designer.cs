@@ -35,12 +35,12 @@
             // 
             // lbDisplayBox
             // 
-            this.lbDisplayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDisplayBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDisplayBox.FormattingEnabled = true;
-            this.lbDisplayBox.ItemHeight = 29;
+            this.lbDisplayBox.ItemHeight = 24;
             this.lbDisplayBox.Location = new System.Drawing.Point(249, 12);
             this.lbDisplayBox.Name = "lbDisplayBox";
-            this.lbDisplayBox.Size = new System.Drawing.Size(502, 410);
+            this.lbDisplayBox.Size = new System.Drawing.Size(502, 388);
             this.lbDisplayBox.TabIndex = 4;
             // 
             // btnAU

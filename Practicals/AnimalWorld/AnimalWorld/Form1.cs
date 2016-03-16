@@ -15,7 +15,7 @@ namespace AnimalWorld
     {
         //Create values needed for constructors
         Random rGen = new Random();
-        Canvas canvas = new Canvas();
+        System.Drawing.Graphics canvas;
 
         //Pretend this constant is in a config file somewhere
         const int ANIMAL_TYPE_COUNT = 3;
@@ -28,18 +28,25 @@ namespace AnimalWorld
         {
             InitializeComponent();
 
+            //instantiate a canvas
+            canvas = this.CreateGraphics();
+
             //Instantiate continents
             na = new NorthAmerica(lbDisplayBox, rGen, ANIMAL_TYPE_COUNT, canvas);
             au = new Australia(lbDisplayBox, rGen, ANIMAL_TYPE_COUNT, canvas);
+
+            
         }
 
         private void btnAU_Click(object sender, EventArgs e)
         {
+            lbDisplayBox.Items.Clear();
             au.runSim();
         }
 
         private void btnNA_Click(object sender, EventArgs e)
         {
+            lbDisplayBox.Items.Clear();
             na.runSim();
         }
     }

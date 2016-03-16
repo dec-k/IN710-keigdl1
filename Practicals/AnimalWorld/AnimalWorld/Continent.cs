@@ -50,8 +50,17 @@ namespace AnimalWorld
                 //[Coupled] Add the animal to the form.
                 //Output their toString
                 displayBox.Items.Add(currentAnimal.ToString());
+
+                //Create a rectangle so pictures get resized to fit on screen.
+                Rectangle container = new Rectangle(20, 20+(i*105),200,100);
+                Rectangle src = new Rectangle(20, 20, 200, 100);
+
+                //Define the unit of measurement for the above values, pixels.
+                GraphicsUnit units = GraphicsUnit.Pixel;
+
                 //Draw their jpg to a form box
-                canvas.DrawImage(currentAnimal.Image, 20, 20 + (i * 120));
+                //canvas.DrawImage(currentAnimal.Image, 20, 20 + (i * 120));
+                canvas.DrawImage(currentAnimal.Image, container, src, units);
             }
         }
     }
