@@ -31,6 +31,7 @@
             this.lbDisplayBox = new System.Windows.Forms.ListBox();
             this.btnAU = new System.Windows.Forms.Button();
             this.btnNA = new System.Windows.Forms.Button();
+            this.btnAN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDisplayBox
@@ -65,11 +66,23 @@
             this.btnNA.UseVisualStyleBackColor = true;
             this.btnNA.Click += new System.EventHandler(this.btnNA_Click);
             // 
+            // btnAN
+            // 
+            this.btnAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAN.Location = new System.Drawing.Point(758, 220);
+            this.btnAN.Name = "btnAN";
+            this.btnAN.Size = new System.Drawing.Size(140, 98);
+            this.btnAN.TabIndex = 7;
+            this.btnAN.Text = "Antarctica";
+            this.btnAN.UseVisualStyleBackColor = true;
+            this.btnAN.Click += new System.EventHandler(this.btnAN_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 434);
+            this.Controls.Add(this.btnAN);
             this.Controls.Add(this.btnNA);
             this.Controls.Add(this.btnAU);
             this.Controls.Add(this.lbDisplayBox);
@@ -84,6 +97,7 @@
         private System.Windows.Forms.ListBox lbDisplayBox;
         private System.Windows.Forms.Button btnAU;
         private System.Windows.Forms.Button btnNA;
+        private System.Windows.Forms.Button btnAN;
     }
 }
 

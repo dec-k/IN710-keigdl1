@@ -23,6 +23,7 @@ namespace AnimalWorld
         //Declare continents
         Continent na;
         Continent au;
+        Continent an;
 
         public Form1()
         {
@@ -34,6 +35,7 @@ namespace AnimalWorld
             //Instantiate continents
             na = new NorthAmerica(lbDisplayBox, rGen, ANIMAL_TYPE_COUNT, canvas);
             au = new Australia(lbDisplayBox, rGen, ANIMAL_TYPE_COUNT, canvas);
+            an = new Antarctica(lbDisplayBox, rGen, ANIMAL_TYPE_COUNT, canvas);
 
             
         }
@@ -56,6 +58,16 @@ namespace AnimalWorld
             //Clear the listbox
             lbDisplayBox.Items.Clear();
             na.runSim();
+        }
+
+        private void btnAN_Click(object sender, EventArgs e)
+        {
+            //Clear the graphics before redrawing
+            canvas.Clear(Form1.ActiveForm.BackColor);
+
+            //Clear the listbox
+            lbDisplayBox.Items.Clear();
+            an.runSim();
         }
     }
 }

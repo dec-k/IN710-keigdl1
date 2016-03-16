@@ -46,7 +46,12 @@
   <ItemGroup>
     <Compile Include="AnimalClasses\Animal.cs" />
     <Compile Include="AnimalClasses\Bison.cs" />
+    <Compile Include="AnimalClasses\Seal.cs" />
+    <Compile Include="AnimalClasses\Walrus.cs" />
+    <Compile Include="AnimalClasses\Penguin.cs" />
     <Compile Include="AnimalClasses\Wolf.cs" />
+    <Compile Include="Antarctica.cs" />
+    <Compile Include="AntarcticAnimalFactory.cs" />
     <Compile Include="NorthAmerica.cs" />
     <Compile Include="Australia.cs" />
     <Compile Include="Continent.cs" />
