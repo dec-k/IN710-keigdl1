@@ -28,50 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pb1 = new System.Windows.Forms.PictureBox();
-            this.pb2 = new System.Windows.Forms.PictureBox();
-            this.pb3 = new System.Windows.Forms.PictureBox();
-            this.pb4 = new System.Windows.Forms.PictureBox();
             this.lbDisplayBox = new System.Windows.Forms.ListBox();
             this.btnAU = new System.Windows.Forms.Button();
             this.btnNA = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pb1
-            // 
-            this.pb1.Location = new System.Drawing.Point(12, 12);
-            this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(230, 98);
-            this.pb1.TabIndex = 0;
-            this.pb1.TabStop = false;
-            // 
-            // pb2
-            // 
-            this.pb2.Location = new System.Drawing.Point(12, 116);
-            this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(230, 98);
-            this.pb2.TabIndex = 1;
-            this.pb2.TabStop = false;
-            // 
-            // pb3
-            // 
-            this.pb3.Location = new System.Drawing.Point(12, 220);
-            this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(230, 98);
-            this.pb3.TabIndex = 2;
-            this.pb3.TabStop = false;
-            // 
-            // pb4
-            // 
-            this.pb4.Location = new System.Drawing.Point(12, 324);
-            this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(230, 98);
-            this.pb4.TabIndex = 3;
-            this.pb4.TabStop = false;
             // 
             // lbDisplayBox
             // 
@@ -92,6 +52,7 @@
             this.btnAU.TabIndex = 5;
             this.btnAU.Text = "Australia";
             this.btnAU.UseVisualStyleBackColor = true;
+            this.btnAU.Click += new System.EventHandler(this.btnAU_Click);
             // 
             // btnNA
             // 
@@ -102,6 +63,7 @@
             this.btnNA.TabIndex = 6;
             this.btnNA.Text = "North America";
             this.btnNA.UseVisualStyleBackColor = true;
+            this.btnNA.Click += new System.EventHandler(this.btnNA_Click);
             // 
             // Form1
             // 
@@ -111,26 +73,14 @@
             this.Controls.Add(this.btnNA);
             this.Controls.Add(this.btnAU);
             this.Controls.Add(this.lbDisplayBox);
-            this.Controls.Add(this.pb4);
-            this.Controls.Add(this.pb3);
-            this.Controls.Add(this.pb2);
-            this.Controls.Add(this.pb1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pb1;
-        private System.Windows.Forms.PictureBox pb2;
-        private System.Windows.Forms.PictureBox pb3;
-        private System.Windows.Forms.PictureBox pb4;
         private System.Windows.Forms.ListBox lbDisplayBox;
         private System.Windows.Forms.Button btnAU;
         private System.Windows.Forms.Button btnNA;

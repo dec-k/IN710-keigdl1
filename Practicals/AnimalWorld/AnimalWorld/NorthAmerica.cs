@@ -10,7 +10,7 @@ namespace AnimalWorld
 {
     namespace AnimalWorld
     {
-        class NorthAmerica : Continent
+        public class NorthAmerica : Continent
         {
             //Ctor
             public NorthAmerica(ListBox displayBox, Random rGen, int nAnimalTypes, Graphics canvas)
