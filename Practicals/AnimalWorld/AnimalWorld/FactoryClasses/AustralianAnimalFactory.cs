@@ -26,6 +26,9 @@ namespace AnimalWorld
                 case 2:
                     newAnimal = new Crocodile();
                     break;
+                case 3:
+                    newAnimal = new Wombat();
+                    break;
             }
 
             //Return

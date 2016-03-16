@@ -18,7 +18,7 @@ namespace AnimalWorld
         System.Drawing.Graphics canvas;
 
         //Pretend this constant is in a config file somewhere
-        const int ANIMAL_TYPE_COUNT = 3;
+        const int ANIMAL_TYPE_COUNT = 4;
 
         //Declare continents
         Continent na;

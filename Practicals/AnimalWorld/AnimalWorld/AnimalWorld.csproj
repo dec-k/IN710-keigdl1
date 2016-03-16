@@ -49,6 +49,9 @@
     <Compile Include="AnimalClasses\Seal.cs" />
     <Compile Include="AnimalClasses\Walrus.cs" />
     <Compile Include="AnimalClasses\Penguin.cs" />
+    <Compile Include="AnimalClasses\Armadillo.cs" />
+    <Compile Include="AnimalClasses\Whale.cs" />
+    <Compile Include="AnimalClasses\Wombat.cs" />
     <Compile Include="AnimalClasses\Wolf.cs" />
     <Compile Include="ContinentClasses\Antarctica.cs" />
     <Compile Include="FactoryClasses\AntarcticAnimalFactory.cs" />
