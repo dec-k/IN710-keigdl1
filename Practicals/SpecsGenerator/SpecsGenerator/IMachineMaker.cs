@@ -8,5 +8,8 @@ namespace SpecsGenerator
 {
     interface IMachineMaker
     {
+        private void makeCPU();
+        private void makeGPU();
+        private void makeRAM();
     }
 }
