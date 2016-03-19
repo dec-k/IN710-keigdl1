@@ -12,6 +12,17 @@ namespace SpecsGenerator.ComponentClasses
         protected string name;
         protected double price;
 
+        protected double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+        protected string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
         //Methods
         public override string ToString()
         {

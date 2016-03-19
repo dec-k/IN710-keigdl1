@@ -9,8 +9,20 @@ namespace SpecsGenerator.ComponentClasses
     class CPU
     {
         //Attr
-        protected string name;
-        protected double price;
+        private string name;
+        private double price;
+
+        //Accessors
+        protected double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+        protected string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
         //Methods
         public override string ToString()

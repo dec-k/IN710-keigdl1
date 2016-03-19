@@ -12,8 +12,8 @@ namespace SpecsGenerator.BaseComponents.ChildrenComponents
         //Ctor
         public MediaCPU()
         {
-            name = "Intel i7 5820K";
-            price = 799.99;
+            Name = "Intel i7 5820K";
+            Price = 799.99;
         }
     }
 }

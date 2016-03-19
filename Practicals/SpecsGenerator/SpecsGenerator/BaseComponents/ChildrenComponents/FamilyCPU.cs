@@ -12,8 +12,8 @@ namespace SpecsGenerator.BaseComponents.ChildrenComponents
         //Ctor
         public FamilyCPU()
         {
-            name = "AMD FX 4350";
-            price = 179.99;
+            Name = "AMD FX 4350";
+            Price = 179.99;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpecsGenerator.ComponentClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace SpecsGenerator
 {
     interface IMachineMaker
     {
-        private void makeCPU();
-        private void makeGPU();
-        private void makeRAM();
+        private CPU makeCPU();
+        private GPU makeGPU();
+        private RAM makeRAM();
     }
 }

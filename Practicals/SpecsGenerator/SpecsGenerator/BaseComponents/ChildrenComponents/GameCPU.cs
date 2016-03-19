@@ -12,8 +12,8 @@ namespace SpecsGenerator.BaseComponents.ChildrenComponents
         //Ctor
         public GameCPU()
         {
-            name = "Intel I5 6600K";
-            price = 599.99;
+            Name = "Intel I5 6600K";
+            Price = 599.99;
         }
     }
 }
