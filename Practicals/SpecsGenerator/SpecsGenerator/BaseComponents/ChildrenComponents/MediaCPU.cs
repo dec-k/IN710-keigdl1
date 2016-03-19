@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace SpecsGenerator.BaseComponents.ChildrenComponents
 {
-    class GameCPU : CPU
+    class MediaCPU : CPU
     {
         //Ctor
-        public GameCPU()
+        public MediaCPU()
         {
             name = "Intel i7 5820K";
             price = 799.99;
