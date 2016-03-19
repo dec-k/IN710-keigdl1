@@ -44,14 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseComponents\ChildrenComponents\FamilyCPU.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\FamilyGPU.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\FamilyRAM.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\GameRAM.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\MediaCPU.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\GameGPU.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\GameCPU.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\MediaGPU.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\MediaRAM.cs" />
+    <Compile Include="BaseComponents\CPU.cs" />
+    <Compile Include="BaseComponents\RAM.cs" />
+    <Compile Include="Factories\FamilyFactory.cs" />
+    <Compile Include="Factories\MediaFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseComponents\GPU.cs" />
+    <Compile Include="Factories\GameFactory.cs" />
+    <Compile Include="Factories\IMachineMaker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecPrinter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -46,6 +46,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Display Specs";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -80,6 +81,7 @@
             // rd1
             // 
             this.rd1.AutoSize = true;
+            this.rd1.Checked = true;
             this.rd1.Location = new System.Drawing.Point(7, 21);
             this.rd1.Name = "rd1";
             this.rd1.Size = new System.Drawing.Size(61, 17);

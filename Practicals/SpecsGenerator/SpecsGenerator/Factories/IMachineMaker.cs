@@ -9,8 +9,8 @@ namespace SpecsGenerator
 {
     interface IMachineMaker
     {
-        private CPU makeCPU();
-        private GPU makeGPU();
-        private RAM makeRAM();
+        CPU makeCPU();
+        GPU makeGPU();
+        RAM makeRAM();
     }
 }
