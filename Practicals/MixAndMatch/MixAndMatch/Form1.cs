@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MixAndMatch
 {
-    public partial class Form1 : Form
+    public partial class CharacterMaker : Form
     {
-        public Form1()
+        public CharacterMaker()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
