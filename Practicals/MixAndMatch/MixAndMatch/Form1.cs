@@ -1,6 +1,4 @@
-﻿using MixAndMatch.Factories;
-using MixAndMatch.MixableClasses;
-using MixAndMatch.MixableClasses.ChildClasses;
+﻿using MixAndMatch.MixableClasses;
 using MixAndMatch.Models;
 using System;
 using System.Collections.Generic;

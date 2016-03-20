@@ -44,20 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\FairyMaker.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MixableClasses\ChildClasses\FairyLegs.cs" />
-    <Compile Include="MixableClasses\ChildClasses\FairyBody.cs" />
-    <Compile Include="MixableClasses\ChildClasses\FairyHead.cs" />
-    <Compile Include="MixableClasses\Legs.cs" />
-    <Compile Include="MixableClasses\Body.cs" />
-    <Compile Include="MixableClasses\Head.cs" />
-    <Compile Include="Factories\ICharMaker.cs" />
     <Compile Include="Models\Vampire.cs" />
     <Compile Include="Models\Witch.cs" />
     <Compile Include="Models\Werewolf.cs" />
