@@ -50,6 +50,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MixableClasses\ChildClasses\FairyLegs.cs" />
     <Compile Include="MixableClasses\ChildClasses\FairyBody.cs" />
     <Compile Include="MixableClasses\ChildClasses\FairyHead.cs" />
     <Compile Include="MixableClasses\Legs.cs" />

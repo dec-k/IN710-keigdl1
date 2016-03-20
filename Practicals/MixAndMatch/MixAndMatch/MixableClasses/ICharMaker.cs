@@ -8,5 +8,8 @@ namespace MixAndMatch.MixableClasses
 {
     interface ICharMaker
     {
+        Head createHead();
+        Body createBody();
+        Legs createLegs();
     }
 }
