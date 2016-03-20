@@ -67,7 +67,6 @@
     <Compile Include="Models\ICharacterMaker.cs" />
     <Compile Include="Models\MakerFactory.cs" />
     <Compile Include="Models\ModelMaker.cs" />
-    <Compile Include="Printer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

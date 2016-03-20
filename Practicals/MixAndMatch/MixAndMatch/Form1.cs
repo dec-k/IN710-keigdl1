@@ -61,7 +61,7 @@ namespace MixAndMatch
             //Get selected body & display
             string selectedBody = cbBody.SelectedItem.ToString();
             ModelMaker bodyModelMaker = makerFactory.createModelMaker(selectedBody);
-            pbBody.Image = headModelMaker.bodyImage();
+            pbBody.Image = bodyModelMaker.bodyImage();
 
             //Get selected legs & display
             string selectedLegs = cbFeet.SelectedItem.ToString();
