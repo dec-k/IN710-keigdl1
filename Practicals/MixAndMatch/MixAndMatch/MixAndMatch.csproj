@@ -50,6 +50,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MixableClasses\ChildClasses\FairyBody.cs" />
+    <Compile Include="MixableClasses\ChildClasses\FairyHead.cs" />
+    <Compile Include="MixableClasses\Legs.cs" />
+    <Compile Include="MixableClasses\Body.cs" />
+    <Compile Include="MixableClasses\Head.cs" />
     <Compile Include="MixableClasses\ICharMaker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
