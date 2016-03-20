@@ -35,9 +35,13 @@ namespace SpecsGenerator
             {
                 mm = new FamilyFactory();
             }
-            else
+            else if (rd3.Checked)
             {
                 mm = new MediaFactory();
+            }
+            else if (rd4.Checked)
+            {
+                mm = new LaptopFactory();
             }
 
             //use printer to output above data to lb

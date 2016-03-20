@@ -44,10 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseComponents\ChildrenComponents\LaptopCPU.cs" />
     <Compile Include="BaseComponents\ChildrenComponents\FamilyCPU.cs" />
     <Compile Include="BaseComponents\ChildrenComponents\FamilyGPU.cs" />
     <Compile Include="BaseComponents\ChildrenComponents\FamilyRAM.cs" />
     <Compile Include="BaseComponents\ChildrenComponents\GameRAM.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\LaptopGPU.cs" />
+    <Compile Include="BaseComponents\ChildrenComponents\LaptopRAM.cs" />
     <Compile Include="BaseComponents\ChildrenComponents\MediaCPU.cs" />
     <Compile Include="BaseComponents\ChildrenComponents\GameGPU.cs" />
     <Compile Include="BaseComponents\ChildrenComponents\GameCPU.cs" />
@@ -56,6 +59,7 @@
     <Compile Include="BaseComponents\CPU.cs" />
     <Compile Include="BaseComponents\RAM.cs" />
     <Compile Include="Factories\FamilyFactory.cs" />
+    <Compile Include="Factories\LaptopFactory.cs" />
     <Compile Include="Factories\MediaFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
