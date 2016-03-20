@@ -11,10 +11,16 @@ namespace MixAndMatch.Models
     {
         public ModelMaker createModelMaker(string selected)
         {
-            ModelMaker mm;
+            //Model skeleton
+            ModelMaker mm = null;
 
-
-
+            //Determine which creature to make
+            switch (selected)
+            {
+                case "Fairy":
+                    mm = new Fairy();
+                    break;
+            }
 
             return mm;
         }

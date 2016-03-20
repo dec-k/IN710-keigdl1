@@ -23,6 +23,9 @@ namespace MixAndMatch
         {
             InitializeComponent();
 
+            //Instantiate makerFactory
+            makerFactory = new MakerFactory();
+
             //Populate head cb
             cbHead.Items.Add("Fairy");
 
@@ -38,6 +41,9 @@ namespace MixAndMatch
             //Get selected head
             string selectedHead = cbHead.SelectedItem.ToString();
             ModelMaker headModelMaker = makerFactory.createModelMaker(selectedHead);
+
+            //Display head
+            pbHead.Image = headModelMaker.headImage();
 
             
         }
