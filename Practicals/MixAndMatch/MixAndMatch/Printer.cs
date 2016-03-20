@@ -25,16 +25,8 @@ namespace MixAndMatch
             this.pb3 = pb3;
         }
 
-        //Methods to output the creature to the form
-        public void ShowHead()
-        {
-
-        }
-        public void ShowBody()
-        {
-
-        }
-        public void ShowFeet()
+        //Method to output the creature to the form
+        public void ShowCreature()
         {
 
         }
