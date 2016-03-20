@@ -28,24 +28,45 @@ namespace MixAndMatch
 
             //Populate head cb
             cbHead.Items.Add("Fairy");
+            cbHead.Items.Add("Frankenstein");
+            cbHead.Items.Add("Vampire");
+            cbHead.Items.Add("Skeleton");
+            cbHead.Items.Add("Witch");
+            cbHead.Items.Add("Werewolf");
 
             //Populate body cb
             cbBody.Items.Add("Fairy");
+            cbBody.Items.Add("Frankenstein");
+            cbBody.Items.Add("Vampire");
+            cbBody.Items.Add("Skeleton");
+            cbBody.Items.Add("Witch");
+            cbBody.Items.Add("Werewolf");
 
             //Populate Feet cb
             cbFeet.Items.Add("Fairy");
+            cbFeet.Items.Add("Frankenstein");
+            cbFeet.Items.Add("Vampire");
+            cbFeet.Items.Add("Skeleton");
+            cbFeet.Items.Add("Witch");
+            cbFeet.Items.Add("Werewolf");
         }
 
         private void btnGen_Click(object sender, EventArgs e)
         {
-            //Get selected head
+            //Get selected head & display
             string selectedHead = cbHead.SelectedItem.ToString();
             ModelMaker headModelMaker = makerFactory.createModelMaker(selectedHead);
-
-            //Display head
             pbHead.Image = headModelMaker.headImage();
 
-            
+            //Get selected body & display
+            string selectedBody = cbBody.SelectedItem.ToString();
+            ModelMaker bodyModelMaker = makerFactory.createModelMaker(selectedBody);
+            pbBody.Image = headModelMaker.bodyImage();
+
+            //Get selected legs & display
+            string selectedLegs = cbFeet.SelectedItem.ToString();
+            ModelMaker legsModelMaker = makerFactory.createModelMaker(selectedLegs);
+            pbFeet.Image = legsModelMaker.legsImage();
         }
     }
 }

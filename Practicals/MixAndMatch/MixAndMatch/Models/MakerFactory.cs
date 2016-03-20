@@ -20,6 +20,21 @@ namespace MixAndMatch.Models
                 case "Fairy":
                     mm = new Fairy();
                     break;
+                case "Frankenstein":
+                    mm = new Fairy();
+                    break;
+                case "Werewolf":
+                    mm = new Fairy();
+                    break;
+                case "Vampire":
+                    mm = new Fairy();
+                    break;
+                case "Witch":
+                    mm = new Fairy();
+                    break;
+                case "Skeleton":
+                    mm = new Fairy();
+                    break;
             }
 
             return mm;

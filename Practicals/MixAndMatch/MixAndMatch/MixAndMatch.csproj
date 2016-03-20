@@ -58,6 +58,11 @@
     <Compile Include="MixableClasses\Body.cs" />
     <Compile Include="MixableClasses\Head.cs" />
     <Compile Include="Factories\ICharMaker.cs" />
+    <Compile Include="Models\Vampire.cs" />
+    <Compile Include="Models\Witch.cs" />
+    <Compile Include="Models\Werewolf.cs" />
+    <Compile Include="Models\Skeleton.cs" />
+    <Compile Include="Models\Frankenstein.cs" />
     <Compile Include="Models\Fairy.cs" />
     <Compile Include="Models\ICharacterMaker.cs" />
     <Compile Include="Models\MakerFactory.cs" />
