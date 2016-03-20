@@ -1,5 +1,7 @@
-﻿using MixAndMatch.MixableClasses;
+﻿using MixAndMatch.Factories;
+using MixAndMatch.MixableClasses;
 using MixAndMatch.MixableClasses.ChildClasses;
+using MixAndMatch.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,27 +17,29 @@ namespace MixAndMatch
     public partial class CharacterMaker : Form
     {
         //Declare a character maker & printer
-        ICharMaker cm;
-        Printer prntr;
+        ICharacterMaker makerFactory;
 
         public CharacterMaker()
         {
             InitializeComponent();
 
             //Populate head cb
-            cbHead.Items.Add(new FairyHead().ToString());
+            cbHead.Items.Add("Fairy");
 
             //Populate body cb
-            cbHead.Items.Add(new FairyBody().ToString());
+            cbBody.Items.Add("Fairy");
 
             //Populate Feet cb
-            cbHead.Items.Add(new FairyLegs().ToString());
+            cbFeet.Items.Add("Fairy");
         }
 
         private void btnGen_Click(object sender, EventArgs e)
         {
-            //Logic here is to pass the currently selected item's in the comboBox into
-            //an instance of the Builder class
+            //Get selected head
+            string selectedHead = cbHead.SelectedItem.ToString();
+            ModelMaker headModelMaker = makerFactory.createModelMaker(selectedHead);
+
+            
         }
     }
 }

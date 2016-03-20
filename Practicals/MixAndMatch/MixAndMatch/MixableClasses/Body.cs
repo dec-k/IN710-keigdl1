@@ -23,5 +23,11 @@ namespace MixAndMatch.MixableClasses
             get { return partType; }
             set { partType = value; }
         }
+
+        //ToString override
+        public override string ToString()
+        {
+            return partType;
+        }
     }
 }

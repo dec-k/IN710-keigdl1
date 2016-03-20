@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builder.cs" />
+    <Compile Include="Factories\FairyMaker.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,7 +57,9 @@
     <Compile Include="MixableClasses\Legs.cs" />
     <Compile Include="MixableClasses\Body.cs" />
     <Compile Include="MixableClasses\Head.cs" />
-    <Compile Include="MixableClasses\ICharMaker.cs" />
+    <Compile Include="Factories\ICharMaker.cs" />
+    <Compile Include="Models\Fairy.cs" />
+    <Compile Include="Models\ModelMaker.cs" />
     <Compile Include="Printer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,9 +88,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -13,7 +13,7 @@ namespace MixAndMatch.MixableClasses.ChildClasses
         public FairyBody()
         {
             partType = "Fairy";
-            image = new Bitmap("Fairy_1.jpg");
+            image = new Bitmap("Fairy_1.png");
         }
     }
 }
