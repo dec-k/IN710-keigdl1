@@ -50,15 +50,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Vampire.cs" />
-    <Compile Include="Models\Witch.cs" />
-    <Compile Include="Models\Werewolf.cs" />
-    <Compile Include="Models\Skeleton.cs" />
-    <Compile Include="Models\Frankenstein.cs" />
-    <Compile Include="Models\Fairy.cs" />
-    <Compile Include="Models\ICharacterMaker.cs" />
-    <Compile Include="Models\MakerFactory.cs" />
-    <Compile Include="Models\ModelMaker.cs" />
+    <Compile Include="Classes\Vampire.cs" />
+    <Compile Include="Classes\Witch.cs" />
+    <Compile Include="Classes\Werewolf.cs" />
+    <Compile Include="Classes\Skeleton.cs" />
+    <Compile Include="Classes\Frankenstein.cs" />
+    <Compile Include="Classes\Fairy.cs" />
+    <Compile Include="Classes\ICharacterMaker.cs" />
+    <Compile Include="Classes\MakerFactory.cs" />
+    <Compile Include="Classes\ModelMaker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
