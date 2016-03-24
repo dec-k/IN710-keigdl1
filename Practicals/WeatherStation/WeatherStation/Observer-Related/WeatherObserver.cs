@@ -14,6 +14,12 @@ namespace WeatherStation
         protected int cHumid;
         protected int cPressure;
 
+        //Values for when computations are being run on variables that will require decimal points
+        protected double cCompTemp;
+        protected double cCompHumid;
+        protected double cCompPressure; 
+
+
         //Listbox instance that will have content passed to it
         protected ListBox lb;
         protected WeatherSubject ws;

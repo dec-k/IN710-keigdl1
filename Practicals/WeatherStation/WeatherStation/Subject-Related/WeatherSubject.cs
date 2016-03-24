@@ -14,12 +14,6 @@ namespace WeatherStation
         private int cHumid;
         private int cPressure; 
 
-        /*Values for when computations are being run on variables that will require decimal points
-        protected double cCompTemp;
-        protected double cCompHumid;
-        protected double cPressure; 
-         */
-
         //Ctor
         public WeatherSubject()
         {
