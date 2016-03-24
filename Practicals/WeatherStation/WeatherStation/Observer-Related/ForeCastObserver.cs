@@ -73,5 +73,13 @@ namespace WeatherStation.Observer_Related
         }
 
         //Custom display method
+        public override void Display()
+        {
+            //clear lb
+            lb.Items.Clear();
+            lb.Items.Add("Temperature today will be " + temp);
+            lb.Items.Add("Expect the humidity to be " + humid);
+            lb.Items.Add("We will be experiencing " + baro + " today.");
+        }
     }
 }

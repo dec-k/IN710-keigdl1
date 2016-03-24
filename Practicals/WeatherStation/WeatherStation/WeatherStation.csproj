@@ -51,6 +51,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Observer-Related\AverageObserver.cs" />
+    <Compile Include="Observer-Related\ForeCastObserver.cs" />
     <Compile Include="Observer-Related\TemperatureObserver.cs" />
     <Compile Include="Subject-Related\ISubject.cs" />
     <Compile Include="Observer-Related\IWeatherObserver.cs" />

@@ -44,7 +44,7 @@ namespace WeatherStation
         //Like the bike one, update will be overwritten by its descendants.
         public abstract void Update(int cTemp, int cHumid, int cPressure);
 
-        public void Display()
+        public virtual void Display()
         {
             //Clear before adding more
             lb.Items.Clear();
