@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace WeatherStation
 {
-    class WeatherObserver : IWeatherObserver
+    abstract class WeatherObserver : IWeatherObserver
     {
         //Attributes of base class
         protected int cTemp;
@@ -36,10 +36,7 @@ namespace WeatherStation
 
         //Instance of a subject
         //Like the bike one, update will be overwritten by its descendants.
-        public abstract void Update(int cTemp, int cHumid, int cPressure)
-        {
-            //Nothing here, I'm abstract!
-        }
+        public abstract void Update(int cTemp, int cHumid, int cPressure);
 
         public void Display()
         {
