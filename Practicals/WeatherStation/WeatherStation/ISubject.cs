@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WeatherStation
 {
-    class ISubject
+    interface ISubject
     {
-        //Standard subject method declarations
+        //Declare standard subject patterns
         void AddObserver(IWeatherObserver o);
         void RemoveObserver(IWeatherObserver o);
         void NotifyObservers();
