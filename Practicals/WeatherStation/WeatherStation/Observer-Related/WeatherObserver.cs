@@ -50,9 +50,9 @@ namespace WeatherStation
             lb.Items.Clear();
 
             //Load 'er up!
-            lb.Items.Add("Temperature: " + cTemp.ToString("F1")); //F1 formats to 1 dp
-            lb.Items.Add("Humidity: " + cHumid.ToString("F1")); //F1 formats to 1 dp
-            lb.Items.Add("Pressure: " + cPressure.ToString("F1")); //F1 formats to 1 dp 
+            lb.Items.Add("Temperature: " + cCompTemp.ToString("F1")); //F1 formats to 1 dp
+            lb.Items.Add("Humidity: " + cCompHumid.ToString("F1")); //F1 formats to 1 dp
+            lb.Items.Add("Pressure: " + cCompPressure.ToString("F1")); //F1 formats to 1 dp 
         }
     }
 }

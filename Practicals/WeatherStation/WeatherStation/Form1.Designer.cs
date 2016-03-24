@@ -51,6 +51,7 @@
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Update Readings";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label1
             // 

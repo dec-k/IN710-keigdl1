@@ -12,7 +12,24 @@ namespace WeatherStation
         private List<IWeatherObserver> obsList;
         private int cTemp;
         private int cHumid;
-        private int cPressure; 
+        private int cPressure;
+
+        //Getsets
+        public int CTemp
+        {
+            get { return cTemp; }
+            set { cTemp = value; }
+        }
+        public int CHumid
+        {
+            get { return cHumid; }
+            set { cHumid = value; }
+        }
+        public int CPressure
+        {
+            get { return cPressure; }
+            set { cPressure = value; }
+        } 
 
         //Ctor
         public WeatherSubject()
