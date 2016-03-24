@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace WeatherStation
 {
-    abstract class WeatherObserver : IWeatherObserver
+    public abstract class WeatherObserver : IWeatherObserver
     {
         //Attributes of base class
         protected int cTemp;
