@@ -60,6 +60,10 @@ namespace WeatherStation.Observer_Related
             {
                 humid = "Asian Tropics Tier";
             }
+            else if (cHumid > 100 || cHumid < 0)
+            {
+                humid = "invalid value";
+            }
 
             //Barometric pressure
             if (cPressure > 0 && cPressure < 50)

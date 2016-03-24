@@ -33,6 +33,11 @@ namespace WeatherStation
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            UpdateFields();
+        }
+
+        private void UpdateFields()
+        {
             //Grab values from textboxes
             //I think this is what could be considered "excessively coupled", ill come back to it.
             try
