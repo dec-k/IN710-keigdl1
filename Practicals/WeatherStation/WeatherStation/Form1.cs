@@ -35,14 +35,21 @@ namespace WeatherStation
         {
             //Grab values from textboxes
             //I think this is what could be considered "excessively coupled", ill come back to it.
-            int t = Int32.Parse(txtTemp.Text);
-            int h = Int32.Parse(txtHumidity.Text);
-            int p = Int32.Parse(txtBaro.Text);
+            try
+            {
+                int t = Int32.Parse(txtTemp.Text);
+                int h = Int32.Parse(txtHumidity.Text);
+                int p = Int32.Parse(txtBaro.Text);
 
-            ws.CTemp = t;
-            ws.CHumid = h;
-            ws.CPressure = p;
-            ws.NotifyObservers();
+                ws.CTemp = t;
+                ws.CHumid = h;
+                ws.CPressure = p;
+                ws.NotifyObservers();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("One or more fields have invalid data and cannot be processed.");
+            }
         }
     }
 }
