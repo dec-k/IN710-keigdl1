@@ -88,5 +88,31 @@ namespace WeatherUnitTests
             //Check observer was added to observer list properly
             Assert.AreEqual(expected, actual);
         }
+
+        //Remove an observer for the obs list
+        [TestMethod]
+        public void ObserverList_RemoveObserver_ReturnsExpected()
+        {
+            //Create needed objects
+            ListBox lb = new ListBox();
+            WeatherSubject ws = new WeatherSubject();
+            List<IWeatherObserver> obList = new List<IWeatherObserver>();
+
+            //Make 2 observers, do not manually add these
+            //Their ctor adds them to the passed subject
+            ForeCastObserver fcObs1 = new ForeCastObserver(lb, ws);
+            ForeCastObserver fcObs2 = new ForeCastObserver(lb, ws);
+
+            //Remove one from the list, decoupling the observer
+            //this makes it essentially inactive
+            ws.RemoveObserver(fcObs2);
+
+            //Expected size of list
+            int expected = 1;
+            int actual = ws.ObsList.Count;
+
+            //Check observer was added to observer list properly
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
