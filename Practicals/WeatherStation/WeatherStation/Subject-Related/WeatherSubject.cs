@@ -15,6 +15,11 @@ namespace WeatherStation
         private int cPressure;
 
         //Getsets
+        public List<IWeatherObserver> ObsList
+        {
+            get { return obsList; }
+            set { obsList = value; }
+        }
         public int CTemp
         {
             get { return cTemp; }
