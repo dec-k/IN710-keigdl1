@@ -45,7 +45,7 @@ namespace SocialObserver.Subject_Related
             //Alert all observers that they will need to update their information
             foreach (StatusObserver obs in obsList)
             {
-                obs.Update(statusText,statusTimestamp);
+                obs.Update(statusText);
                 obs.Display();
             }
         }
