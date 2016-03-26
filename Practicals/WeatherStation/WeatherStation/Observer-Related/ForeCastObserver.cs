@@ -7,13 +7,30 @@ using System.Windows.Forms;
 
 namespace WeatherStation.Observer_Related
 {
-    class ForeCastObserver : WeatherObserver
+    public class ForeCastObserver : WeatherObserver
     {
         //attributes of a good weather forecast
         //Stored as strings, no numbers allowed!
         string temp;
         string baro;
         string humid;
+
+        //Accessors
+        public string Temp
+        {
+            get { return temp; }
+            set { temp = value; }
+        }
+        public string Baro
+        {
+            get { return baro; }
+            set { baro = value; }
+        }
+        public string Humid
+        {
+            get { return humid; }
+            set { humid = value; }
+        }
 
         //blank ctor
         public ForeCastObserver(ListBox lb, WeatherSubject ws)
