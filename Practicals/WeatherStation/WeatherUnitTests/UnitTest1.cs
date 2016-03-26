@@ -75,14 +75,15 @@ namespace WeatherUnitTests
             ListBox lb = new ListBox();
             WeatherSubject ws = new WeatherSubject();
             List<IWeatherObserver> obList = new List<IWeatherObserver>();
-            ForeCastObserver fcObs = new ForeCastObserver(lb, ws);
 
-            //Add fcobs to observer list
-            obList.Add(fcObs);
+            //Make 2 observers, do not manually add these
+            //Their ctor adds them to the passed subject
+            ForeCastObserver fcObs1 = new ForeCastObserver(lb, ws);
+            ForeCastObserver fcObs2 = new ForeCastObserver(lb, ws);
             
             //Expected size of list
-            int expected = 1;
-            int actual = obList.Count;
+            int expected = 2;
+            int actual = ws.ObsList.Count;
 
             //Check observer was added to observer list properly
             Assert.AreEqual(expected, actual);
