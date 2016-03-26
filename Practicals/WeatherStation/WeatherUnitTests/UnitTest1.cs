@@ -69,19 +69,22 @@ namespace WeatherUnitTests
 
         //Ensure an observer can be added to the subject
         [TestMethod]
-        public void ForecastObs_UpdateValues_ReturnsExpected()
+        public void ObserverList_AddObserver_ReturnsExpected()
         {
             //Create needed objects
             ListBox lb = new ListBox();
             WeatherSubject ws = new WeatherSubject();
-            
-
+            List<IWeatherObserver> obList = new List<IWeatherObserver>();
             ForeCastObserver fcObs = new ForeCastObserver(lb, ws);
-            ws.RemoveObserver(fcObs);
-            
-            string expected = "Nippy";
-            string actual = fcObs.Temp;
 
+            //Add fcobs to observer list
+            obList.Add(fcObs);
+            
+            //Expected size of list
+            int expected = 1;
+            int actual = obList.Count;
+
+            //Check observer was added to observer list properly
             Assert.AreEqual(expected, actual);
         }
     }
