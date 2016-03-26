@@ -32,12 +32,12 @@ namespace SocialObserver.Observer_Related
             //Add itself to the obs list
             st.AddObserver(this);
         }
-        public void Update(string passedStatus, DateTime passedTime)
+        public void Update(string passedStatus)
         {
             //Set this instances attributes to equal those of the values passed in through arguments
             statusText = passedStatus;
 
-            //Update timestamp to be set to when the main observer initially clicked update status
+            //Update timestamp to be set to when the main observer initially clicked update status.
             statusTimestamp = DateTime.Now;
         }
 
