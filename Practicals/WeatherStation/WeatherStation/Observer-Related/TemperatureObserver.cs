@@ -18,6 +18,7 @@ namespace WeatherStation.Observer_Related
 
         public override void Update(int cTemp, int cHumid, int cPressure)
         {
+            //Convert passed in values to their double counterparts
             cCompTemp = cTemp;
             cCompHumid = cHumid;
             cCompPressure = cPressure;
