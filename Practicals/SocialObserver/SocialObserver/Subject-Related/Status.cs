@@ -14,6 +14,13 @@ namespace SocialObserver.Subject_Related
         private string statusText;
         private DateTime statusTimestamp;
 
+        //Accessor/Mutator for statusText
+        public string StatusText
+        {
+            get { return statusText; }
+            set { statusText = value; }
+        }
+
         //Ctor
         public Status()
         {
