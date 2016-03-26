@@ -50,10 +50,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Observer-Related\FriendStatusObserver.cs" />
     <Compile Include="Observer-Related\IObserver.cs" />
+    <Compile Include="Observer-Related\StatusObserver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Subject-Related\ISubject.cs" />
+    <Compile Include="Subject-Related\Status.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

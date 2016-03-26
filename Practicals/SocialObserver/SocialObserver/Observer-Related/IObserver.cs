@@ -9,7 +9,7 @@ namespace SocialObserver
     public interface IObserver
     {
         //Declare standard observer methods
-        void Update(string input);
+        void Update(string status, DateTime time);
         void Display();
     }
 }

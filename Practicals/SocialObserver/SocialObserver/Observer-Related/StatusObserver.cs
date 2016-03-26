@@ -29,12 +29,14 @@ namespace SocialObserver.Observer_Related
             //Add itself to the obs list
             st.AddObserver(this);
         }
-        public void Update(string input)
+        public void Update(string passedStatus, DateTime passedTime)
         {
-            throw new NotImplementedException();
+            //Set this instances attributes to equal those of the values passed in through arguments
+            statusText = passedStatus;
+            statusTimestamp = passedTime;
         }
 
-        //Method can be overwritten,
+        //Method that can be overwritten,
         //In this case, it is overwritten for classes where the timestamp field is also required as an output.
         public virtual void Display()
         {
