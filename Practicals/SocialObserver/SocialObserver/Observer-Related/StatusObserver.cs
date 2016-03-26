@@ -26,6 +26,9 @@ namespace SocialObserver.Observer_Related
             statusText = "";
             statusTimestamp = DateTime.Now;
 
+            //Bind form control to local var
+            this.lb = lb;
+
             //Add itself to the obs list
             st.AddObserver(this);
         }
@@ -33,7 +36,9 @@ namespace SocialObserver.Observer_Related
         {
             //Set this instances attributes to equal those of the values passed in through arguments
             statusText = passedStatus;
-            statusTimestamp = passedTime;
+
+            //Update timestamp to be set to when the main observer initially clicked update status
+            statusTimestamp = DateTime.Now;
         }
 
         //Method that can be overwritten,
@@ -41,7 +46,7 @@ namespace SocialObserver.Observer_Related
         public virtual void Display()
         {
             //Add items to listbox, will accumulate over time
-            lb.Items.Add(" \" " + statusText + " \" ");
+            lb.Items.Add(" \"" + statusText + "\"");
         }
     }
 }
