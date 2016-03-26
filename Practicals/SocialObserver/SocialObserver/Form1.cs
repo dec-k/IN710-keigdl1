@@ -17,7 +17,12 @@ namespace SocialObserver
         //Declare empty instances of observers and their subject
         Status subject;
         StatusObserver sOb;
-        FriendStatusObserver fsOb;
+
+        //You only really need 1 and then I could just update multiple listboxes but I feel that
+        //defeats the point of the exercise
+        FriendStatusObserver fsOb1;
+        FriendStatusObserver fsOb2;
+        FriendStatusObserver fsOb3;
         
         public Form1()
         {
@@ -26,7 +31,9 @@ namespace SocialObserver
             //Fully instantiate above objects
             subject = new Status();
             sOb = new StatusObserver(lbMine, subject);
-            fsOb = new FriendStatusObserver(lbF1, subject);
+            fsOb1 = new FriendStatusObserver(lbF1, subject);
+            fsOb2 = new FriendStatusObserver(lbF2, subject);
+            fsOb3 = new FriendStatusObserver(lbF3, subject);
         }
 
         private void UpdateFields()
