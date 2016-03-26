@@ -38,9 +38,9 @@ namespace WeatherStation.Observer_Related
             simCount += 1;
 
             //calc averages
-            cCompTemp = runningTemp / simCount;
-            cCompHumid = runningHumid / simCount;
-            cCompPressure = runningPressure / simCount;
+            CCompTemp = runningTemp / simCount;
+            CCompHumid = runningHumid / simCount;
+            CCompPressure = runningPressure / simCount;
         }
     }
 }

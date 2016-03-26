@@ -10,32 +10,46 @@ namespace WeatherStation
     public abstract class WeatherObserver : IWeatherObserver
     {
         //Attributes of base class
-        private int cTemp;
-        private int cHumid;
-        private int cPressure;
+        protected int cTemp;
+        protected int cHumid;
+        protected int cPressure;
 
         //Accessors
-        protected int CTemp
+        public int CTemp
         {
             get { return cTemp; }
             set { cTemp = value; }
         }
-        protected int CHumid
+        public int CHumid
         {
             get { return cHumid; }
             set { cHumid = value; }
         }
-        protected int CPressure
+        public int CPressure
         {
             get { return cPressure; }
             set { cPressure = value; }
         }
+        public double CCompTemp
+        {
+            get { return cCompTemp; }
+            set { cCompTemp = value; }
+        }
+        public double CCompHumid
+        {
+            get { return cCompHumid; }
+            set { cCompHumid = value; }
+        }
+        public double CCompPressure
+        {
+            get { return cCompPressure; }
+            set { cCompPressure = value; }
+        } 
 
         //Values for when computations are being run on variables that will require decimal points
         protected double cCompTemp;
         protected double cCompHumid;
-        protected double cCompPressure; 
-
+        protected double cCompPressure;
 
         //Listbox instance that will have content passed to it
         protected ListBox lb;
