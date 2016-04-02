@@ -59,6 +59,9 @@ namespace ProgressDelegate
 
         private void btnTestProgress_Click(object sender, EventArgs e)
         {
+            //reset the progress bars to prevent them causing out of bounds errors
+            resetProgressIndicators();
+
             //determine which button checked
             if (rdoSpinner.Checked)
             {
@@ -76,7 +79,12 @@ namespace ProgressDelegate
             //pass slow method the delegate we just defined
             slowMethod(dpt);
         }
+
+        private void resetProgressIndicators()
+        {
+            progTest.Value = 0;
+            nudTest.Value = 0;
+            trackTest.Value = 0;
+        }
     }
-
-
 }
