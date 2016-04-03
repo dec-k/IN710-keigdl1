@@ -31,8 +31,8 @@
             this.btnGenSet = new System.Windows.Forms.Button();
             this.btnEvens = new System.Windows.Forms.Button();
             this.btnLessThanTen = new System.Windows.Forms.Button();
-            this.lbUnderTen = new System.Windows.Forms.ListBox();
-            this.lbEvens = new System.Windows.Forms.ListBox();
+            this.lbFiltered = new System.Windows.Forms.ListBox();
+            this.lbRands = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnGenSet
@@ -43,6 +43,7 @@
             this.btnGenSet.TabIndex = 0;
             this.btnGenSet.Text = "Generate Set";
             this.btnGenSet.UseVisualStyleBackColor = true;
+            this.btnGenSet.Click += new System.EventHandler(this.btnGenSet_Click);
             // 
             // btnEvens
             // 
@@ -62,29 +63,29 @@
             this.btnLessThanTen.Text = "Display <10";
             this.btnLessThanTen.UseVisualStyleBackColor = true;
             // 
-            // lbUnderTen
+            // lbFiltered
             // 
-            this.lbUnderTen.FormattingEnabled = true;
-            this.lbUnderTen.Location = new System.Drawing.Point(156, 70);
-            this.lbUnderTen.Name = "lbUnderTen";
-            this.lbUnderTen.Size = new System.Drawing.Size(137, 355);
-            this.lbUnderTen.TabIndex = 3;
+            this.lbFiltered.FormattingEnabled = true;
+            this.lbFiltered.Location = new System.Drawing.Point(156, 70);
+            this.lbFiltered.Name = "lbFiltered";
+            this.lbFiltered.Size = new System.Drawing.Size(137, 329);
+            this.lbFiltered.TabIndex = 3;
             // 
-            // lbEvens
+            // lbRands
             // 
-            this.lbEvens.FormattingEnabled = true;
-            this.lbEvens.Location = new System.Drawing.Point(12, 70);
-            this.lbEvens.Name = "lbEvens";
-            this.lbEvens.Size = new System.Drawing.Size(137, 355);
-            this.lbEvens.TabIndex = 4;
+            this.lbRands.FormattingEnabled = true;
+            this.lbRands.Location = new System.Drawing.Point(12, 70);
+            this.lbRands.Name = "lbRands";
+            this.lbRands.Size = new System.Drawing.Size(137, 329);
+            this.lbRands.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 435);
-            this.Controls.Add(this.lbEvens);
-            this.Controls.Add(this.lbUnderTen);
+            this.ClientSize = new System.Drawing.Size(305, 410);
+            this.Controls.Add(this.lbRands);
+            this.Controls.Add(this.lbFiltered);
             this.Controls.Add(this.btnLessThanTen);
             this.Controls.Add(this.btnEvens);
             this.Controls.Add(this.btnGenSet);
@@ -99,8 +100,8 @@
         private System.Windows.Forms.Button btnGenSet;
         private System.Windows.Forms.Button btnEvens;
         private System.Windows.Forms.Button btnLessThanTen;
-        private System.Windows.Forms.ListBox lbUnderTen;
-        private System.Windows.Forms.ListBox lbEvens;
+        private System.Windows.Forms.ListBox lbFiltered;
+        private System.Windows.Forms.ListBox lbRands;
     }
 }
 
