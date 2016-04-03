@@ -53,7 +53,9 @@ namespace GardenReporter2016
 
         private void btnArea_Click(object sender, EventArgs e)
         {
+            //Bind the delegate to a gardenmanager method
             gd = new GardenDelegate(gardenManager.IterateGetArea);
+            //'activate' garden delegate and pass it the required arg
             gd(listBox1);
         }
 
