@@ -12,7 +12,13 @@ namespace GardenReporter2016
 {
     public partial class Form1 : Form
     {
+        //Declare garden manager
         GardenManager gardenManager;
+
+        //create a delegate type and declare one
+        public delegate void GardenDelegate(ListBox lb);
+        GardenDelegate gd;
+
         public Form1()
         {
             InitializeComponent();
@@ -47,12 +53,14 @@ namespace GardenReporter2016
 
         private void btnArea_Click(object sender, EventArgs e)
         {
-            /* YOUR CODE HERE */
+            gd = new GardenDelegate(gardenManager.IterateGetArea);
+            gd(listBox1);
         }
 
         private void btnCharges_Click(object sender, EventArgs e)
         {
-            /* YOUR CODE HERE */
+            gd = new GardenDelegate(gardenManager.IterateGetBalance);
+            gd(listBox1);
         }
     }
 }
