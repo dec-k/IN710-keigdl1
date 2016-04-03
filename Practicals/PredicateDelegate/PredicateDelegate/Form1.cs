@@ -53,7 +53,11 @@ namespace PredicateDelegate
         //Gen a random number
         private void genRandom()
         {
-            lbRands.Items.Add(r.Next(100));
+            int generatedNumber = r.Next(100);
+
+            //add gen num to list
+            listOfNumbers.Add(generatedNumber);
+            lbRands.Items.Add(generatedNumber);
         }
 
         private void btnGenSet_Click(object sender, EventArgs e)
@@ -61,9 +65,46 @@ namespace PredicateDelegate
             //clear lb before genning more numbers
             lbRands.Items.Clear();
 
+            //empty current list
+            listOfNumbers.Clear();
+
             for (int i = 0; i < 25; i++)
             {
                 genRandom();
+            }
+        }
+
+        private void btnEvens_Click(object sender, EventArgs e)
+        {
+            //clear
+            lbFiltered.Items.Clear();
+
+            //Create a predicate instance
+            Predicate<int> isOddPredicate = new Predicate<int>(isOdd);
+
+            for (int i = 0; i < listOfNumbers.Count; i++)
+            {
+                if (!isOddPredicate(listOfNumbers[i]))
+                {
+                    lbFiltered.Items.Add(listOfNumbers[i]);
+                }
+            }
+        }
+
+        private void btnLessThanTen_Click(object sender, EventArgs e)
+        {
+            //clear
+            lbFiltered.Items.Clear();
+
+            //Create a predicate instance
+            Predicate<int> isSubTenPredicate = new Predicate<int>(isLessThanTen);
+
+            for (int i = 0; i < listOfNumbers.Count; i++)
+            {
+                if (isSubTenPredicate(listOfNumbers[i]))
+                {
+                    lbFiltered.Items.Add(listOfNumbers[i]);
+                }
             }
         }
     }

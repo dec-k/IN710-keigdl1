@@ -53,6 +53,7 @@
             this.btnEvens.TabIndex = 1;
             this.btnEvens.Text = "Display Evens";
             this.btnEvens.UseVisualStyleBackColor = true;
+            this.btnEvens.Click += new System.EventHandler(this.btnEvens_Click);
             // 
             // btnLessThanTen
             // 
@@ -62,6 +63,7 @@
             this.btnLessThanTen.TabIndex = 2;
             this.btnLessThanTen.Text = "Display <10";
             this.btnLessThanTen.UseVisualStyleBackColor = true;
+            this.btnLessThanTen.Click += new System.EventHandler(this.btnLessThanTen_Click);
             // 
             // lbFiltered
             // 
