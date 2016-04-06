@@ -75,6 +75,10 @@ namespace ProgressDelegate
 
         private void btnTestProgress_Click(object sender, EventArgs e)
         {
+            //reset progress-guys values
+            resetProgressIndicators();
+
+            //call slowworker
             slowWorker.SlowMethod(nudTest,progTest,trackTest);
 
             //7.2 CODE WILL COMMENT OUT LATER
