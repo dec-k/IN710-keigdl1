@@ -13,6 +13,7 @@ namespace ProgressDelegate
         public override void ProgUpdateHandler(object subject, CustomEventArgs ce)
         {
             ce.nud.Value++;
+            ce.trackBar.Refresh();
         }
     }
 }
