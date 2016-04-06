@@ -21,6 +21,11 @@ namespace ProgressDelegate
         //Declare a slowWorker subject
         ProgressSubject slowWorker;
 
+        //Declare 3 new observers, one for each type of control
+        ProgBarObserver progBarObs;
+        TrackBarObserver trackBarObs;
+        NUDObserver nudObs;
+
         public Form1()
         {
             InitializeComponent();
@@ -62,7 +67,7 @@ namespace ProgressDelegate
 
         private void btnTestProgress_Click(object sender, EventArgs e)
         {
-            slowWorker.SlowMethod();
+            slowWorker.SlowMethod(nudTest,progTest,trackTest);
 
             //7.2 CODE WILL COMMENT OUT LATER
             /*reset the progress bars to prevent them causing out of bounds errors
