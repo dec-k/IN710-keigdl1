@@ -31,6 +31,14 @@ namespace ProgressDelegate
             InitializeComponent();
             //check a default option
             rdoSpinner.Checked = true;
+
+            //init new observers
+            slowWorker = new ProgressSubject();
+
+            //intantiate these new observers and pass them the subject so they know who to 'listen' on.
+            progBarObs = new ProgBarObserver(slowWorker);
+            trackBarObs = new TrackBarObserver(slowWorker);
+            nudObs = new NUDObserver(slowWorker);
         }
 
         //Increment spinner val
