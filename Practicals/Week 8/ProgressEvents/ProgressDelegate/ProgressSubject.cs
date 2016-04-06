@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProgressDelegate
 {
-    class ProgressSubject
+   public class ProgressSubject
     {
+       //Declare an event
+       public event EventHandler<CustomEventArgs> progressEvent;
+
+       //Blank ctor
+       public ProgressSubject();
+
         public void SlowMethod()
         {
             for (int i = 0; i < 10; i++)
