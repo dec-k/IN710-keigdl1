@@ -19,7 +19,7 @@ namespace CustomHandlers
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("I am the button1_click handler. Boring!");
         }
     }
 }
