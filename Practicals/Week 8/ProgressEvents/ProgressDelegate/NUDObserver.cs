@@ -12,8 +12,8 @@ namespace ProgressDelegate
         public NUDObserver(ProgressSubject subject) : base(subject) { }
         public override void ProgUpdateHandler(object subject, CustomEventArgs ce)
         {
-            ce.nud.Value++;
-            ce.trackBar.Refresh();
+            ce.nud.UpButton();
+            ce.nud.Refresh();
         }
     }
 }
