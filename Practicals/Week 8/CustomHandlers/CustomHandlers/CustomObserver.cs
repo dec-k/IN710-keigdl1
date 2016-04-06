@@ -34,6 +34,7 @@ namespace CustomHandlers
             sb.AppendLine("I'm a custom handler.");
             sb.AppendLine("I am of type: " + this.GetType().ToString());
             sb.AppendLine("My code is: " + code);
+            sb.AppendLine("I am responding to an event raised on: " + senderButton.Name);
 
             MessageBox.Show(sb.ToString());
         }

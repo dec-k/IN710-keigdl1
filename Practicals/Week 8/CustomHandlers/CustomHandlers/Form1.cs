@@ -26,8 +26,8 @@ namespace CustomHandlers
             r = new Random();
 
             //Instantiate custom observers
-            cOb1 = new CustomObserver(r.Next(100),button1);
-            cOb2 = new CustomObserver(r.Next(100), button1);
+            cOb1 = new CustomObserver(r.Next(100), btnTriggerHandlers);
+            cOb2 = new CustomObserver(r.Next(100), btnTriggerHandlers);
         }
 
         private void button1_Click(object sender, EventArgs e)
