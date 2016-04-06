@@ -16,14 +16,14 @@ namespace ProgressDelegate
         {
             this.subject = subject;
 
-            //Fire up a handler like last practical except with a custom handler class
+            //Create a handler and bind it to the specified method
             EventHandler<CustomEventArgs> handler = new EventHandler<CustomEventArgs>(ProgUpdateHandler);
+
+            //Bind the handler to a subject
+            subject.progressEvent += handler;
         }
 
         //Abstract method that all child observers will provide implementation for
-        public abstract void ProgUpdateHandler(object subject, CustomEventArgs ce)
-        {
-
-        }
+        public abstract void ProgUpdateHandler(object subject, CustomEventArgs ce);
     }
 }
