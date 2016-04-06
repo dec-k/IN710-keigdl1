@@ -8,5 +8,18 @@ namespace ProgressDelegate
 {
     class ProgressSubject
     {
+        public void SlowMethod()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                System.Threading.Thread.Sleep(500);
+                OnUpdateEvent();
+            }
+        }
+
+        private void OnUpdateEvent()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
