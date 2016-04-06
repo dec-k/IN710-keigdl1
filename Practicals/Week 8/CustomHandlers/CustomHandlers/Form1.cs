@@ -28,6 +28,13 @@ namespace CustomHandlers
             //Instantiate custom observers
             cOb1 = new CustomObserver(r.Next(100), btnTriggerHandlers);
             cOb2 = new CustomObserver(r.Next(100), btnTriggerHandlers);
+
+            //Explanation for my own benefit:
+            /*Found this practical easier than part 1, which I struggled with. Basically, when you call the constructor
+             * for a new customObserver like this, it's constructor has code that binds one of THAT classes methods to a System-defined event
+             * in this case it is a '.Click' event. Then obviously when that criteria is met, the event will pop and execute its code.
+             * If you're a lecturer or other person readingt this block, it might seem obvious! But I just wanted to write something concrete.
+             * */
         }
 
         private void button1_Click(object sender, EventArgs e)
