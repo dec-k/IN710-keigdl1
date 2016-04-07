@@ -14,7 +14,6 @@ namespace PetrolBots
     {
         //Constant for ship size
         public const int SHIP_SIZE = 50;
-        public const int HEIGHT_MINUS_BOTBAR = 400;
 
         //Attr
         Graphics mainCanvas;
@@ -25,6 +24,7 @@ namespace PetrolBots
 
         //Canvas bg colour
         Brush backgroundBrush;
+        Brush foregroundPanelBrush;
 
         public Form1()
         {
@@ -32,7 +32,8 @@ namespace PetrolBots
 
             //Init things
             mainCanvas = CreateGraphics();
-            backgroundBrush = new SolidBrush(Color.White);
+            backgroundBrush = new SolidBrush(Color.LightBlue);
+            foregroundPanelBrush = new SolidBrush(Color.Black);
             
             botList = new List<PetrolBot>();
             shipList = new List<Ship>();
@@ -56,7 +57,8 @@ namespace PetrolBots
 
         public void updateDisplay()
         {
-            mainCanvas.FillRectangle(backgroundBrush, 0, 0, 500, HEIGHT_MINUS_BOTBAR);
+            mainCanvas.FillRectangle(backgroundBrush, 0, 0, 500, 500);
+            mainCanvas.FillRectangle(foregroundPanelBrush, 0, 400, 500, 100);
             
             //Move & redraw all ships in the list
             for (int i = 0; i < shipList.Count; i++)
