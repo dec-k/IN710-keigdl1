@@ -19,12 +19,13 @@ namespace PetrolBots
         int botSize;
 
         //ctor
-        public PetrolBot(Graphics parentCanvas, Color colour, Point startLoc, int botSize)
+        public PetrolBot(Graphics parentCanvas, Color colour, Point startLoc, int botSize, Ship tetheredShip)
         {
             this.botSize = botSize;
-            botStartingLocation = startLoc;
             this.parentCanvas = parentCanvas;
+            botStartingLocation = startLoc;
             botColour = colour;
+            botShip = tetheredShip;
         }
 
         public void drawBot()

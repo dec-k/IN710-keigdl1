@@ -10,7 +10,7 @@ namespace PetrolBots
     class Ship
     {
         //Ship Attr Declaration
-        int petrol { get; set; } //makes this var modifiable elsewhere
+        int petrol;
         Random r;
         int shipSize;
         Graphics parentCanvas;
@@ -19,6 +19,18 @@ namespace PetrolBots
         Point shipLocation;
         Color shipColour;
         Point shipVelocity;
+
+        //Getters and setters
+        public int Petrol
+        {
+            get { return petrol; }
+            set { petrol = value; }
+        }
+        public Point ShipLocation
+        {
+            get { return shipLocation; }
+            set { shipLocation = value; }
+        }
 
 
         public Ship(int shipSize, Graphics parentCanvas, Random r)

@@ -56,11 +56,11 @@ namespace PetrolBots
             shipList.Add(s5);
 
             //Instantiate some petrolBots
-            PetrolBot pb1 = new PetrolBot(mainCanvas, Color.Lime, new Point(25, 425), BOT_SIZE);
-            PetrolBot pb2 = new PetrolBot(mainCanvas, Color.Orange, new Point(75, 425), BOT_SIZE);
-            PetrolBot pb3 = new PetrolBot(mainCanvas, Color.Purple, new Point(125, 425), BOT_SIZE);
-            PetrolBot pb4 = new PetrolBot(mainCanvas, Color.Teal, new Point(175, 425), BOT_SIZE);
-            PetrolBot pb5 = new PetrolBot(mainCanvas, Color.Yellow, new Point(225, 425), BOT_SIZE);
+            PetrolBot pb1 = new PetrolBot(mainCanvas, Color.Lime, new Point(25, 425), BOT_SIZE, s1);
+            PetrolBot pb2 = new PetrolBot(mainCanvas, Color.Orange, new Point(75, 425), BOT_SIZE,s2);
+            PetrolBot pb3 = new PetrolBot(mainCanvas, Color.Purple, new Point(125, 425), BOT_SIZE,s3);
+            PetrolBot pb4 = new PetrolBot(mainCanvas, Color.Teal, new Point(175, 425), BOT_SIZE,s4);
+            PetrolBot pb5 = new PetrolBot(mainCanvas, Color.Yellow, new Point(225, 425), BOT_SIZE,s5);
 
             //Add bot to its list
             botList.Add(pb1);
