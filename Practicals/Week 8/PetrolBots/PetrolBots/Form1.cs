@@ -47,5 +47,10 @@ namespace PetrolBots
             mainCanvas.FillRectangle(backgroundBrush, 0, 0, Width, Height);
             shipList[0].drawShip();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            testUpdate();
+        }
     }
 }
