@@ -15,7 +15,6 @@ namespace PetrolBots
         Point botCurrentLocation;
         Ship botShip; //The ship that the refueler bot is designated to refuel
         Point botStartingLocation; //Location on the main panel that the bot sits in waiting
-        Point shipLocation; //The location of the tethered ship
         int botSize;
 
         //ctor

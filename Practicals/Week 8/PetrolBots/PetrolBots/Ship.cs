@@ -11,23 +11,17 @@ namespace PetrolBots
     {
         //Ship Attr Declaration
         int petrol;
-        Random r;
         int shipSize;
+        Random r;
         Graphics parentCanvas;
         EShipState state;
 
-        public EShipState State
-        {
-            get { return state; }
-            set { state = value; }
-        }
-
         //Access values using name.X/Y
         Point shipLocation;
-        Color shipColour;
         Point shipVelocity;
+        Color shipColour;
 
-        //Getters and setters
+        //Properties
         public int Petrol
         {
             get { return petrol; }
@@ -38,11 +32,15 @@ namespace PetrolBots
             get { return shipLocation; }
             set { shipLocation = value; }
         }
+        public EShipState State
+        {
+            get { return state; }
+            set { state = value; }
+        }
 
         //custom delegate and events
         public delegate void FuelEventHandler(object sender, ShipEventArgs e);
         public event FuelEventHandler OutOfFuelEvent;
-        public event EventHandler FullOfFuelEvent;
 
         public Ship(int shipSize, Graphics parentCanvas, Random r)
         {
@@ -105,12 +103,7 @@ namespace PetrolBots
 
                 //consume a bit of fuel
                 usePetrol();
-            }
-            else
-            {
-                
-            }
-            
+            } 
         }
 
         public void usePetrol()
@@ -120,18 +113,11 @@ namespace PetrolBots
             {
                 petrol--;
             }
-            else
+            else //This else is very important, it's what flips the switch to get the event handlers excited and at attention.
             {
-                //change state to refuel mode
+                //change state to refuel mode, alerting the PetrolBots.
                 state = EShipState.REFUELING;
             }
-        }
-
-        public void OnFullOfFuelEvent()
-        {
-            EventArgs e = new EventArgs();
-            if (FullOfFuelEvent != null)
-                FullOfFuelEvent(this, e);
         }
 
         public void OnOutOfFuelEvent(Point currShipLocation)
@@ -143,6 +129,7 @@ namespace PetrolBots
 
         public void refuel()
         {
+            //Increment fuel value
             Petrol++;
         }
     }
