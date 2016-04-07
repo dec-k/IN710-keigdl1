@@ -26,15 +26,15 @@ namespace PetrolBots
             this.shipSize = shipSize;
             this.parentCanvas = parentCanvas;
 
-            //Give initial amount of fuel
-            petrol = r.Next(0, 50);
+            //Give initial amount of fuel (at least half full)
+            petrol = r.Next(50, 100);
 
             //Give position
-            shipLocation = new Point(r.Next(500),r.Next(500));
+            shipLocation = new Point(r.Next(100,300),r.Next(100,300));
             //Give black as starting colour
             shipColour = Color.FromArgb(0, 0, 0);
             //Set ship velocity
-            shipVelocity = new Point(r.Next(3), r.Next(3));
+            shipVelocity = new Point(r.Next(1,5), r.Next(1,5));
         }
 
         public void drawShip()
@@ -55,7 +55,15 @@ namespace PetrolBots
 
         public void moveShip()
         {
-            //CODE TO DETERMINE IF SHIP TOUCHING EDGES HERE!!!
+            //If the ship moves too far along either axis, it's velocity for that direction will be flipped.
+            if (shipLocation.X >= (500 - shipSize) || (shipLocation.X <= 0))
+            {
+                shipVelocity.X = shipVelocity.X - (shipVelocity.X * 2);
+            }
+            if (shipLocation.Y >= (400 - shipSize) || shipLocation.Y <= 0)
+            {
+                shipVelocity.Y = shipVelocity.Y - (shipVelocity.Y * 2);
+            }
 
             //Adjust position by velocity values
             shipLocation.X = shipLocation.X + shipVelocity.X;
