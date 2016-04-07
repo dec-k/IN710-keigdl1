@@ -32,6 +32,9 @@ namespace PetrolBots
             set { shipLocation = value; }
         }
 
+        //custom delegate and events
+        public event OutOfFuelEventHandler(object o, ShipEventArgs sea);
+        public event EventHandler FullOfFuelEvent();
 
         public Ship(int shipSize, Graphics parentCanvas, Random r)
         {
