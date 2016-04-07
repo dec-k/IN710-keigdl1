@@ -24,6 +24,7 @@ namespace PetrolBots
             this.botSize = botSize;
             this.parentCanvas = parentCanvas;
             botStartingLocation = startLoc;
+            botCurrentLocation = botStartingLocation;
             botColour = colour;
             botShip = tetheredShip;
 
@@ -38,7 +39,7 @@ namespace PetrolBots
             SolidBrush botBrush = new SolidBrush(botColour);
 
             //Draw the rectangle to the form using the brush
-            parentCanvas.FillEllipse(botBrush, botStartingLocation.X, botStartingLocation.Y, botSize, botSize);
+            parentCanvas.FillEllipse(botBrush, botCurrentLocation.X, botCurrentLocation.Y, botSize, botSize);
         }
 
         //event handlers
@@ -48,7 +49,7 @@ namespace PetrolBots
         }
 
         //Help from Leonard on where to place this method.
-        public void OutOfFuelEventHandler(object sender, ShipEventArgs e)
+        public async void OutOfFuelEventHandler(object sender, ShipEventArgs e)
         {
             if (botShip.Petrol == 0)
             {
@@ -57,9 +58,11 @@ namespace PetrolBots
                 botCurrentLocation.X = botShip.ShipLocation.X;
                 botCurrentLocation.Y = botShip.ShipLocation.Y;
 
+
                 while (botShip.Petrol < 100)
                 {
                     botShip.Petrol++;
+                    await Task.Delay(100);
                 }
 
                 botShip.State = EShipState.WANDERING;
