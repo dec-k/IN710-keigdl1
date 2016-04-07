@@ -14,6 +14,7 @@ namespace PetrolBots
     {
         //Constant for ship size
         public const int SHIP_SIZE = 50;
+        public const int BOT_SIZE = 10;
 
         //Attr
         Graphics mainCanvas;
@@ -53,6 +54,20 @@ namespace PetrolBots
             shipList.Add(s3);
             shipList.Add(s4);
             shipList.Add(s5);
+
+            //Instantiate some petrolBots
+            PetrolBot pb1 = new PetrolBot(mainCanvas, Color.Lime, new Point(25, 425), BOT_SIZE);
+            PetrolBot pb2 = new PetrolBot(mainCanvas, Color.Orange, new Point(75, 425), BOT_SIZE);
+            PetrolBot pb3 = new PetrolBot(mainCanvas, Color.Purple, new Point(125, 425), BOT_SIZE);
+            PetrolBot pb4 = new PetrolBot(mainCanvas, Color.Teal, new Point(175, 425), BOT_SIZE);
+            PetrolBot pb5 = new PetrolBot(mainCanvas, Color.Yellow, new Point(225, 425), BOT_SIZE);
+
+            //Add bot to its list
+            botList.Add(pb1);
+            botList.Add(pb2);
+            botList.Add(pb3);
+            botList.Add(pb4);
+            botList.Add(pb5);
         }
 
         public void updateDisplay()
@@ -65,6 +80,12 @@ namespace PetrolBots
             {
                 shipList[i].moveShip();
                 shipList[i].drawShip();
+            }
+
+            //Move & redraw all bots
+            for (int i = 0; i < botList.Count; i++)
+            {
+                botList[i].drawBot();
             }
         }
 
