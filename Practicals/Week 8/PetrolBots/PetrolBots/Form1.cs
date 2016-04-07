@@ -36,24 +36,39 @@ namespace PetrolBots
             botList = new List<PetrolBot>();
             shipList = new List<Ship>();
 
-            //Create bounding rectangle
+            //Create boundary rect
             Rectangle bounds = new Rectangle(0, 0, Width, HEIGHT_MINUS_BOTBAR);
 
-            //test drawing rect to canvas
-            Ship test1 = new Ship(SHIP_SIZE, mainCanvas);
-            shipList.Add(test1);
-            testUpdate();
+            //Instantiate some ships
+            Ship s1 = new Ship(SHIP_SIZE, mainCanvas);
+            Ship s2 = new Ship(SHIP_SIZE, mainCanvas);
+            Ship s3 = new Ship(SHIP_SIZE, mainCanvas);
+            Ship s4 = new Ship(SHIP_SIZE, mainCanvas);
+            Ship s5 = new Ship(SHIP_SIZE, mainCanvas);
+
+            //Add ships to the list
+            shipList.Add(s1);
+            shipList.Add(s2);
+            shipList.Add(s3);
+            shipList.Add(s4);
+            shipList.Add(s5);
         }
 
-        public void testUpdate()
+        public void updateDisplay()
         {
             mainCanvas.FillRectangle(backgroundBrush, 0, 0, Width, Height);
-            shipList[0].drawShip();
+            
+            //Move & redraw all ships in the list
+            for (int i = 0; i < shipList.Count; i++)
+            {
+                shipList[i].moveShip();
+                shipList[i].drawShip();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            testUpdate();
+            updateDisplay();
         }
     }
 }

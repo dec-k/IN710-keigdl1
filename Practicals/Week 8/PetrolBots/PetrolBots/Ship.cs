@@ -67,7 +67,10 @@ namespace PetrolBots
 
         public void usePetrol()
         {
-
+            if (petrol != 0)
+            {
+                petrol--;
+            }
         }
     }
 }
