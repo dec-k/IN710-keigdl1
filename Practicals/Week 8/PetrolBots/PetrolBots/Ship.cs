@@ -23,6 +23,7 @@ namespace PetrolBots
 
         public Ship(int shipSize, Graphics parentCanvas, Random r)
         {
+            //Pass in random from the form to ensure proper seed generation
             this.r = r;
             
             this.shipSize = shipSize;
@@ -32,13 +33,13 @@ namespace PetrolBots
             petrol = r.Next(50, 100);
 
             //Give position
-            shipLocation = new Point(r.Next(100,300),r.Next(100,300));
+            shipLocation = new Point(r.Next(0, 395), r.Next(0, 300));
 
             //Give black as starting colour
             shipColour = Color.FromArgb(0, 0, 0);
 
             //Set ship velocity
-            shipVelocity = new Point(r.Next(1,5), r.Next(1,5));
+            shipVelocity = new Point(r.Next(-3,3), r.Next(-3,3));
         }
 
         public void drawShip()
@@ -63,11 +64,11 @@ namespace PetrolBots
             if (petrol != 0)
             {
                 //If the ship moves too far along either axis, it's velocity for that axis will be flipped.
-                if (shipLocation.X >= (500 - shipSize) || (shipLocation.X <= 0))
+                if (shipLocation.X >= (500 - shipSize*2) || (shipLocation.X <= 1))
                 {
                     shipVelocity.X = shipVelocity.X - (shipVelocity.X * 2);
                 }
-                if (shipLocation.Y >= (400 - shipSize) || shipLocation.Y <= 0)
+                if (shipLocation.Y >= (399 - shipSize) || shipLocation.Y <= 1)
                 {
                     shipVelocity.Y = shipVelocity.Y - (shipVelocity.Y * 2);
                 }
