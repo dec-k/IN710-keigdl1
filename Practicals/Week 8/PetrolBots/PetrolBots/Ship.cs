@@ -144,12 +144,6 @@ namespace PetrolBots
         public void refuel()
         {
             Petrol++;
-
-            if (petrol == 100) { 
-                //set state back to wander
-                state = EShipState.WANDERING;
-            }
-            
         }
     }
 }
