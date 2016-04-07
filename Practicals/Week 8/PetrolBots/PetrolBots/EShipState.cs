@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace PetrolBots
 {
-    class EShipState
+    public enum EShipState
     {
-    }
+        WANDERING,
+        REFUELING
+    };
 }
