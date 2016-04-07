@@ -11,7 +11,7 @@ namespace PetrolBots
         //Ship Attr Declaration
         int petrol { get; set; }
         Random r = new Random();
-        int shipSize; //Ships are squares so you just store 1 value
+        int shipSize;
 
         public Ship()
         {

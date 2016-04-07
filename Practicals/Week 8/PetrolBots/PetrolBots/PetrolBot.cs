@@ -8,5 +8,7 @@ namespace PetrolBots
 {
     class PetrolBot
     {
+        //Attributes of a petrol refueller bot
+
     }
 }
