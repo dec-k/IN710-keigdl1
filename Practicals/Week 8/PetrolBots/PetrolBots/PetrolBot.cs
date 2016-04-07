@@ -70,7 +70,7 @@ namespace PetrolBots
                     botShip.refuel();
 
                     //Delay processing in this loop by 100ms. Only affects this thread of processing, unlike Sleep().
-                    await Task.Delay(100);
+                    await Task.Delay(50);
                 }
 
                 //After refueling done, set state back to wander.
