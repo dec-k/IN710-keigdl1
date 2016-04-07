@@ -47,14 +47,23 @@ namespace PetrolBots
             
         }
 
+        //Help from Leonard on where to place this method.
         public void OutOfFuelEventHandler(object sender, ShipEventArgs e)
         {
             if (botShip.Petrol == 0)
             {
+                botShip.State = EShipState.REFUELING;
+
                 botCurrentLocation.X = botShip.ShipLocation.X;
                 botCurrentLocation.Y = botShip.ShipLocation.Y;
 
-                botShip.refuel();
+                while (botShip.Petrol < 100)
+                {
+                    botShip.Petrol++;
+                }
+
+                botShip.State = EShipState.WANDERING;
+                
             }
 
             botCurrentLocation.X = botStartingLocation.X;

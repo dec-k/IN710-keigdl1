@@ -14,6 +14,13 @@ namespace PetrolBots
         Random r;
         int shipSize;
         Graphics parentCanvas;
+        EShipState state;
+
+        public EShipState State
+        {
+            get { return state; }
+            set { state = value; }
+        }
 
         //Access values using name.X/Y
         Point shipLocation;
@@ -41,6 +48,9 @@ namespace PetrolBots
         {
             //Pass in random from the form to ensure proper seed generation
             this.r = r;
+
+            //put ship into wanderer state on create
+            state = EShipState.WANDERING;
             
             this.shipSize = shipSize;
             this.parentCanvas = parentCanvas;
@@ -77,7 +87,7 @@ namespace PetrolBots
         public void moveShip()
         {
             //Check if ship is out of fuel before moving
-            if (petrol != 0)
+            if (state == EShipState.WANDERING)
             {
                 //If the ship moves too far along either axis, it's velocity for that axis will be flipped.
                 if (shipLocation.X >= (500 - shipSize*2) || (shipLocation.X <= 1))
@@ -98,7 +108,7 @@ namespace PetrolBots
             }
             else
             {
-                //REFUEL IMMEDIATELY PLEASE I AM STUCK IN OCEAN
+                
             }
             
         }
@@ -109,6 +119,11 @@ namespace PetrolBots
             if (petrol != 0)
             {
                 petrol--;
+            }
+            else
+            {
+                //change state to refuel mode
+                state = EShipState.REFUELING;
             }
         }
 
@@ -128,13 +143,13 @@ namespace PetrolBots
 
         public void refuel()
         {
-            if (Petrol == 0)
-            {
-                while (Petrol != 100)
-                {
-                    Petrol++;
-                }
+            Petrol++;
+
+            if (petrol == 100) { 
+                //set state back to wander
+                state = EShipState.WANDERING;
             }
+            
         }
     }
 }
