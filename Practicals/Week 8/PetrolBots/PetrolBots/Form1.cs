@@ -20,6 +20,8 @@ namespace PetrolBots
         Graphics mainCanvas;
         List<PetrolBot> botList;
         List<Ship> shipList;
+        Random r;
+
 
         //Canvas bg colour
         Brush backgroundBrush;
@@ -35,12 +37,14 @@ namespace PetrolBots
             botList = new List<PetrolBot>();
             shipList = new List<Ship>();
 
+            r = new Random();
+
             //Instantiate some ships
-            Ship s1 = new Ship(SHIP_SIZE, mainCanvas);
-            Ship s2 = new Ship(SHIP_SIZE, mainCanvas);
-            Ship s3 = new Ship(SHIP_SIZE, mainCanvas);
-            Ship s4 = new Ship(SHIP_SIZE, mainCanvas);
-            Ship s5 = new Ship(SHIP_SIZE, mainCanvas);
+            Ship s1 = new Ship(SHIP_SIZE, mainCanvas,r);
+            Ship s2 = new Ship(SHIP_SIZE, mainCanvas,r);
+            Ship s3 = new Ship(SHIP_SIZE, mainCanvas,r);
+            Ship s4 = new Ship(SHIP_SIZE, mainCanvas,r);
+            Ship s5 = new Ship(SHIP_SIZE, mainCanvas,r);
 
             //Add ships to the list
             shipList.Add(s1);

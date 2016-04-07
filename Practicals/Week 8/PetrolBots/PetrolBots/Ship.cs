@@ -11,7 +11,7 @@ namespace PetrolBots
     {
         //Ship Attr Declaration
         int petrol { get; set; } //makes this var modifiable elsewhere
-        Random r = new Random();
+        Random r;
         int shipSize;
         Graphics parentCanvas;
 
@@ -21,8 +21,10 @@ namespace PetrolBots
         Point shipVelocity;
 
 
-        public Ship(int shipSize, Graphics parentCanvas)
+        public Ship(int shipSize, Graphics parentCanvas, Random r)
         {
+            this.r = r;
+            
             this.shipSize = shipSize;
             this.parentCanvas = parentCanvas;
 
@@ -31,8 +33,10 @@ namespace PetrolBots
 
             //Give position
             shipLocation = new Point(r.Next(100,300),r.Next(100,300));
+
             //Give black as starting colour
             shipColour = Color.FromArgb(0, 0, 0);
+
             //Set ship velocity
             shipVelocity = new Point(r.Next(1,5), r.Next(1,5));
         }
@@ -55,26 +59,36 @@ namespace PetrolBots
 
         public void moveShip()
         {
-            //If the ship moves too far along either axis, it's velocity for that direction will be flipped.
-            if (shipLocation.X >= (500 - shipSize) || (shipLocation.X <= 0))
+            //Check if ship is out of fuel before moving
+            if (petrol != 0)
             {
-                shipVelocity.X = shipVelocity.X - (shipVelocity.X * 2);
+                //If the ship moves too far along either axis, it's velocity for that axis will be flipped.
+                if (shipLocation.X >= (500 - shipSize) || (shipLocation.X <= 0))
+                {
+                    shipVelocity.X = shipVelocity.X - (shipVelocity.X * 2);
+                }
+                if (shipLocation.Y >= (400 - shipSize) || shipLocation.Y <= 0)
+                {
+                    shipVelocity.Y = shipVelocity.Y - (shipVelocity.Y * 2);
+                }
+
+                //Adjust position by velocity values
+                shipLocation.X = shipLocation.X + shipVelocity.X;
+                shipLocation.Y = shipLocation.Y + shipVelocity.Y;
+
+                //consume a bit of fuel
+                usePetrol();
             }
-            if (shipLocation.Y >= (400 - shipSize) || shipLocation.Y <= 0)
+            else
             {
-                shipVelocity.Y = shipVelocity.Y - (shipVelocity.Y * 2);
+                //REFUEL IMMEDIATELY PLEASE I AM STUCK IN OCEAN
             }
-
-            //Adjust position by velocity values
-            shipLocation.X = shipLocation.X + shipVelocity.X;
-            shipLocation.Y = shipLocation.Y + shipVelocity.Y;
-
-            //consume a bit of fuel
-            usePetrol();
+            
         }
 
         public void usePetrol()
         {
+            //Check if petrol isn't already empty before deducting.
             if (petrol != 0)
             {
                 petrol--;
