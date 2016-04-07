@@ -22,10 +22,12 @@ namespace PetrolBots
         {
             this.botSize = botSize;
             this.parentCanvas = parentCanvas;
-            botStartingLocation = startLoc;
-            botCurrentLocation = botStartingLocation;
             botColour = colour;
             botShip = tetheredShip;
+
+            //Set the starting location  & the current location as the initially passed in location.
+            botStartingLocation = startLoc; //This will not change
+            botCurrentLocation = botStartingLocation; //This will change a lot.
 
             //Bind event handler
             Ship.FuelEventHandler handler = new Ship.FuelEventHandler(OutOfFuelEventHandler);
@@ -39,12 +41,6 @@ namespace PetrolBots
 
             //Draw the rectangle to the form using the brush
             parentCanvas.FillEllipse(botBrush, botCurrentLocation.X, botCurrentLocation.Y, botSize, botSize);
-        }
-
-        //event handlers
-        public void FullOfFuelEventHandler(object sender, ShipEventArgs e)
-        {
-            
         }
 
         //Help from Leonard on basics of using this method,
