@@ -33,8 +33,9 @@ namespace PetrolBots
         }
 
         //custom delegate and events
-        public event OutOfFuelEventHandler(object o, ShipEventArgs sea);
-        public event EventHandler FullOfFuelEvent();
+        public delegate void FuelEventHandler(object sender, ShipEventArgs e);
+        public event FuelEventHandler OutOfFuelEvent;
+        public event EventHandler FullOfFuelEvent;
 
         public Ship(int shipSize, Graphics parentCanvas, Random r)
         {
@@ -108,6 +109,31 @@ namespace PetrolBots
             if (petrol != 0)
             {
                 petrol--;
+            }
+        }
+
+        public void OnFullOfFuelEvent()
+        {
+            EventArgs e = new EventArgs();
+            if (FullOfFuelEvent != null)
+                FullOfFuelEvent(this, e);
+        }
+
+        public void OnOutOfFuelEvent(Point currShipLocation)
+        {
+            ShipEventArgs sea = new ShipEventArgs(currShipLocation);
+            if (OutOfFuelEvent != null)
+                OutOfFuelEvent(this, sea);
+        }
+
+        public void refuel()
+        {
+            if (Petrol == 0)
+            {
+                while (Petrol != 100)
+                {
+                    Petrol++;
+                }
             }
         }
     }

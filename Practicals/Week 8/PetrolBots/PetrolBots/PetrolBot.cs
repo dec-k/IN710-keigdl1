@@ -26,6 +26,10 @@ namespace PetrolBots
             botStartingLocation = startLoc;
             botColour = colour;
             botShip = tetheredShip;
+
+            //Bind event handler
+            Ship.FuelEventHandler handler = new Ship.FuelEventHandler(OutOfFuelEventHandler);
+            botShip.OutOfFuelEvent += handler;
         }
 
         public void drawBot()
@@ -35,6 +39,26 @@ namespace PetrolBots
 
             //Draw the rectangle to the form using the brush
             parentCanvas.FillEllipse(botBrush, botStartingLocation.X, botStartingLocation.Y, botSize, botSize);
+        }
+
+        //event handlers
+        public void FullOfFuelEventHandler(object sender, ShipEventArgs e)
+        {
+            
+        }
+
+        public void OutOfFuelEventHandler(object sender, ShipEventArgs e)
+        {
+            if (botShip.Petrol == 0)
+            {
+                botCurrentLocation.X = botShip.ShipLocation.X;
+                botCurrentLocation.Y = botShip.ShipLocation.Y;
+
+                botShip.refuel();
+            }
+
+            botCurrentLocation.X = botStartingLocation.X;
+            botCurrentLocation.Y = botStartingLocation.Y;
         }
 
     }

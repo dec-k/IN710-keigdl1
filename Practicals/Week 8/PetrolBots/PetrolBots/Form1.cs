@@ -80,6 +80,8 @@ namespace PetrolBots
             {
                 shipList[i].moveShip();
                 shipList[i].drawShip();
+
+                shipList[i].OnOutOfFuelEvent(shipList[i].ShipLocation);
             }
 
             //Move & redraw all bots
