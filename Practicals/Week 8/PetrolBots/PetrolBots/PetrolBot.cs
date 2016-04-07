@@ -66,11 +66,12 @@ namespace PetrolBots
                 }
 
                 botShip.State = EShipState.WANDERING;
+                botCurrentLocation.X = botStartingLocation.X;
+                botCurrentLocation.Y = botStartingLocation.Y;
                 
             }
 
-            botCurrentLocation.X = botStartingLocation.X;
-            botCurrentLocation.Y = botStartingLocation.Y;
+            
         }
 
     }
