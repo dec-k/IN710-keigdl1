@@ -78,15 +78,7 @@ namespace PetrolBots
             //Move & redraw all ships in the list
             for (int i = 0; i < shipList.Count; i++)
             {
-                shipList[i].moveShip();
-                shipList[i].drawShip();
-
-                shipList[i].OnOutOfFuelEvent(shipList[i].ShipLocation);
-            }
-
-            //Move & redraw all bots
-            for (int i = 0; i < botList.Count; i++)
-            {
+                shipList[i].ShipCycle();
                 botList[i].drawBot();
             }
         }

@@ -11,11 +11,12 @@ namespace PetrolBots
     {
         //var to hold ship loc
         Point shipLocation { get; set; }
+        EShipState state;
 
         //ctor
-        public ShipEventArgs(Point shipLocation)
+        public ShipEventArgs(EShipState state)
         {
-            this.shipLocation = shipLocation;
+            this.state = state;
         }
     }
 }

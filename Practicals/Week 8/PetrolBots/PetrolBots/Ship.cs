@@ -39,8 +39,11 @@ namespace PetrolBots
         }
 
         //custom delegate and events
-        public delegate void FuelEventHandler(object sender, ShipEventArgs e);
-        public event FuelEventHandler OutOfFuelEvent;
+        public delegate void OutOfFuelEventHandler(object ship, ShipEventArgs shipArgs);
+        public event OutOfFuelEventHandler OutOfFuelEvent;
+
+        public delegate void FullOfFuelEventHandler(object ship, ShipEventArgs shipArgs);
+        public event FullOfFuelEventHandler FullOfFuelEvent; 
 
         public Ship(int shipSize, Graphics parentCanvas, Random r)
         {
@@ -84,9 +87,6 @@ namespace PetrolBots
 
         public void moveShip()
         {
-            //Check if ship is out of fuel before moving
-            if (state == EShipState.WANDERING)
-            {
                 //If the ship moves too far along either axis, it's velocity for that axis will be flipped.
                 if (shipLocation.X >= (500 - shipSize*2) || (shipLocation.X <= 1))
                 {
@@ -103,34 +103,61 @@ namespace PetrolBots
 
                 //consume a bit of fuel
                 usePetrol();
-            } 
         }
 
         public void usePetrol()
         {
-            //Check if petrol isn't already empty before deducting.
-            if (petrol != 0)
-            {
                 petrol--;
-            }
-            else //This else is very important, it's what flips the switch to get the event handlers excited and at attention.
-            {
-                //change state to refuel mode, alerting the PetrolBots.
-                state = EShipState.REFUELING;
-            }
+
         }
 
-        public void OnOutOfFuelEvent(Point currShipLocation)
+        public void ShipCycle()
         {
-            ShipEventArgs sea = new ShipEventArgs(currShipLocation);
-            if (OutOfFuelEvent != null)
-                OutOfFuelEvent(this, sea);
+            if (petrol == 100)
+            {
+                state = EShipState.WANDERING;
+                OnFullOfFuelEvent();
+            }
+
+            if (petrol == 0)
+                state = EShipState.REFUELING;
+
+            if (state == EShipState.WANDERING)
+            {
+                drawShip();
+                moveShip();
+            }
+            else
+            {
+                drawShip();
+                OnOutOfFuelEvent();
+            }
+
         }
+
+        public void OnFullOfFuelEvent()
+        {
+            ShipEventArgs shipArgs = new ShipEventArgs(state);
+
+            if (FullOfFuelEvent != null)
+                FullOfFuelEvent(this, shipArgs);
+        }
+
+        public void OnOutOfFuelEvent()
+        {
+            ShipEventArgs shipArgs = new ShipEventArgs(state);
+
+            if (OutOfFuelEvent != null)
+                OutOfFuelEvent(this, shipArgs);
+        } 
 
         public void refuel()
         {
-            //Increment fuel value
-            Petrol++;
+            while (petrol < 100)
+            {
+                //increase petrol
+                petrol++;
+            }
         }
     }
 }
