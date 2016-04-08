@@ -46,8 +46,6 @@ namespace PetrolBots
             parentCanvas.FillEllipse(botBrush, botCurrentLocation.X, botCurrentLocation.Y, botSize, botSize);
         }
 
-        //Help from Leonard on basics of using this method,
-        //Then found out how to write it as an async method.
         public void OutOfFuelEventHandler(object sender, ShipEventArgs e)
         {
             botCurrentLocation = botShip.ShipLocation;
