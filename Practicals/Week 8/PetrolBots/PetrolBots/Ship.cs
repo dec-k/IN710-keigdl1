@@ -153,10 +153,9 @@ namespace PetrolBots
 
         public void refuel()
         {
-            while (petrol < 100)
+            if (petrol < 100)
             {
-                //increase petrol
-                petrol++;
+                Petrol += 5;
             }
         }
     }
