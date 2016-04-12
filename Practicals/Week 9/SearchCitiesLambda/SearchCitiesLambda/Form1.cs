@@ -38,6 +38,9 @@ namespace SearchCitiesLambda
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            //clear lb 
+            lbResults.Items.Clear();
+
             //get val out of search box
             string searchString = txtSearch.Text;
 
@@ -53,6 +56,21 @@ namespace SearchCitiesLambda
                 }
             }
 
+        }
+
+        public void multiplyPopulation()
+        {
+            //Lambda expression to multiply each cities population by 3
+            cityList.ForEach((c) => c.Population *= 3);
+            //Write cities to listbox
+            cityList.ForEach((c) => lbResults.Items.Add(c.ToString()));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //clear lb 
+            lbResults.Items.Clear();
+            multiplyPopulation();
         }
     }
 }
