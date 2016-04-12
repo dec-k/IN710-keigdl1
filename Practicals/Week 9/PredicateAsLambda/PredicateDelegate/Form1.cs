@@ -25,31 +25,6 @@ namespace PredicateDelegate
             listOfNumbers = new List<int>();
         }
 
-        //method to determine if a given number is odd
-        private bool isOdd(int input)
-        {
-            bool isAnOddNumber = ((input % 2) == 1);
-            return isAnOddNumber;
-        }
-
-        //method to determine if a given number is under 10
-        private bool isLessThanTen(int input)
-        {
-            bool isLessThanTen;
-
-            if (input < 10)
-            {
-                isLessThanTen = true;
-            }
-            else
-            {
-                isLessThanTen = false;
-
-            }
-
-            return isLessThanTen;
-        }
-
         //Gen a random number
         private void genRandom()
         {
