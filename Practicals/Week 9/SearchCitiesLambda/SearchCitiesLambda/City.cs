@@ -20,5 +20,12 @@ namespace SearchCitiesLambda
             CountryName = countryName;
             Population = population;
         }
+
+        //override tostring for output
+        public override string ToString()
+        {
+            string output = "" + CityName + ", Population: " + Population;
+            return output;
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace SearchCitiesLambda
     {
         //List of cities
         List<City> cityList;
+
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +34,25 @@ namespace SearchCitiesLambda
             cityList.Add(c3);
             cityList.Add(c4);
             cityList.Add(c5);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //get val out of search box
+            string searchString = txtSearch.Text;
+
+            //func using lambda
+            Func<string, string, bool> searchCities = (c1, c2) => c1.Equals(c2);
+
+            foreach(City c in cityList){
+                //check if search matches
+                if (searchCities(searchString, c.CountryName))
+                {
+                    //add to list
+                    lbResults.Items.Add(c.ToString());
+                }
+            }
+
         }
     }
 }
