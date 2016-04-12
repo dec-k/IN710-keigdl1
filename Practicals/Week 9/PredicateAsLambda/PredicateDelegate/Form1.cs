@@ -79,8 +79,8 @@ namespace PredicateDelegate
             //clear
             lbFiltered.Items.Clear();
 
-            //Create a predicate instance
-            Predicate<int> isOddPredicate = new Predicate<int>(isOdd);
+            //Create a predicate instance that uses a lambda expression
+            Predicate<int> isOddPredicate = (n) => (n % 2) == 1;
 
             for (int i = 0; i < listOfNumbers.Count; i++)
             {
@@ -97,7 +97,7 @@ namespace PredicateDelegate
             lbFiltered.Items.Clear();
 
             //Create a predicate instance
-            Predicate<int> isSubTenPredicate = new Predicate<int>(isLessThanTen);
+            Predicate<int> isSubTenPredicate = (n) => n < 10;
 
             for (int i = 0; i < listOfNumbers.Count; i++)
             {
