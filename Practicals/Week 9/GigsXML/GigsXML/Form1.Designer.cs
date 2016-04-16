@@ -52,7 +52,7 @@
             this.dgvGigs.Location = new System.Drawing.Point(3, 66);
             this.dgvGigs.Name = "dgvGigs";
             this.dgvGigs.ReadOnly = true;
-            this.dgvGigs.Size = new System.Drawing.Size(543, 150);
+            this.dgvGigs.Size = new System.Drawing.Size(543, 277);
             this.dgvGigs.TabIndex = 0;
             // 
             // bandName
@@ -93,6 +93,7 @@
             this.btnAllGigs.TabIndex = 1;
             this.btnAllGigs.Text = "All Gigs";
             this.btnAllGigs.UseVisualStyleBackColor = true;
+            this.btnAllGigs.Click += new System.EventHandler(this.btnAllGigs_Click);
             // 
             // Form1
             // 
