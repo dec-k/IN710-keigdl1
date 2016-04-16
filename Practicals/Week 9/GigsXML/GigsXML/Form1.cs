@@ -49,7 +49,7 @@ namespace GigsXML
 
             foreach (XElement cGig in gigDoc.Element("Event_Guide").Elements("Gig"))
             {
-                if (cGig.Element("Band").Element("Genre").Value.Equals("Hard Rock"))
+                if ((cGig.Element("Band").Element("Genre").Value).Equals("Hard Rock"))
                 {
                     //Maybe a gig class would be good.
                     gridRow.Add(cGig.Element("Band").Element("Name").Value,
