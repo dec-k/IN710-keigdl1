@@ -28,76 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvGigs = new System.Windows.Forms.DataGridView();
             this.bandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.venue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnAllGigs = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvGigs
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvGigs.AllowUserToAddRows = false;
+            this.dgvGigs.AllowUserToDeleteRows = false;
+            this.dgvGigs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGigs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bandName,
             this.genre,
             this.venue,
             this.date,
             this.time});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvGigs.Location = new System.Drawing.Point(3, 66);
+            this.dgvGigs.Name = "dgvGigs";
+            this.dgvGigs.ReadOnly = true;
+            this.dgvGigs.Size = new System.Drawing.Size(543, 150);
+            this.dgvGigs.TabIndex = 0;
             // 
             // bandName
             // 
             this.bandName.HeaderText = "Band Name";
             this.bandName.Name = "bandName";
+            this.bandName.ReadOnly = true;
             // 
             // genre
             // 
             this.genre.HeaderText = "Genre";
             this.genre.Name = "genre";
+            this.genre.ReadOnly = true;
             // 
             // venue
             // 
             this.venue.HeaderText = "Venue";
             this.venue.Name = "venue";
+            this.venue.ReadOnly = true;
             // 
             // date
             // 
             this.date.HeaderText = "Date";
             this.date.Name = "date";
+            this.date.ReadOnly = true;
             // 
             // time
             // 
             this.time.HeaderText = "Time";
             this.time.Name = "time";
+            this.time.ReadOnly = true;
+            // 
+            // btnAllGigs
+            // 
+            this.btnAllGigs.Location = new System.Drawing.Point(12, 27);
+            this.btnAllGigs.Name = "btnAllGigs";
+            this.btnAllGigs.Size = new System.Drawing.Size(75, 23);
+            this.btnAllGigs.TabIndex = 1;
+            this.btnAllGigs.Text = "All Gigs";
+            this.btnAllGigs.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 467);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(555, 467);
+            this.Controls.Add(this.btnAllGigs);
+            this.Controls.Add(this.dgvGigs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvGigs;
         private System.Windows.Forms.DataGridViewTextBoxColumn bandName;
         private System.Windows.Forms.DataGridViewTextBoxColumn genre;
         private System.Windows.Forms.DataGridViewTextBoxColumn venue;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
+        private System.Windows.Forms.Button btnAllGigs;
 
     }
 }

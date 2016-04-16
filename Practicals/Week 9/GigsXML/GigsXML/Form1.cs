@@ -14,11 +14,13 @@ namespace GigsXML
     public partial class Form1 : Form
     {
         //XML Document declaration & loading
-        XDocument gigDoc = XDocument.Load("pubsAndClubs.xml");
+        XDocument gigDoc;
 
         public Form1()
         {
             InitializeComponent();
+
+            gigDoc = XDocument.Load("pubsAndClubs.xml");
         }
     }
 }
