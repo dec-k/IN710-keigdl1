@@ -15,12 +15,17 @@ namespace GigsXML
     {
         //XML Document declaration & loading
         XDocument gigDoc;
+        DataGridViewRowCollection gridRow;
 
         public Form1()
         {
             InitializeComponent();
 
             gigDoc = XDocument.Load("pubsAndClubs.xml");
+            gridRow = dgvGigs.Rows;
+            //Debug: just seeing how gridrows work
+            gridRow.Add("test","test");
+            gridRow.Add("test");
         }
     }
 }
