@@ -40,11 +40,10 @@ namespace GigsXML
             foreach (XElement cGig in gigDoc.Element("Event_Guide").Elements("Gig"))
             {
                 //month from xml
-                string gigMonth = cGig.Element("Band").Element("Date").Attribute("month").Value;
+                string gigMonth = cGig.Element("Band").Element("Date").Attribute("month").Value.Trim();
 
                 if (gigMonth.Equals(nowMonth))
                 {
-                    //Maybe a gig class would be good.
                     gridRow.Add(cGig.Element("Band").Element("Name").Value,
                                 cGig.Element("Band").Element("Genre").Value,
                                 cGig.Element("Venue").Value,
@@ -80,11 +79,11 @@ namespace GigsXML
                 if ((cGig.Element("Band").Element("Genre").Value.Trim().Equals("Hard Rock")))
                 {
                     //Maybe a gig class would be good.
-                    gridRow.Add(cGig.Element("Band").Element("Name").Value,
-                                cGig.Element("Band").Element("Genre").Value,
-                                cGig.Element("Venue").Value,
-                                cGig.Element("Date").Attribute("day").Value + " - " + cGig.Element("Date").Attribute("month").Value + " - " + cGig.Element("Date").Attribute("year").Value,
-                                cGig.Element("Time").Value);
+                    gridRow.Add(cGig.Element("Band").Element("Name").Value.Trim(),
+                                cGig.Element("Band").Element("Genre").Value.Trim(),
+                                cGig.Element("Venue").Value.Trim(),
+                                cGig.Element("Date").Attribute("day").Value.Trim() + " - " + cGig.Element("Date").Attribute("month").Value.Trim() + " - " + cGig.Element("Date").Attribute("year").Value.Trim(),
+                                cGig.Element("Time").Value.Trim());
                 }
             }
         }
