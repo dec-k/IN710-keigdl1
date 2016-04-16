@@ -36,14 +36,15 @@
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAllGigs = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dvgBand = new System.Windows.Forms.DataGridView();
+            this.dgvBand = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.bname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgBand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBand)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvGigs
@@ -113,20 +114,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dvgBand
+            // dgvBand
             // 
-            this.dvgBand.AllowUserToAddRows = false;
-            this.dvgBand.AllowUserToDeleteRows = false;
-            this.dvgBand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgBand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBand.AllowUserToAddRows = false;
+            this.dgvBand.AllowUserToDeleteRows = false;
+            this.dgvBand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bname,
             this.Role,
             this.Column1});
-            this.dvgBand.Location = new System.Drawing.Point(3, 304);
-            this.dvgBand.Name = "dvgBand";
-            this.dvgBand.ReadOnly = true;
-            this.dvgBand.Size = new System.Drawing.Size(343, 202);
-            this.dvgBand.TabIndex = 3;
+            this.dgvBand.Location = new System.Drawing.Point(3, 335);
+            this.dgvBand.Name = "dgvBand";
+            this.dgvBand.ReadOnly = true;
+            this.dgvBand.Size = new System.Drawing.Size(343, 202);
+            this.dgvBand.TabIndex = 3;
+            this.dgvBand.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBand_CellContentClick);
             // 
             // label1
             // 
@@ -140,11 +142,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 271);
+            this.label2.Location = new System.Drawing.Point(0, 290);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Band Dataview";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 306);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(184, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Show Alabama Shakes Members";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // bname
             // 
@@ -160,7 +172,7 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Instruments (If Any)";
+            this.Column1.HeaderText = "Instruments";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
@@ -169,9 +181,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 609);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dvgBand);
+            this.Controls.Add(this.dgvBand);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAllGigs);
             this.Controls.Add(this.dgvGigs);
@@ -179,7 +192,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgBand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBand)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,9 +208,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.Button btnAllGigs;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dvgBand;
+        private System.Windows.Forms.DataGridView dgvBand;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn bname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
