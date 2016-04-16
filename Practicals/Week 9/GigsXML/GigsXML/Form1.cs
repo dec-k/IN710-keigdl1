@@ -24,10 +24,6 @@ namespace GigsXML
             //Read in xml from file
             gigDoc = XDocument.Load("pubsAndClubs.xml");
             gridRow = dgvGigs.Rows;
-
-            //Debug: just seeing how gridrows work
-            gridRow.Add(gigDoc.Element("Name"));
-            gridRow.Add("test");
         }
 
         public void showAllGigs()
