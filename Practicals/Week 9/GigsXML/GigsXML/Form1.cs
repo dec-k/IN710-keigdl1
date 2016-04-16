@@ -51,7 +51,7 @@ namespace GigsXML
 
             foreach (XElement cGig in gigDoc.Element("Event_Guide").Elements("Gig"))
             {
-                if ((cGig.Element("Band").Element("Genre").Value.Equals("Hard Rock")))
+                if ((cGig.Element("Band").Element("Genre").Value.Trim().Equals("Hard Rock")))
                 {
                     //Maybe a gig class would be good.
                     gridRow.Add(cGig.Element("Band").Element("Name").Value,
@@ -71,7 +71,7 @@ namespace GigsXML
             
             foreach (XElement cBand in gigDoc.Element("Event_Guide").Elements("Gig"))
             {
-                if (cBand.Element("Band").Element("Name").Equals("Alabama Shakes"))
+                if (cBand.Element("Band").Element("Name").Value.Trim() == "Alabama Shakes")
                 {
                     //Check if the band member has a role
                     var foundRole = cBand.Element("Band").Element("Band_Members").Element("Member").Element("Role");
