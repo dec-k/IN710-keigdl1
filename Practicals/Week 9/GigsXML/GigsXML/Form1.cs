@@ -26,6 +26,9 @@ namespace GigsXML
             gigDoc = XDocument.Load("pubsAndClubs.xml");
             gridRow = dgvGigs.Rows;
             gridRow2 = dgvBand.Rows;
+
+            //Add the new gig req'd for exercise 5
+            addGig();
         }
 
         public void showGigsThisMonth()
@@ -118,6 +121,35 @@ namespace GigsXML
                     }
                 }
             }
+        }
+
+        public void addGig()
+        {
+            //Declare new xElement
+            XElement newGig = new XElement("Gig",
+                                 new XElement("Venue", "My House"),
+                                 new XElement("Date",
+                                     new XAttribute("day", "12"), new XAttribute("month", "09"), new XAttribute("year", "2016")),
+                                 new XElement("Time", "3:00am"),
+                                 new XElement("Band",
+                                     new XElement("Name", "Dredg"),
+                                     new XElement("Genre", "Metal"),
+                                     new XElement("Band_Members",
+                                         new XElement("Member",
+                                             new XElement("First_Name", "Gavin"),
+                                             new XElement("Last_Name", "Hayes"),
+                                             new XElement("Role", "Lead Guitarist"),
+                                             new XElement("Instruments",
+                                                 new XElement("Instrument", "Guitar"))),
+                                         new XElement("Member",
+                                             new XElement("First_Name", "Mark"),
+                                             new XElement("Last_Name", "Engles"),
+                                             new XElement("Role", "Vocals & Guitar"),
+                                             new XElement("Instruments",
+                                                 new XElement("Instrument", "Guitar"))))));
+
+            //Add new gig to gigdoc
+            gigDoc.Element("Event_Guide").Add(newGig);
         }
 
         private void btnAllGigs_Click(object sender, EventArgs e)
