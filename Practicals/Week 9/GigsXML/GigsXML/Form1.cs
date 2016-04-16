@@ -28,6 +28,32 @@ namespace GigsXML
             gridRow2 = dgvBand.Rows;
         }
 
+        public void showGigsThisMonth()
+        {
+            //Get current date at method called
+            DateTime now = DateTime.Now;
+            //Format month as 2 digit version "04".
+            string nowMonth = now.ToString("MM");
+
+            
+
+            foreach (XElement cGig in gigDoc.Element("Event_Guide").Elements("Gig"))
+            {
+                //month from xml
+                string gigMonth = cGig.Element("Band").Element("Date").Attribute("month").Value;
+
+                if (gigMonth.Equals(nowMonth))
+                {
+                    //Maybe a gig class would be good.
+                    gridRow.Add(cGig.Element("Band").Element("Name").Value,
+                                cGig.Element("Band").Element("Genre").Value,
+                                cGig.Element("Venue").Value,
+                                cGig.Element("Date").Attribute("day").Value + " - " + cGig.Element("Date").Attribute("month").Value + " - " + cGig.Element("Date").Attribute("year").Value,
+                                cGig.Element("Time").Value);
+                }
+            }
+        }
+
         public void showAllGigs()
         {
             //Clear dgv row before use
@@ -36,11 +62,11 @@ namespace GigsXML
             foreach (XElement cGig in gigDoc.Element("Event_Guide").Elements("Gig"))
             {
                 //Maybe a gig class would be good.
-                gridRow.Add(cGig.Element("Band").Element("Name").Value,
-                            cGig.Element("Band").Element("Genre").Value,
-                            cGig.Element("Venue").Value,
-                            cGig.Element("Date").Attribute("day").Value + " - " + cGig.Element("Date").Attribute("month").Value + " - " +cGig.Element("Date").Attribute("year").Value,
-                            cGig.Element("Time").Value);
+                gridRow.Add(cGig.Element("Band").Element("Name").Value.Trim(),
+                            cGig.Element("Band").Element("Genre").Value.Trim(),
+                            cGig.Element("Venue").Value.Trim(),
+                            cGig.Element("Date").Attribute("day").Value.Trim() + " - " + cGig.Element("Date").Attribute("month").Value.Trim() + " - " + cGig.Element("Date").Attribute("year").Value.Trim(),
+                            cGig.Element("Time").Value.Trim());
             }
         }
 
@@ -79,17 +105,17 @@ namespace GigsXML
                     if (foundRole != null)
                     {
                         //Has a role
-                        gridRow2.Add(cBand.Element("Band").Element("Band_Members").Element("Member").Element("First_Name").Value + " " +
-                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Last_Name").Value,
-                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Role").Value,
-                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Instruments").Value);
+                        gridRow2.Add(cBand.Element("Band").Element("Band_Members").Element("Member").Element("First_Name").Value.Trim() + " " +
+                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Last_Name").Value.Trim(),
+                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Role").Value.Trim(),
+                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Instruments").Value.Trim());
                     }
                     else
                     {
                         //Has no defined role
-                        gridRow2.Add(cBand.Element("Band").Element("Band_Members").Element("Member").Element("First_Name").Value + " " +
-                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Last_Name").Value,
-                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Instruments").Value);
+                        gridRow2.Add(cBand.Element("Band").Element("Band_Members").Element("Member").Element("First_Name").Value.Trim() + " " +
+                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Last_Name").Value.Trim(),
+                                     cBand.Element("Band").Element("Band_Members").Element("Member").Element("Instruments").Value.Trim());
                     }
                 }
             }
@@ -113,6 +139,11 @@ namespace GigsXML
         private void dgvBand_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            showGigsThisMonth();
         }
     }
 }

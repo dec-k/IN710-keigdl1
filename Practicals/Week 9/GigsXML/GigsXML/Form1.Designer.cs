@@ -43,6 +43,7 @@
             this.bname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGigs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBand)).BeginInit();
             this.SuspendLayout();
@@ -176,11 +177,22 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(192, 37);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(102, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Gigs This Month";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 609);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -215,6 +227,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Button button3;
 
     }
 }
