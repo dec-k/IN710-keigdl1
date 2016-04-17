@@ -43,7 +43,7 @@ namespace GigsXML
             foreach (XElement cGig in gigDoc.Element("Event_Guide").Elements("Gig"))
             {
                 //month from xml
-                string gigMonth = cGig.Element("Band").Element("Date").Attribute("month").Value.Trim();
+                string gigMonth = cGig.Element("Date").Attribute("month").Value.Trim();
 
                 if (gigMonth.Equals(nowMonth))
                 {
