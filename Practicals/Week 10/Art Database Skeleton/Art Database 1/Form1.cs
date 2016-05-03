@@ -70,7 +70,7 @@ namespace Art_Database_1
             var allPaintings = from painting in paintings
                                select new { painting.Artist, painting.Title, painting.Year, painting.Method };
 
-            foreach (var p in paintings)
+            foreach (var p in allPaintings)
             {
                 listBox1.Items.Add(p.Artist + "\t\t" + p.Title + "\t\t" + p.Year + "\t\t" + p.Method);
             }
@@ -82,7 +82,17 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button2_Click(object sender, EventArgs e)
         {
+            //Clear lb before update
+            listBox1.Items.Clear();
 
+            var italyArtists = from artist in artists
+                               where String.Equals(artist.Country, "Italy")
+                               select new { artist.FirstName, artist.LastName, artist.Country };
+
+            foreach (var a in italyArtists)
+            {
+                listBox1.Items.Add(a.LastName + ", " + a.FirstName + "\t\t" + a.Country);
+            }
         }
 
         //------------------------------------------------------
@@ -90,7 +100,17 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void btnBefore1800_Click(object sender, EventArgs e)
         {
-            
+            //Clear lb before update
+            listBox1.Items.Clear();
+
+            var pre1800 = from painting in paintings
+                               where painting.Year < 1800
+                               select new { painting.Title, painting.Year };
+
+            foreach (var p in pre1800)
+            {
+                listBox1.Items.Add(p.Title + "\t\t" + p.Year);
+            }
         }
 
         //------------------------------------------------------
