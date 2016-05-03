@@ -64,7 +64,16 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            //Clear lb before update
+            listBox1.Items.Clear();
+
+            var allPaintings = from painting in paintings
+                               select new { painting.Artist, painting.Title, painting.Year, painting.Method };
+
+            foreach (var p in paintings)
+            {
+                listBox1.Items.Add(p.Artist + "\t\t" + p.Title + "\t\t" + p.Year + "\t\t" + p.Method);
+            }
         }
 
 
