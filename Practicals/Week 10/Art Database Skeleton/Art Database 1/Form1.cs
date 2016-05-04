@@ -157,7 +157,29 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void btnNbyCountry_Click(object sender, EventArgs e)
         {
-            
+            listBox1.Items.Clear();
+
+            //create a grouping for each country
+            var countryJoinArtist = from p in paintings
+                                    join a in artists
+                                    on p.Artist equals a.LastName
+                                    where p.Equals(p)
+                                    group p by a.Country into cpaints
+                                    select cpaints;
+
+            //get country count
+            var country = from c in countryJoinArtist
+                          where c.Equals(c)
+                          orderby c.Count()
+                          select c;
+
+            foreach (var cpaint in country)
+            {
+                int nPaintings = cpaint.Count();
+
+                listBox1.Items.Add(cpaint.Key + ":\t" + nPaintings);
+            }
+
         }
 
         //------------------------------------------------------
