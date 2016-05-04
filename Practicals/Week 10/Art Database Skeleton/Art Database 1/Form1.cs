@@ -195,10 +195,10 @@ namespace Art_Database_1
 
             foreach (var a in artistGrouping)
             {
-                listBox1.Items.Add(a.Key + ":\t");
+                listBox1.Items.Add(a.Key + ":");
                 foreach (var artist in a)
                 {
-                    listBox1.Items.Add(artist.FirstName + " " + artist.LastName + "\t");
+                    listBox1.Items.Add("\t" + artist.FirstName + " " + artist.LastName);
                 }
             }
         }
