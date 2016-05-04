@@ -238,7 +238,8 @@ namespace Art_Database_1
 
             foreach (var ap in joinAtoP)
             {
-                listBox1.Items.Add(ap.FirstName + " " + ap.LastName + "\t" + ap.Country + "\t" + ap.Title);
+                string l = String.Format("{0,-10}{1,-20}\t{2,-20}\t{3}", ap.FirstName, ap.LastName, ap.Country, ap.Title);
+                listBox1.Items.Add(l);
             }
         }
 
