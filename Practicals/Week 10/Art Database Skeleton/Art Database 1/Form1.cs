@@ -208,7 +208,20 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button7_Click(object sender, EventArgs e)
         {
-          
+            listBox1.Items.Clear();
+
+            var artistGrouping = from a in artists
+                                 where a.Country.Equals("Netherlands")
+                                 group a by a.Country;
+
+            foreach (var a in artistGrouping)
+            {
+                listBox1.Items.Add(a.Key + ":");
+                foreach (var artist in a)
+                {
+                    listBox1.Items.Add("\t" + artist.FirstName + " " + artist.LastName);
+                }
+            }
         }
 
         //------------------------------------------------------
