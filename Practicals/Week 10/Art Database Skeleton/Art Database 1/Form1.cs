@@ -138,7 +138,18 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button6_Click(object sender, EventArgs e)
         {
-           
+            listBox1.Items.Clear();
+
+            string uArtist = textBox1.Text;
+
+            var oldestPainting = from painting in paintings
+                                 where String.Equals(painting.Artist, uArtist)
+                                 select new { painting.Title, painting.Year, painting.Artist };
+
+            foreach (var p in oldestPainting)
+            {
+                listBox1.Items.Add(p.Title + "\t\t" + p.Year + "\t\t" + p.Artist);
+            }
         }
 
         //------------------------------------------------------
