@@ -229,7 +229,17 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button4_Click(object sender, EventArgs e)
         {
-          
+            listBox1.Items.Clear();
+
+            var joinAtoP = from p in paintings
+                           join a in artists
+                           on p.Artist equals a.LastName
+                           select new { a.FirstName, a.LastName, a.Country, p.Title };
+
+            foreach (var ap in joinAtoP)
+            {
+                listBox1.Items.Add(ap.FirstName + " " + ap.LastName + "\t" + ap.Country + "\t" + ap.Title);
+            }
         }
 
         //------------------------------------------------------
