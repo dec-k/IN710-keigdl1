@@ -31,5 +31,20 @@ namespace ExternalDatabaseLightning
             //Add intensity reading to the listbox
             listBox1.Items.Add("Average lightning strike intensity is: " + avgIntensity);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Select only the top 3 fires by area, order in descending from hi->lo
+            var topFires = db.tblFires.Select(f => f)
+                                      .OrderByDescending(f => f.fireArea)
+                                      .Take(3);
+
+            foreach (var f in topFires)
+            {
+                listBox1.Items.Add("-----------");
+                listBox1.Items.Add("Area: " + f.fireArea);
+                listBox1.Items.Add("Position: " + f.fireLatitude + ", " + f.fireLongitude);
+            }
+        }
     }
 }
