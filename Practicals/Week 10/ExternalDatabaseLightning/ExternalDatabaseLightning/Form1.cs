@@ -22,6 +22,7 @@ namespace ExternalDatabaseLightning
             db = new FireStrikeDbDataContext();
         }
 
+
         //Average strike intensity
         private void button1_Click(object sender, EventArgs e)
         {
