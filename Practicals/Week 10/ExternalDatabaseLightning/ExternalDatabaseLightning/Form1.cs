@@ -42,9 +42,17 @@ namespace ExternalDatabaseLightning
             foreach (var f in topFires)
             {
                 listBox1.Items.Add("-----------");
+                listBox1.Items.Add("Fire ID: " + f.fireID);
+                listBox1.Items.Add("Date: " + f.fireDate);
                 listBox1.Items.Add("Area: " + f.fireArea);
                 listBox1.Items.Add("Position: " + f.fireLatitude + ", " + f.fireLongitude);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var picDetails = db.tblPictures.Select(p => p)
+                               .OrderBy(p => p.pictureDate);
         }
     }
 }
