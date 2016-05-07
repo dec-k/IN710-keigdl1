@@ -25,13 +25,11 @@ namespace ExternalDatabaseLightning
         //Average strike intensity
         private void button1_Click(object sender, EventArgs e)
         {
-            var strikes = from s in db.tblStrikes
-                          select s;
+            //Create a variable that stores a query result
+            var avgIntensity = db.tblStrikes.Average(s => s.strikeIntensity);
 
-            foreach (var s in strikes)
-            {
-                listBox1.Items.Add(s.strikeIntensity);
-            }
+            //Add intensity reading to the listbox
+            listBox1.Items.Add("Average lightning strike intensity is: " + avgIntensity);
         }
     }
 }
