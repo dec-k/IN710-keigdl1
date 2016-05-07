@@ -25,11 +25,19 @@ namespace ExternalDatabaseLightning
         //Average strike intensity
         private void button1_Click(object sender, EventArgs e)
         {
+
+            IEnumerable<int> intensities = from strike in db.tblStrikes
+                                           select strike.strikeIntensity;
+
+            double averageIntensity = intensities.Average();
+            listBox1.Items.Add(averageIntensity);
+            /*
             //Create a variable that stores a query result
             var avgIntensity = db.tblStrikes.Average(s => s.strikeIntensity);
 
             //Add intensity reading to the listbox
             listBox1.Items.Add("Average lightning strike intensity is: " + avgIntensity);
+             */
         }
 
         private void button2_Click(object sender, EventArgs e)
