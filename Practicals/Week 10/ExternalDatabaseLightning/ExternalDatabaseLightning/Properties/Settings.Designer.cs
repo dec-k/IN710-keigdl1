@@ -27,7 +27,7 @@ namespace ExternalDatabaseLightning.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=bitdev.ict.op.ac.nz;Initial Catalog=IN700001_201601_KEIGDL1;Persist S" +
-            "ecurity Info=True;User ID=keigdl1")]
+            "ecurity Info=True;User ID=keigdl1;Password=DKe_D486")]
         public string IN700001_201601_KEIGDL1ConnectionString {
             get {
                 return ((string)(this["IN700001_201601_KEIGDL1ConnectionString"]));
