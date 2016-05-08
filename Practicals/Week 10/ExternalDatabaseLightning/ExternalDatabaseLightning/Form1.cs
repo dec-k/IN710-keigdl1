@@ -22,27 +22,26 @@ namespace ExternalDatabaseLightning
             db = new FireStrikeDbDataContext();
         }
 
+        public void resetLb(ListBox l){
+            l.Items.Clear();
+        }
+
 
         //Average strike intensity
         private void button1_Click(object sender, EventArgs e)
         {
+            resetLb(listBox1);
 
             IEnumerable<int> intensities = from strike in db.tblStrikes
                                            select strike.strikeIntensity;
 
             double averageIntensity = intensities.Average();
             listBox1.Items.Add(averageIntensity);
-            /*
-            //Create a variable that stores a query result
-            var avgIntensity = db.tblStrikes.Average(s => s.strikeIntensity);
-
-            //Add intensity reading to the listbox
-            listBox1.Items.Add("Average lightning strike intensity is: " + avgIntensity);
-             */
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            resetLb(listBox1);
             //Select only the top 3 fires by area, order in descending from hi->lo
             var topFires = db.tblFires.Select(f => f)
                                       .OrderByDescending(f => f.fireArea)
