@@ -59,8 +59,28 @@ namespace ExternalDatabaseLightning
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var picDetails = db.tblPictures.Select(p => p)
-                               .OrderBy(p => p.pictureDate);
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            resetLb(listBox1);
+
+            var fireByStrike = from strike in db.tblStrikes
+                             from fire in db.tblFires
+                             where strike.strikeDate == fire.fireDate
+                             && strike.strikeLatitude == fire.fireLatitude
+                             && strike.strikeLongitude == fire.fireLongitude
+                             select fire;
+
+            foreach (var f in fireByStrike)
+            {
+                listBox1.Items.Add("-----------");
+                listBox1.Items.Add("Fire ID: " + f.fireID);
+                listBox1.Items.Add("Date: " + f.fireDate);
+                listBox1.Items.Add("Area: " + f.fireArea);
+                listBox1.Items.Add("Position: " + f.fireLatitude + ", " + f.fireLongitude);
+            }
         }
     }
 }
