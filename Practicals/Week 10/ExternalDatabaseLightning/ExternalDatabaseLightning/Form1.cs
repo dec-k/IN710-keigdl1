@@ -59,7 +59,18 @@ namespace ExternalDatabaseLightning
 
         private void button3_Click(object sender, EventArgs e)
         {
+            resetLb(listBox1);
 
+            var picDetail = from strike in db.tblStrikes
+                            join picture in db.tblPictures on strike.strikeID equals picture.strikeID
+                            select new { strike.strikeLatitude, strike.strikeLongitude, picture.pictureFileName };
+
+            foreach (var pic in picDetail)
+            {
+                listBox1.Items.Add("Lat: " + pic.strikeLatitude +
+                                   ", Lng: " + pic.strikeLongitude +
+                                   ", Url: " + pic.pictureFileName);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
