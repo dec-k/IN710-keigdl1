@@ -16,7 +16,7 @@ namespace BuildAndPopulateDB
         //Ctor
         public DBM()
         {
-            //Magic~~
+            //Perform all required steps to build and populate database.
             buildDatabase();
         }
 
