@@ -11,6 +11,7 @@ namespace BuildAndPopulateDB
     class DBM
     {
         //Attr here
+        SqlConnection connection;
 
         //Ctor
         public DBM()
@@ -24,16 +25,20 @@ namespace BuildAndPopulateDB
         private void makeConnection()
         {
             //Declare connection instance
-            SqlConnection connection = new SqlConnection();
+            connection = new SqlConnection();
 
             //Very fussy connection string
             connection.ConnectionString = "Data Source = bitdev.ict.op.ac.nz;" +            //Data Source
                                           "Initial Catalog = IN700001_201601_KEIGDL1;" +    //Initial Catalog
                                           "User ID = keigdl1;" +                            //BitDev Username
                                           "Password = " + StaticInfo.pw + ";";              //Shh! It's a gosh darn plain text password!
+        }
 
-            //Open a connection to the database
-            connection.Open();
+        //2) Check if tables already exist before making them, if so - drop.
+        private void dropTable(string tblName)
+        {
+            String xDropCommand = "IF OBJECT_ID('" + tblName + "') IS NOT NULL DROP TABLE" + tblName + ";";
+
         }
     }
 }
