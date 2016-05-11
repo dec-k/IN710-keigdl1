@@ -38,7 +38,7 @@ namespace BuildAndPopulateDB
         //2) Check if tables already exist before making them, if so - drop.
         private void dropTable(string tblName)
         {
-            String xDropCommand = "IF OBJECT_ID('" + tblName + "') IS NOT NULL DROP TABLE" + tblName + ";";
+            String xDropCommand = "IF OBJECT_ID('" + tblName + "') IS NOT NULL DROP TABLE " + tblName + ";";
 
             //Call nonqueryexecute, feeding it a command STRING.
             executeNonQuery(xDropCommand);
