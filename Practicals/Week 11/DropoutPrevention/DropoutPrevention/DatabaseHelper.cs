@@ -87,7 +87,7 @@ namespace DropoutPrevention
         public void DueSoon()
         {
             //Get date that is two weeks from now
-            string now = DateTime.Now.ToString("yyyy-MM-dd");
+            string now = DateTime.Now.ToString("yyyy-MM-dd"); 
             string twoWeeksFromNow = DateTime.Now.AddDays(14).ToString("yyyy-MM-dd");
 
             //Query string
