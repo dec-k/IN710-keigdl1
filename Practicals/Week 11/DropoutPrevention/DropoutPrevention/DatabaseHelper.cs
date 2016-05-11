@@ -86,30 +86,16 @@ namespace DropoutPrevention
 
         public void DueSoon()
         {
-            clearLB(lb);
-
             //Get date that is two weeks from now
             string now = DateTime.Now.ToString("yyyy-MM-dd");
             string twoWeeksFromNow = DateTime.Now.AddDays(14).ToString("yyyy-MM-dd");
-
-            //Open connection first
-            connection.Open();
 
             //Query string
             string commandString = "SELECT tblAssignment.assignName, tblAssignment.deadline " +
                                    "FROM tblAssignment " +
                                    "WHERE tblAssignment.deadline BETWEEN '" + now + "' AND '" + twoWeeksFromNow + "';";
 
-            //Instantiate a sqlcommand
-            SqlCommand commandToExecute = new SqlCommand();
-
-            //Set command connection
-            commandToExecute.Connection = connection;
-            commandToExecute.CommandText = commandString;
-
-            //Create a sql data reader
-            SqlDataReader dataReader;
-            dataReader = commandToExecute.ExecuteReader();
+            stringToReader(commandString);
 
             while (dataReader.Read())
             {
@@ -118,36 +104,21 @@ namespace DropoutPrevention
                 lb.Items.Add("\n");
             }
 
-            dataReader.Close();
-            connection.Close();
+            closeConnections();
         }
 
         public void AverageGrades()
         {
-            clearLB(lb);
-
             //Get date that is two weeks from now
             string now = DateTime.Now.ToString("yyyy-mm-dd");
             string twoWeeksFromNow = DateTime.Now.AddDays(14).ToString("yyyy-mm-dd");
-
-            //Open connection first
-            connection.Open();
 
             //Query string
             string commandString = "SELECT tblPaper.paperName, CAST(AVG(tblAssignment.score) AS numeric(36,2)) AS scoreAvg " +
                                    "FROM tblAssignment JOIN tblPaper ON tblAssignment.paperID=tblPaper.paperID " + 
                                    "GROUP BY tblPaper.paperName;";
 
-            //Instantiate a sqlcommand
-            SqlCommand commandToExecute = new SqlCommand();
-
-            //Set command connection
-            commandToExecute.Connection = connection;
-            commandToExecute.CommandText = commandString;
-
-            //Create a sql data reader
-            SqlDataReader dataReader;
-            dataReader = commandToExecute.ExecuteReader();
+            stringToReader(commandString);
 
             while (dataReader.Read())
             {
@@ -156,8 +127,7 @@ namespace DropoutPrevention
                 lb.Items.Add("\n");
             }
 
-            dataReader.Close();
-            connection.Close();
+            closeConnections();
         }
     }
 }
