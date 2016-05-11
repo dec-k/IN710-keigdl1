@@ -27,5 +27,10 @@ namespace DropoutPrevention
             dbHelper.ShowPapers();
         }
 
+        private void btnDueSoon_Click(object sender, EventArgs e)
+        {
+            dbHelper.DueSoon();
+        }
+
     }
 }

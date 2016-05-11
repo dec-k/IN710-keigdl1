@@ -66,6 +66,7 @@
             this.btnDueSoon.TabIndex = 2;
             this.btnDueSoon.Text = "Due Soon";
             this.btnDueSoon.UseVisualStyleBackColor = true;
+            this.btnDueSoon.Click += new System.EventHandler(this.btnDueSoon_Click);
             // 
             // btnAvg
             // 

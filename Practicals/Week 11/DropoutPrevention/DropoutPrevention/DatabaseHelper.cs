@@ -53,10 +53,43 @@ namespace DropoutPrevention
 
             while (dataReader.Read())
             {
-                lb.Items.Add(dataReader["paperName"]);
+                lb.Items.Add("Course: " + dataReader["paperName"]);
+                lb.Items.Add("Lecturer: " + dataReader["firstName"] + " " + dataReader["lastName"]);
+                lb.Items.Add("Lecturer Email: " + dataReader["email"]);
+                lb.Items.Add("\n");
             }
+        }
 
+        public void DueSoon()
+        {
+            //Get date that is two weeks from now
+            string now = DateTime.Now.ToString("yyyy-mm-dd");
+            string twoWeeksFromNow = DateTime.Now.AddDays(14).ToString("yyyy-mm-dd");
 
+            //Open connection first
+            connection.Open();
+
+            //Query string
+            string commandString = "SELECT tblAssignment.assignName, tblAssignment.deadline " +
+                                   "FROM tblAssignment " +
+                                   "WHERE tblAssignment.deadline BETWEEN '" + now + "' AND '" + twoWeeksFromNow + "';";
+
+            //Instantiate a sqlcommand
+            SqlCommand commandToExecute = new SqlCommand();
+
+            //Set command connection
+            commandToExecute.Connection = connection;
+            commandToExecute.CommandText = commandString;
+
+            //Create a sql data reader
+            SqlDataReader dataReader;
+            dataReader = commandToExecute.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                lb.Items.Add("Assignment Name: " + dataReader["assignName"]);
+                lb.Items.Add("Due On: " + dataReader["deadline"]);
+            }
         }
 
 
