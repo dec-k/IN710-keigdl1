@@ -76,6 +76,7 @@
             this.btnAvg.TabIndex = 3;
             this.btnAvg.Text = "Average Grades";
             this.btnAvg.UseVisualStyleBackColor = true;
+            this.btnAvg.Click += new System.EventHandler(this.btnAvg_Click);
             // 
             // lb
             // 

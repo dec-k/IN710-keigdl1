@@ -32,5 +32,10 @@ namespace DropoutPrevention
             dbHelper.DueSoon();
         }
 
+        private void btnAvg_Click(object sender, EventArgs e)
+        {
+            dbHelper.AverageGrades();
+        }
+
     }
 }

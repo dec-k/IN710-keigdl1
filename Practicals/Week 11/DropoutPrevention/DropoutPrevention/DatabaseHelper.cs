@@ -58,6 +58,8 @@ namespace DropoutPrevention
                 lb.Items.Add("Lecturer Email: " + dataReader["email"]);
                 lb.Items.Add("\n");
             }
+
+            connection.Close();
         }
 
         public void DueSoon()
@@ -90,8 +92,42 @@ namespace DropoutPrevention
                 lb.Items.Add("Assignment Name: " + dataReader["assignName"]);
                 lb.Items.Add("Due On: " + dataReader["deadline"]);
             }
+
+            connection.Close();
         }
 
+        public void AverageGrades()
+        {
+            //Get date that is two weeks from now
+            string now = DateTime.Now.ToString("yyyy-mm-dd");
+            string twoWeeksFromNow = DateTime.Now.AddDays(14).ToString("yyyy-mm-dd");
 
+            //Open connection first
+            connection.Open();
+
+            //Query string
+            string commandString = "SELECT tblPaper.paperName, AVG(tblAssignment.score) AS scavg " +
+                                   "FROM tblAssignment JOIN tblPaper ON tblAssignment.paperID=tblPaper.paperID " + 
+                                   "GROUP BY tblPaper.paperName;";
+
+            //Instantiate a sqlcommand
+            SqlCommand commandToExecute = new SqlCommand();
+
+            //Set command connection
+            commandToExecute.Connection = connection;
+            commandToExecute.CommandText = commandString;
+
+            //Create a sql data reader
+            SqlDataReader dataReader;
+            dataReader = commandToExecute.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                lb.Items.Add("Paper Name: " + dataReader["paperName"]);
+                lb.Items.Add("Average Score: " + dataReader["scavg"]);
+            }
+
+            connection.Close();
+        }
     }
 }
