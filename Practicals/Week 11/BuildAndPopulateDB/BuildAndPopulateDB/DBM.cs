@@ -73,6 +73,13 @@ namespace BuildAndPopulateDB
                                         "lastName VARCHAR(30) NOT NULL, " +
                                         "email VARCHAR(100) NOT NULL, " +
                                         "PRIMARY KEY(lecID));";
+
+            String createPapers =   "CREATE TABLE tblPaper(" +
+                                        "paperID int IDENTITY, " +
+                                        "lecID int NOT NULL, " +
+                                        "paperName VARCHAR(100) NOT NULL, " +
+                                        "PRIMARY KEY(paperID), " +
+                                        "FOREIGN KEY(lecID) REFERENCES tblLecturer(lecID));";
         }
     }
 }
