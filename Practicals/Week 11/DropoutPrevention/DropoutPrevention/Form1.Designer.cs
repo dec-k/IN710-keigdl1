@@ -56,6 +56,7 @@
             this.btnShowPaper.TabIndex = 1;
             this.btnShowPaper.Text = "Show My Papers";
             this.btnShowPaper.UseVisualStyleBackColor = true;
+            this.btnShowPaper.Click += new System.EventHandler(this.btnShowPaper_Click);
             // 
             // btnDueSoon
             // 
