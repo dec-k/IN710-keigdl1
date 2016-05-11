@@ -43,7 +43,7 @@
             this.groupBox1.Controls.Add(this.btnShowPaper);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(171, 111);
+            this.groupBox1.Size = new System.Drawing.Size(312, 111);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Functions";
@@ -52,7 +52,7 @@
             // 
             this.btnShowPaper.Location = new System.Drawing.Point(6, 19);
             this.btnShowPaper.Name = "btnShowPaper";
-            this.btnShowPaper.Size = new System.Drawing.Size(159, 23);
+            this.btnShowPaper.Size = new System.Drawing.Size(300, 23);
             this.btnShowPaper.TabIndex = 1;
             this.btnShowPaper.Text = "Show My Papers";
             this.btnShowPaper.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@
             // 
             this.btnDueSoon.Location = new System.Drawing.Point(6, 48);
             this.btnDueSoon.Name = "btnDueSoon";
-            this.btnDueSoon.Size = new System.Drawing.Size(159, 23);
+            this.btnDueSoon.Size = new System.Drawing.Size(300, 23);
             this.btnDueSoon.TabIndex = 2;
             this.btnDueSoon.Text = "Due Soon";
             this.btnDueSoon.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             // 
             this.btnAvg.Location = new System.Drawing.Point(6, 77);
             this.btnAvg.Name = "btnAvg";
-            this.btnAvg.Size = new System.Drawing.Size(159, 23);
+            this.btnAvg.Size = new System.Drawing.Size(300, 23);
             this.btnAvg.TabIndex = 3;
             this.btnAvg.Text = "Average Grades";
             this.btnAvg.UseVisualStyleBackColor = true;
@@ -81,14 +81,14 @@
             this.lb.FormattingEnabled = true;
             this.lb.Location = new System.Drawing.Point(12, 129);
             this.lb.Name = "lb";
-            this.lb.Size = new System.Drawing.Size(171, 303);
+            this.lb.Size = new System.Drawing.Size(312, 303);
             this.lb.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(197, 452);
+            this.ClientSize = new System.Drawing.Size(336, 452);
             this.Controls.Add(this.lb);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
