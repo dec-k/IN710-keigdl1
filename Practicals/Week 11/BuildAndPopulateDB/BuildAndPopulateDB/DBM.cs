@@ -39,6 +39,40 @@ namespace BuildAndPopulateDB
         {
             String xDropCommand = "IF OBJECT_ID('" + tblName + "') IS NOT NULL DROP TABLE" + tblName + ";";
 
+            //Call nonqueryexecute, feeding it a command STRING.
+            executeNonQuery(xDropCommand);
+        }
+
+        //X) Realised midway through writing drop that i'll need a handler for nonQueries.
+        private void executeNonQuery(string command)
+        {
+            SqlCommand nonQuery = new SqlCommand(command, connection);
+
+            //Open connection
+            connection.Open();
+
+            //Execute non query
+            nonQuery.ExecuteNonQuery();
+
+            //Close connection
+            connection.Close();
+        }
+
+        //3) Create the tables for the database. Should parametise this, but I want to keep it easy for now.
+        private void makeTables()
+        {
+            //Before creating, try deleting.
+            dropTable("tblLecturer");
+            dropTable("tblPaper");
+            dropTable("tblAssignment");
+
+            //Begin writing create strings
+            String createLecturers = "CREATE TABLE tblLecturer(" +
+                                        "lecID int IDENTITY, " +
+                                        "firstName VARCHAR(30) NOT NULL, " +
+                                        "lastName VARCHAR(30) NOT NULL, " +
+                                        "email VARCHAR(100) NOT NULL, " +
+                                        "PRIMARY KEY(lecID));";
         }
     }
 }
