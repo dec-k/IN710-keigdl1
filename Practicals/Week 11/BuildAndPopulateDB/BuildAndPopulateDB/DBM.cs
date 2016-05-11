@@ -153,5 +153,18 @@ namespace BuildAndPopulateDB
             addAssign(4, "Proper Hydration Techniques", "2016-8-2", 0);
             addAssign(2, "Critical Analysis - Barney", "2016-9-2", 44);
         }
+
+        //6) Bring it all together!
+        private void buildDatabase()
+        {
+            //Sets up the SQLConnection object.
+            makeConnection();
+
+            //Sets up all tables in the database.
+            makeTables();
+
+            //Seeds the tables with data.
+            seedAll();
+        }
     }
 }
