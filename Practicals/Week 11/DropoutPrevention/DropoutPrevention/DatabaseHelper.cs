@@ -11,6 +11,8 @@ namespace DropoutPrevention
     public class DatabaseHelper
     {
         SqlConnection connection;
+        SqlDataReader dataReader;
+        SqlCommand commandToExecute;
         ListBox lb;
 
         public DatabaseHelper(ListBox lb)
@@ -36,29 +38,40 @@ namespace DropoutPrevention
             lb.Items.Clear();
         }
 
-        public void ShowPapers()
-        {
+        private void stringToReader(string commandString){
             //Clear
             clearLB(lb);
 
             //Open connection first
             connection.Open();
 
-            //Query string
-            string commandString = "SELECT tblPaper.paperName, tblLecturer.firstName, tblLecturer.lastName, tblLecturer.email " +
-                                   "FROM tblPaper JOIN tblLecturer ON tblPaper.paperID=tblLecturer.lecID;";
-
             //Instantiate a sqlcommand
-            SqlCommand commandToExecute = new SqlCommand();
+            commandToExecute = new SqlCommand();
 
             //Set command connection
             commandToExecute.Connection = connection;
             commandToExecute.CommandText = commandString;
 
             //Create a sql data reader
-            SqlDataReader dataReader;
             dataReader = commandToExecute.ExecuteReader();
+        }
 
+        private void closeConnections()
+        {
+            dataReader.Close();
+            connection.Close();
+        }
+
+        public void ShowPapers()
+        {
+            //Query string
+            string commandString = "SELECT tblPaper.paperName, tblLecturer.firstName, tblLecturer.lastName, tblLecturer.email " +
+                                   "FROM tblPaper JOIN tblLecturer ON tblPaper.paperID=tblLecturer.lecID;";
+
+            //Update reader instance
+            stringToReader(commandString);
+
+            //Output specific to each button
             while (dataReader.Read())
             {
                 lb.Items.Add("Course: " + dataReader["paperName"]);
@@ -67,7 +80,8 @@ namespace DropoutPrevention
                 lb.Items.Add("\n");
             }
 
-            connection.Close();
+            //Close all connections
+            closeConnections();
         }
 
         public void DueSoon()
@@ -104,6 +118,7 @@ namespace DropoutPrevention
                 lb.Items.Add("\n");
             }
 
+            dataReader.Close();
             connection.Close();
         }
 
@@ -141,6 +156,7 @@ namespace DropoutPrevention
                 lb.Items.Add("\n");
             }
 
+            dataReader.Close();
             connection.Close();
         }
     }
