@@ -37,7 +37,7 @@ namespace DropoutPrevention
             connection.Open();
 
             //Query string
-            string commandString = "SELECT tblPaper.paperName, tblLecturer.firstName, tblLecturer.lastName, tblLecturer.email" +
+            string commandString = "SELECT tblPaper.paperName, tblLecturer.firstName, tblLecturer.lastName, tblLecturer.email " +
                                    "FROM tblPaper JOIN tblLecturer ON tblPaper.paperID=tblLecturer.lecID;";
 
             //Instantiate a sqlcommand
