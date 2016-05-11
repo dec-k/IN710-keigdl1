@@ -31,8 +31,16 @@ namespace DropoutPrevention
                                           "Password = " + StaticInfo.pw + ";";              //Shh! It's a gosh darn plain text password!
         }
 
+        private void clearLB(ListBox lb)
+        {
+            lb.Items.Clear();
+        }
+
         public void ShowPapers()
         {
+            //Clear
+            clearLB(lb);
+
             //Open connection first
             connection.Open();
 
@@ -64,9 +72,11 @@ namespace DropoutPrevention
 
         public void DueSoon()
         {
+            clearLB(lb);
+
             //Get date that is two weeks from now
-            string now = DateTime.Now.ToString("yyyy-mm-dd");
-            string twoWeeksFromNow = DateTime.Now.AddDays(14).ToString("yyyy-mm-dd");
+            string now = DateTime.Now.ToString("yyyy-MM-dd");
+            string twoWeeksFromNow = DateTime.Now.AddDays(14).ToString("yyyy-MM-dd");
 
             //Open connection first
             connection.Open();
@@ -91,6 +101,7 @@ namespace DropoutPrevention
             {
                 lb.Items.Add("Assignment Name: " + dataReader["assignName"]);
                 lb.Items.Add("Due On: " + dataReader["deadline"]);
+                lb.Items.Add("\n");
             }
 
             connection.Close();
@@ -98,6 +109,8 @@ namespace DropoutPrevention
 
         public void AverageGrades()
         {
+            clearLB(lb);
+
             //Get date that is two weeks from now
             string now = DateTime.Now.ToString("yyyy-mm-dd");
             string twoWeeksFromNow = DateTime.Now.AddDays(14).ToString("yyyy-mm-dd");
@@ -106,7 +119,7 @@ namespace DropoutPrevention
             connection.Open();
 
             //Query string
-            string commandString = "SELECT tblPaper.paperName, AVG(tblAssignment.score) AS scavg " +
+            string commandString = "SELECT tblPaper.paperName, CAST(AVG(tblAssignment.score) AS numeric(36,2)) AS scoreAvg " +
                                    "FROM tblAssignment JOIN tblPaper ON tblAssignment.paperID=tblPaper.paperID " + 
                                    "GROUP BY tblPaper.paperName;";
 
@@ -124,7 +137,8 @@ namespace DropoutPrevention
             while (dataReader.Read())
             {
                 lb.Items.Add("Paper Name: " + dataReader["paperName"]);
-                lb.Items.Add("Average Score: " + dataReader["scavg"]);
+                lb.Items.Add("Average Score: " + dataReader["scoreAvg"]);
+                lb.Items.Add("\n");
             }
 
             connection.Close();
