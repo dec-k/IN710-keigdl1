@@ -91,6 +91,35 @@ namespace BuildAndPopulateDB
                                         "score numeric(3) NULL, " +
                                         "PRIMARY KEY(assignID), " +
                                         "FOREIGN KEY(paperID) REFERENCES tblPaper(paperID));";
+
+            //Execute creation queries
+            executeNonQuery(createLecturers);
+            executeNonQuery(createPapers);
+            executeNonQuery(createAssigns);
+        }
+
+        //4) Now that we have tables (hopefully), we can add entries to them.
+        private void addLecturer(String fn, String ln, String email)
+        {
+            string addCommand = "INSERT INTO tblLecturer VALUES('" + fn + "', '" + ln + "', '" + email + "');";
+
+            //execute
+            //Note to self: executeNonQuery handles open/closing connection to reduce duplication.
+            executeNonQuery(addCommand);
+        }
+
+        private void addPaper(int li, string name)
+        {
+            string addCommand = "INSERT INTO tblPaper VALUES(" + li + ", '" + name + "');";
+
+            executeNonQuery(addCommand);
+        }
+
+        private void addAssign(int pi, string n, string dl, int score)
+        {
+            string addCommand = "INSERT INTO tblAssignment VALUES(" + pi + ", '" + n + "', '" + dl + "', " + score + ");";
+
+            executeNonQuery(addCommand);
         }
     }
 }
