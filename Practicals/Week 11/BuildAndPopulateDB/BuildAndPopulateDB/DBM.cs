@@ -66,7 +66,7 @@ namespace BuildAndPopulateDB
             dropTable("tblPaper");
             dropTable("tblAssignment");
 
-            //Begin writing create strings
+            //Lecture table create
             String createLecturers = "CREATE TABLE tblLecturer(" +
                                         "lecID int IDENTITY, " +
                                         "firstName VARCHAR(30) NOT NULL, " +
@@ -74,12 +74,23 @@ namespace BuildAndPopulateDB
                                         "email VARCHAR(100) NOT NULL, " +
                                         "PRIMARY KEY(lecID));";
 
-            String createPapers =   "CREATE TABLE tblPaper(" +
+            //Paper table create
+            String createPapers = "CREATE TABLE tblPaper(" +
                                         "paperID int IDENTITY, " +
                                         "lecID int NOT NULL, " +
                                         "paperName VARCHAR(100) NOT NULL, " +
                                         "PRIMARY KEY(paperID), " +
                                         "FOREIGN KEY(lecID) REFERENCES tblLecturer(lecID));";
+
+            //Assign table create
+            String createAssigns = "CREATE TABLE tblAssignment(" +
+                                        "assignID int IDENTITY, " + //Heh, had "assID" for a while.
+                                        "paperID int NOT NULL, " +
+                                        "assignName VARCHAR(50), " +
+                                        "deadline date NOT NULL, " +
+                                        "score numeric(3) NULL, " +
+                                        "PRIMARY KEY(assignID), " +
+                                        "FOREIGN KEY(paperID) REFERENCES tblPaper(paperID));";
         }
     }
 }
