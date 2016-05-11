@@ -121,5 +121,37 @@ namespace BuildAndPopulateDB
 
             executeNonQuery(addCommand);
         }
+
+        //5) Now the fun part, writing seed data! :japanese_goblin:
+        private void seedAll()
+        {
+            seedLecturer();
+            seedPaper();
+            seedAssignment();
+        }
+
+        private void seedLecturer()
+        {
+            addLecturer("Patricia", "Haden", "phaden@op.ac.nz");
+            addLecturer("Crombobulous", "Michael", "rnm@op.ac.nz");
+            addLecturer("Pete", "The Polyp", "sendhelp@op.ac.nz");
+        }
+
+        private void seedPaper()
+        {
+            addPaper(1, "Objectively Hard Systems Development");
+            addPaper(2, "Introduction to Binge-Watching");
+            addPaper(3, "Introduction to Stack Overflow");
+            addPaper(3, "Stress Mitigation 101");
+        }
+
+        private void seedAssignment()
+        {
+            addAssign(1, "Grey-Scott Reaction", "2016-5-2", 82);
+            addAssign(2, "Game of Thrones, a Summary", "2016-6-2", 100);
+            addAssign(3, "Code Tidying", "2016-7-2", 3);
+            addAssign(4, "Proper Hydration Techniques", "2016-8-2", 0);
+            addAssign(2, "Critical Analysis - Barney", "2016-9-2", 44);
+        }
     }
 }
