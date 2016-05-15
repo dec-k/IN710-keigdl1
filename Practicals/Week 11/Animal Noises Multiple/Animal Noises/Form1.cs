@@ -40,6 +40,12 @@ namespace Animal_Noises
             
             for (int i = 0; i < animalList.Count; i++)
                 threadList[i].Start();
+
+            for (int i = 0; i < animalList.Count; i++)
+            {
+                //Wait for each instance to cycle its method once
+                threadList[i].Join();
+            }
            
         }
 
