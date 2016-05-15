@@ -19,6 +19,9 @@ namespace metronome
         private Counter mainCounter;
         private TimeDisplay mainTimeDisplay;
 
+        //Thread instance
+        private Thread thread;
+
 
         public Form1()
         {
@@ -31,6 +34,13 @@ namespace metronome
             mainBeeper = new Beeper(mainMetronome, "blip1.wav");
             mainCounter = new Counter(mainMetronome, numericUpDown1);
             mainTimeDisplay = new TimeDisplay(mainMetronome, listBox1);    
+
+            //Instantiate thread, the Thread constructor infers that you want a delegate - and automatically treats the argument as such.
+            //This cuts out the need for a ThreadStart delegate.
+            thread = new Thread(mainMetronome.start);
+
+            //Start the secondary thread at form load
+            thread.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,6 +58,7 @@ namespace metronome
         private void button2_Click(object sender, EventArgs e)
         {
             // Code needed here to stop the metronome
+            thread.Abort();
         }
 
     }
