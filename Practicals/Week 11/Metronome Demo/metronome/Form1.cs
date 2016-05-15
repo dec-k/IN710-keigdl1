@@ -35,9 +35,7 @@ namespace metronome
             mainCounter = new Counter(mainMetronome, numericUpDown1);
             mainTimeDisplay = new TimeDisplay(mainMetronome, listBox1);    
 
-            //Instantiate thread, the Thread constructor infers that you want a delegate - and automatically treats the argument as such.
-            //This cuts out the need for a ThreadStart delegate.
-            thread = new Thread(mainMetronome.start);
+
 
 
         }
@@ -46,6 +44,11 @@ namespace metronome
         {
            int currInterval = Convert.ToInt16(textBox1.Text);
            mainMetronome.Interval = currInterval;
+
+           //Instantiate thread, the Thread constructor infers that you want a delegate - and automatically treats the argument as such.
+           //This cuts out the need for a ThreadStart delegate.
+           thread = new Thread(mainMetronome.start);
+
            //Start the secondary thread at form load
            thread.Start();
         }
