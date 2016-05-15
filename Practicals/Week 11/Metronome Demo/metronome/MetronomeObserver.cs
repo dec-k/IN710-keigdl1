@@ -75,7 +75,11 @@ namespace metronome
             //If they are different, invoke required returns TRUE.
             if (spinBox.InvokeRequired)
             {
-                FormControllerDelegate fcd = new FormControllerDelegate(u)   
+                //Create delegate instance and provide it an update method
+                FormControllerDelegate fcd = new FormControllerDelegate(incrementSpinner);
+
+                //Invoke method asynchronously via a callback method.
+                spinBox.Invoke(fcd, new object[] { e });
             }
             else
             {
