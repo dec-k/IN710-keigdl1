@@ -10,6 +10,13 @@ using System.Media;
 
 namespace metronome
 {
+    //I read and digested this link:
+    //https://msdn.microsoft.com/en-us/library/ms171728(v=vs.110).aspx
+
+    //Declare a delegate for form controlling. You can also make this in each method
+    //but it just saves precious keystrokes to do it here.
+    delegate void FormControllerDelegate(metronomeEventArgs e);
+
     public class MetronomeObserver
     {
         protected Metronome metronome;
@@ -63,7 +70,23 @@ namespace metronome
 
         public override void onMetronomeEvent(object sender, metronomeEventArgs e)
         {
-                spinBox.Value++;  
+            //The InvokeRequired method will compares the ID of the thread that
+            //CALLED this event, to the one that MADE this event.
+            //If they are different, invoke required returns TRUE.
+            if (spinBox.InvokeRequired)
+            {
+                FormControllerDelegate fcd = new FormControllerDelegate(u)   
+            }
+            else
+            {
+                spinBox.Value++;
+            }
+                
+        }
+
+        private void incrementSpinner(metronomeEventArgs e)
+        {
+            spinBox.Value++;
         }
     } // end TCounter
 
@@ -84,12 +107,5 @@ namespace metronome
             DateTime currDateTime = e.currentTime;
             listBox.Items.Add(currDateTime.ToString());         
         }
-    }
-
-
-
-
-
-
-            
+    }        
 }
