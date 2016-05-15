@@ -39,15 +39,15 @@ namespace metronome
             //This cuts out the need for a ThreadStart delegate.
             thread = new Thread(mainMetronome.start);
 
-            //Start the secondary thread at form load
-            thread.Start();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
            int currInterval = Convert.ToInt16(textBox1.Text);
            mainMetronome.Interval = currInterval;
-           mainMetronome.start();
+           //Start the secondary thread at form load
+           thread.Start();
         }
 
         public void clearBuffer()
