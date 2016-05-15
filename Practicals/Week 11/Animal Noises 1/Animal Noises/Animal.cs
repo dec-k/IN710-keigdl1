@@ -10,6 +10,14 @@ namespace Animal_Noises
     public class Animal
     {
         private SoundPlayer soundPlayer;
+        private bool playing = false;
+
+        //Accessor for playing boolean
+        public bool Playing
+        {
+            get { return playing; }
+            set { playing = value; }
+        }
 
         public Animal()
         {
@@ -18,7 +26,7 @@ namespace Animal_Noises
 
         public void speak()
         {
-            while (true)
+            while (playing)
             {
                 soundPlayer.Play();
                 Thread.Sleep(1000);

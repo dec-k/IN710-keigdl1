@@ -16,6 +16,7 @@ namespace Animal_Noises
         private Animal mainAnimal;
         ThreadStart threadDelegate;
         Thread animalNoiseThread;
+        bool togglePlay;
 
         public Form1()
         {
@@ -40,11 +41,17 @@ namespace Animal_Noises
         {
             //Start running the delegates code on a separate thread.
             animalNoiseThread.Start();
+            mainAnimal.Playing = true;
         }
 
         private void btnWhat_Click(object sender, EventArgs e)
         {
             MessageBox.Show("It is a frog");
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            mainAnimal.Playing = false;
         }
 
 
