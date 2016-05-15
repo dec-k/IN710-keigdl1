@@ -108,8 +108,22 @@ namespace metronome
 
         public override void onMetronomeEvent(object sender, metronomeEventArgs e)
         {
+            //Check if invoke required
+            if (listBox.InvokeRequired)
+            {
+                //Create delegate instance and provide it an update method
+                FormControllerDelegate fcd = new FormControllerDelegate(addMetronomeTick);
+
+                //Invoke method asynchronously via a callback method.
+                listBox.Invoke(fcd, new object[] { e });
+            }
+         
+        }
+
+        private void addMetronomeTick(metronomeEventArgs e)
+        {
             DateTime currDateTime = e.currentTime;
-            listBox.Items.Add(currDateTime.ToString());         
+            listBox.Items.Add(currDateTime.ToString());  
         }
     }        
 }
