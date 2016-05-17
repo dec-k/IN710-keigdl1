@@ -32,7 +32,7 @@ namespace MVCIntroduction.Controllers
             int daysTill;
 
             //Get a random number
-            int holidayPicker = 0;
+            int holidayPicker = r.Next(3);
 
             //Switch on the value of randomly generated number
             switch (holidayPicker)
@@ -51,7 +51,6 @@ namespace MVCIntroduction.Controllers
 
                     //Load up img url
                     holiday.imgUrl = "http://www.amazingladiesgetaways.com/wp-content/uploads/2015/09/whats-open-queens-birthday-public-holiday-in-melbourne.jpg";
-                    return View(holiday);
                     break;
             }
 
