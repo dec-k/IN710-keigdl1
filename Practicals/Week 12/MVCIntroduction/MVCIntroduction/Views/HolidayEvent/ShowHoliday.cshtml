@@ -1,0 +1,21 @@
+﻿@model MVCIntroduction.Models.HolidayEvent
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowHoliday</title>
+</head>
+<body>
+    <div> 
+        <h1>Happy @ViewBag.HolidayName !</h1>
+        <h2>It is @ViewBag.DaysUntil away.</h2>
+        <img src="@ViewBag.ImgUrl" />
+    </div>
+</body>
+</html>
