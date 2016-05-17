@@ -32,8 +32,19 @@ namespace MVCIntroduction.Controllers
             switch (holidayPicker)
             {
                 case 0:
+                    //Queens birthday
                     holiday = buildHoliday("Queen's Birthday", "http://www.amazingladiesgetaways.com/wp-content/uploads/2015/09/whats-open-queens-birthday-public-holiday-in-melbourne.jpg",
-                                           06, 06, DateTime.Now.Year + 1);
+                                           06, 06, DateTime.Now.Year);
+                    break;
+                case 1:
+                    //Halloween
+                    holiday = buildHoliday("Halloween", "http://image.desiringgod.org/take-halloween-captive-en/legacy_landscape/large_take-halloween-captive.jpg?1452019723",
+                                           31, 10, DateTime.Now.Year);
+                    break;
+                case 2:
+                    //Boxing Day
+                    holiday = buildHoliday("Boxing Day", "http://blog.creativebug.com//wp-content/uploads/2013/10/cardboardbox1.jpg",
+                                           26, 12, DateTime.Now.Year);
                     break;
             }
 
@@ -53,7 +64,7 @@ namespace MVCIntroduction.Controllers
             //Oh boy datetime manipulation!
             DateTime now = DateTime.Today;
             DateTime then = new DateTime(hYYYY, hMM, hDD);
-            TimeSpan diff = now - then;
+            TimeSpan diff = then - now;
             int daysTill = Convert.ToInt32(Math.Ceiling(diff.TotalDays));
 
             //Load up time diff
