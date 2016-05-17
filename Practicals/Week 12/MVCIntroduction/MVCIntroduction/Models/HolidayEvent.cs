@@ -7,5 +7,9 @@ namespace MVCIntroduction.Models
 {
     public class HolidayEvent
     {
+        //Attributes of any good wholesome holiday
+        public String holidayName {get; set;}
+        public DateTime daysUntil { get; set; }
+        public String imgUrl { get; set; }
     }
 }
