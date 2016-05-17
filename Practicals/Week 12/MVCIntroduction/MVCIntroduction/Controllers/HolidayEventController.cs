@@ -25,12 +25,6 @@ namespace MVCIntroduction.Controllers
             //Declare an Instance of HolidayEvent
             HolidayEvent holiday = new HolidayEvent();
 
-            //DateTime shenanigans
-            DateTime now = DateTime.Today;
-            DateTime then;
-            TimeSpan diff;
-            int daysTill;
-
             //Get a random number
             int holidayPicker = r.Next(3);
 
@@ -38,19 +32,8 @@ namespace MVCIntroduction.Controllers
             switch (holidayPicker)
             {
                 case 0:
-                    //Load up its holiday name
-                    holiday.holidayName = "Queen's Birthday";
-
-                    //Start calculating days Until (Encapsulate this)
-                    then = new DateTime(2016, 6, 6);
-                    diff = now - then;
-                    daysTill = Convert.ToInt32(Math.Ceiling(diff.TotalDays));
-
-                    //Load up daysUntil
-                    holiday.daysUntil = daysTill;
-
-                    //Load up img url
-                    holiday.imgUrl = "http://www.amazingladiesgetaways.com/wp-content/uploads/2015/09/whats-open-queens-birthday-public-holiday-in-melbourne.jpg";
+                    holiday = buildHoliday("Queen's Birthday", "http://www.amazingladiesgetaways.com/wp-content/uploads/2015/09/whats-open-queens-birthday-public-holiday-in-melbourne.jpg",
+                                           06, 06, DateTime.Now.Year + 1);
                     break;
             }
 
@@ -72,6 +55,12 @@ namespace MVCIntroduction.Controllers
             DateTime then = new DateTime(hYYYY, hMM, hDD);
             TimeSpan diff = now - then;
             int daysTill = Convert.ToInt32(Math.Ceiling(diff.TotalDays));
+
+            //Load up time diff
+            hEvent.daysUntil = daysTill;
+
+            //Return the completed holiday instance
+            return hEvent;
         }
     }
 }
