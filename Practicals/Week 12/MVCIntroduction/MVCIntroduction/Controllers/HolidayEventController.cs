@@ -23,9 +23,39 @@ namespace MVCIntroduction.Controllers
             Random r = new Random();
 
             //Declare an Instance of HolidayEvent
-            HolidayEvent holiday;
+            HolidayEvent holiday = new HolidayEvent();
 
+            //DateTime shenanigans
+            DateTime now = DateTime.Today;
+            DateTime then;
+            TimeSpan diff;
+            int daysTill;
 
+            //Get a random number
+            int holidayPicker = 0;
+
+            //Switch on the value of randomly generated number
+            switch (holidayPicker)
+            {
+                case 0:
+                    //Load up its holiday name
+                    holiday.holidayName = "Queen's Birthday";
+
+                    //Start calculating days Until (Encapsulate this)
+                    then = new DateTime(2016, 6, 6);
+                    diff = now - then;
+                    daysTill = Convert.ToInt32(Math.Ceiling(diff.TotalDays));
+
+                    //Load up daysUntil
+                    holiday.daysUntil = daysTill;
+
+                    //Load up img url
+                    holiday.imgUrl = "http://www.amazingladiesgetaways.com/wp-content/uploads/2015/09/whats-open-queens-birthday-public-holiday-in-melbourne.jpg";
+                    return View(holiday);
+                    break;
+            }
+
+            return View(holiday);
         }
     }
 }
