@@ -56,5 +56,22 @@ namespace MVCIntroduction.Controllers
 
             return View(holiday);
         }
+
+        private HolidayEvent buildHoliday(string hName, string hUrl, int hDD, int hMM, int hYYYY)
+        {
+            HolidayEvent hEvent = new HolidayEvent();
+
+            //Load up its holiday name
+            hEvent.holidayName = hName;
+
+            //Load up its img url
+            hEvent.imgUrl = hUrl;
+
+            //Oh boy datetime manipulation!
+            DateTime now = DateTime.Today;
+            DateTime then = new DateTime(hYYYY, hMM, hDD);
+            TimeSpan diff = now - then;
+            int daysTill = Convert.ToInt32(Math.Ceiling(diff.TotalDays));
+        }
     }
 }
