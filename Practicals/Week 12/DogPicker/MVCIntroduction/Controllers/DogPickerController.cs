@@ -32,10 +32,10 @@ namespace MVCIntroduction.Controllers
             dogList = makeDatabase();
 
             //Make a list to store score values. This is a way of assessing which dog is the best choice.
-            List<int> scores = new List<int>();
+            int[] scores = new int[dogList.Count];
             
             //Blank dog object, will be passed into the return view
-            Dog recDog;
+            Dog recDog = dogList[0];
 
             for (int i = 0; i < dogList.Count; i++)
             {
@@ -76,10 +76,21 @@ namespace MVCIntroduction.Controllers
                 }
             }
 
+            //Now that score vals are determined, find the highest score
+            for (int i = 0; i < dogList.Count - 1; i++)
+            {
+                if (scores[i] > scores[i + 1])
+                {
+                    recDog = dogList[i];
+                }
+                else
+                {
+                    recDog = dogList[i+1];
+                }
+            }
 
 
-
-           return View("DogConfirm", recDog);
+            return View("DogConfirm", recDog);
         }
 
         //=========================================================================
