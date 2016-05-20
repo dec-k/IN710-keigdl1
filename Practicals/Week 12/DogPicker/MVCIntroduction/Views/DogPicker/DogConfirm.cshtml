@@ -13,13 +13,20 @@
 </head>
 <body>
     <div> 
-        <h1>Your recommend Dog:</h1>
+        <h1>We think you'd like a:</h1>
+
+        <h2>@Model.BreedName, because...</h2>
 
         <p>
-            Breed: @Model.DisplayName<br />
-            Drools: @Model.Drools<br />
-            Size: @Model.Size<br />
-            Good with kids: @Model.GoodWithChildren<br />
+            Activity Level: @Model.ActivityLevel<br />
+            Shedding Level: @Model.SheddingLevel<br />
+            Grooming Difficulty: @Model.GroomingLevel<br/>
+            Intelligence: @Model.IntelligenceLevel<br />
+            Coat Length: @Model.Coatlength<br />
+            Size: @Model.Size<br /><br />
+
+            Drools a lot: @Model.Drools<br />
+            Okay with kids: @Model.GoodWithChildren<br />
 
         </p>
     </div>
