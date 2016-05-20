@@ -31,59 +31,12 @@ namespace MVCIntroduction.Controllers
             //Call makedatabase, populating a list of dogs
             dogList = makeDatabase();
 
-            //Make a list to store score values. This is a way of assessing which dog is the best choice.
-            int[] scores = new int[dogList.Count];
-            
             //Blank dog object, will be passed into the return view
             Dog recDog = dogList[0];
 
-            for (int i = 0; i < dogList.Count; i++)
-            {
-                //For each matching criteria, increase a score value.
-                //This completely hinges on the fact that dogs in the list ARE NOT SORTED.
-                //The dog list has a very tenuous connection with the score list.
-                if (dogList[i].GoodWithChildren == GoodWithChildren)
-                {
-                    scores[i]++;
-                }
-                if (dogList[i].Drools == Drools)
-                {
-                    scores[i]++;
-                }
-                if (dogList[i].Coatlength == Coatlength)
-                {
-                    scores[i]++;
-                }
-                if (dogList[i].Size == Size)
-                {
-                    scores[i]++;
-                }
-                if (dogList[i].ActivityLevel == ActivityLevel)
-                {
-                    scores[i]++;
-                }
-                if (dogList[i].SheddingLevel == SheddingLevel)
-                {
-                    scores[i]++;
-                }
-                if (dogList[i].GroomingLevel == GroomingLevel)
-                {
-                    scores[i]++;
-                }
-                if (dogList[i].IntelligenceLevel == IntelligenceLevel)
-                {
-                    scores[i]++;
-                }
-            }
-            
-            //Get max val
-            int highScore = scores.Max();
-
-            //Get first index of max val (sorry dogs that got the same score, this just takes the first one to get that score.)
-            int indexOf = scores.ToList().IndexOf(highScore);
-
-            //Create a dog that had the highest score
-            recDog = dogList[indexOf];
+            //build a return dog by determining the index of the best match.
+            int indexOfBest = determineBestMatch(GoodWithChildren, Drools, Coatlength, Size, ActivityLevel, SheddingLevel, GroomingLevel, IntelligenceLevel);
+            recDog = dogList[indexOfBest];
 
             return View("DogConfirm", recDog);
         }
@@ -336,6 +289,64 @@ namespace MVCIntroduction.Controllers
             newDatabase.Add(westHighlandWhiteTerrier);
 
             return newDatabase;
+        }
+
+        private int determineBestMatch(bool GoodWithChildren, bool Drools, ELength Coatlength, ESize Size, EScale ActivityLevel, EScale SheddingLevel, EScale GroomingLevel, EScale IntelligenceLevel)
+        {
+            //Make a list to store score values. This is a way of assessing which dog is the best choice.
+            int[] scores = new int[dogList.Count];
+
+            for (int i = 0; i < dogList.Count; i++)
+            {
+                //For each matching criteria, increase a score value.
+                //This completely hinges on the fact that dogs in the list ARE NOT SORTED.
+                //The dog list has a very tenuous connection with the score list.
+                if (dogList[i].GoodWithChildren == GoodWithChildren)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].Drools == Drools)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].Coatlength == Coatlength)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].Size == Size)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].ActivityLevel == ActivityLevel)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].SheddingLevel == SheddingLevel)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].GroomingLevel == GroomingLevel)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].IntelligenceLevel == IntelligenceLevel)
+                {
+                    scores[i]++;
+                }
+            }
+
+            //Get max val
+            int highScore = scores.Max();
+
+            //Big Caveat:
+            //This will return the index of the first dog that achieved that score.
+            //It's quite common for multiple dogs to get the same score, so some dogs will be over-represented in practice.
+            //This can be prevented by instead creating a list of dogs with equal scores and randomly selecting one from there as the
+            //return dog. I felt it wasn't needed for the scope of this practical (also it's 11:30pm).
+            int indexOf = scores.ToList().IndexOf(highScore);
+
+            //Return index
+            return indexOf;
         }
       
     }
