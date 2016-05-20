@@ -7,6 +7,6 @@ namespace MVCIntroduction.Models
 {
     public enum ESize
     {
-        Small, Medium, Large
+        Miniature, Small, Medium, Large, Giant
     }
 }

@@ -17,7 +17,7 @@ namespace MVCIntroduction.Models
         public EScale IntelligenceLevel { get; set; }
         public bool GoodWithChildren { get; set; }
         public bool Drools { get; set; }
-        public ELength CoatLength;
+        public ELength Coatlength;
         public ESize Size;
     }
 }

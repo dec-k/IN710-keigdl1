@@ -17,7 +17,7 @@
         <h2>Trust us so we can help you help us help find you a dog. :)</h2>
 
         <!-- Begin preferences form -->
-        <form action="~/Views/DogPicker/ChooseDogPref.cshtml" method="post">  
+        <form action="~/Views/DogPicker/DogConfirm.cshtml" method="post">  
             <p>Must be good with children:</p>
             <input type="radio" name="GoodWithChildren" value="True" checked /> Yes <br />
             <input type="radio" name="GoodWithChildren" value="False" /> No <br />
@@ -32,9 +32,11 @@
             <input type="radio" name="CoatLength" value="Long" /> Long <br />
 
             <p>Preferred Dog Size:</p>
-            <input type="radio" name="Size" value="Small" checked /> Small <br />
+            <input type="radio" name="Size" value="Miniature" checked/> Miniature <br />
+            <input type="radio" name="Size" value="Small" /> Small <br />
             <input type="radio" name="Size" value="Medium" /> Medium <br />
             <input type="radio" name="Size" value="Large" /> Large <br />
+            <input type="radio" name="Size" value="Giant" /> Giant <br />
 
             <!-- Begin table -->
             <h2>Preferences Part II</h2>
