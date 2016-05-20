@@ -75,20 +75,15 @@ namespace MVCIntroduction.Controllers
                     scores[i]++;
                 }
             }
+            
+            //Get max val
+            int highScore = scores.Max();
 
-            //Now that score vals are determined, find the highest score
-            for (int i = 0; i < dogList.Count - 1; i++)
-            {
-                if (scores[i] > scores[i + 1])
-                {
-                    recDog = dogList[i];
-                }
-                else
-                {
-                    recDog = dogList[i+1];
-                }
-            }
+            //Get first index of max val (sorry dogs that got the same score, this just takes the first one to get that score.)
+            int indexOf = scores.ToList().IndexOf(highScore);
 
+            //Create a dog that had the highest score
+            recDog = dogList[indexOf];
 
             return View("DogConfirm", recDog);
         }
