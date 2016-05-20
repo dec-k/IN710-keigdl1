@@ -30,34 +30,56 @@ namespace MVCIntroduction.Controllers
         {
             //Call makedatabase, populating a list of dogs
             dogList = makeDatabase();
+
+            //Make a list to store score values. This is a way of assessing which dog is the best choice.
+            List<int> scores = new List<int>();
             
             //Blank dog object, will be passed into the return view
             Dog recDog;
 
-            //Create a list where filtered-down dogs will go.
-            List<Dog> filteredDogs = makeDatabase();
-            
-            //Perform 'all or nothing' checks first, instantly ruling out ones that dont match the bool requirements.
             for (int i = 0; i < dogList.Count; i++)
             {
-                if (dogList[i].GoodWithChildren != GoodWithChildren)
+                //For each matching criteria, increase a score value.
+                //This completely hinges on the fact that dogs in the list ARE NOT SORTED.
+                //The dog list has a very tenuous connection with the score list.
+                if (dogList[i].GoodWithChildren == GoodWithChildren)
                 {
-                    //Remove the entry as it is missing a criteria.
-                    filteredDogs.RemoveAt(i);
-                    break;
+                    scores[i]++;
                 }
-
-                if (dogList[i].Drools != Drools)
+                if (dogList[i].Drools == Drools)
                 {
-                    //Remove the entry as it is missing a criteria.
-                    filteredDogs.RemoveAt(i);
-                    break;
+                    scores[i]++;
+                }
+                if (dogList[i].Coatlength == Coatlength)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].Size == Size)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].ActivityLevel == ActivityLevel)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].SheddingLevel == SheddingLevel)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].GroomingLevel == GroomingLevel)
+                {
+                    scores[i]++;
+                }
+                if (dogList[i].IntelligenceLevel == IntelligenceLevel)
+                {
+                    scores[i]++;
                 }
             }
 
-                //DEBUG, checking if post can read model vals properly.
-                recDog = dogList[0]; 
-            return View("DogConfirm", recDog);
+
+
+
+           return View("DogConfirm", recDog);
         }
 
         //=========================================================================
@@ -308,11 +330,6 @@ namespace MVCIntroduction.Controllers
             newDatabase.Add(westHighlandWhiteTerrier);
 
             return newDatabase;
-        }
-
-        private Dog generateRecommendation()
-        {
-            
         }
       
     }
