@@ -7,6 +7,6 @@ namespace MVCIntroduction.Models
 {
     public enum EScale
     {
-        LOW, MEDIUM, HIGH, NOPREF
+        Low, Medium, High, NOPREF
     }
 }

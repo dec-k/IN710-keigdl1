@@ -24,9 +24,9 @@ namespace MVCIntroduction.Controllers
         }
 
         [HttpPost]
-        public ActionResult ChooseDogPref(bool GoodWithChildren, bool Drools, ELength CoatLength, ESize Size, EScale ActivityLevel, EScale SheddingLevel, E)
+        public ActionResult ChooseDogPref(bool GoodWithChildren, bool Drools, ELength CoatLength, ESize Size, EScale ActivityLevel, EScale SheddingLevel, EScale GroomingLevel, EScale IntelligenceLevel)
         {
-            return View();
+            return View("DogConfirm");
         }
     }
 }

@@ -7,6 +7,6 @@ namespace MVCIntroduction.Models
 {
     public enum ELength
     {
-        SHORT, MEDIUM, LONG
+        Short, Medium, Long
     }
 }
