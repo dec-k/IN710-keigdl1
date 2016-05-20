@@ -30,10 +30,35 @@ namespace MVCIntroduction.Controllers
         {
             //Call makedatabase, populating a list of dogs
             dogList = makeDatabase();
-            return View("DogConfirm");
+            
+            //Blank dog object, will be passed into the return view
+            Dog recDog;
+
+            //Create a list where filtered-down dogs will go.
+            List<Dog> filteredDogs = makeDatabase();
+            
+            //Perform 'all or nothing' checks first, instantly ruling out ones that dont match the bool requirements.
+            for (int i = 0; i < dogList.Count; i++)
+            {
+                if (dogList[i].GoodWithChildren != GoodWithChildren)
+                {
+                    //Remove the entry as it is missing a criteria.
+                    filteredDogs.RemoveAt(i);
+                    break;
+                }
+
+                if (dogList[i].Drools != Drools)
+                {
+                    //Remove the entry as it is missing a criteria.
+                    filteredDogs.RemoveAt(i);
+                    break;
+                }
+            }
+
+                //DEBUG, checking if post can read model vals properly.
+                recDog = dogList[0]; 
+            return View("DogConfirm", recDog);
         }
-
-
 
         //=========================================================================
         private List<Dog> makeDatabase()
@@ -283,6 +308,11 @@ namespace MVCIntroduction.Controllers
             newDatabase.Add(westHighlandWhiteTerrier);
 
             return newDatabase;
+        }
+
+        private Dog generateRecommendation()
+        {
+            
         }
       
     }
