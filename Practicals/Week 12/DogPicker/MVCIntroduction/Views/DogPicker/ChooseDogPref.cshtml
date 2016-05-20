@@ -15,6 +15,114 @@
     <div> 
         <h1>Dog Recommender</h1>
         <h2>Trust us so we can help you help us help find you a dog. :)</h2>
+
+        <!-- Begin preferences form -->
+        <form action="~/Views/DogPicker/ChooseDogPref.cshtml" method="post">  
+            <p>Must be good with children:</p>
+            <input type="radio" name="GoodWithChildren" value="True" checked /> Yes <br />
+            <input type="radio" name="GoodWithChildren" value="False" /> No <br />
+
+            <p>Can you tolerate slobbery doggos?</p>
+            <input type="radio" name="Drools" value="True" checked /> Yes <br />
+            <input type="radio" name="Drools" value="False" /> No <br />
+
+            <p>Preferred Coat Length:</p>
+            <input type="radio" name="CoatLength" value="Short" checked /> Short <br />
+            <input type="radio" name="CoatLength" value="Medium" /> Medium <br />
+            <input type="radio" name="CoatLength" value="Long" /> Long <br />
+
+            <p>Preferred Dog Size:</p>
+            <input type="radio" name="Size" value="Small" checked /> Small <br />
+            <input type="radio" name="Size" value="Medium" /> Medium <br />
+            <input type="radio" name="Size" value="Large" /> Large <br />
+
+            <!-- Begin table -->
+            <h2>Preferences Part II</h2>
+            <table>
+                <tr>
+                    <td>
+                        Activity: 
+                    </td>
+
+                    <td>
+                        <input type="radio" name="ActivityLevel" value="Low" checked /> Low <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="ActivityLevel" value="Medium" /> Medium <br />
+                    </td>
+                    
+                    <td>
+                        <input type="radio" name="ActivityLevel" value="High" /> High <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="ActivityLevel" value="NOPREF" /> No Preference <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Shedding: </td>
+
+                    <td>
+                        <input type="radio" name="SheddingLevel" value="Low" checked /> Low <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="SheddingLevel" value="Medium" /> Medium <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="SheddingLevel" value="High" /> High <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="SheddingLevel" value="NOPREF" /> No Preference <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Grooming: </td>
+
+                    <td>
+                        <input type="radio" name="GroomingLevel" value="Low" checked /> Low <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="GroomingLevel" value="Medium" /> Medium <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="GroomingLevel" value="High" /> High <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="GroomingLevel" value="NOPREF" /> No Preference <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Intelligence: </td>
+
+                    <td>
+                        <input type="radio" name="IntelligenceLevel" value="Low" checked /> Low <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="IntelligenceLevel" value="Medium" /> Medium <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="IntelligenceLevel" value="High" /> High <br />
+                    </td>
+
+                    <td>
+                        <input type="radio" name="IntelligenceLevel" value="NOPREF" /> No Preference <br />
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Submission Button -->
+            <input type="submit" value="Recommend a Dog" />
+
+        </form>
     </div>
 </body>
 </html>
