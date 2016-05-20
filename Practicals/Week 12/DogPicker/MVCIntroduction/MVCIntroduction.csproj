@@ -104,6 +104,7 @@
     <Content Include="Views\Holiday\ViewBagTest.cshtml" />
     <Content Include="Views\HolidayEvent\ShowHoliday.cshtml" />
     <Content Include="Views\DogPicker\ChooseDogPref.cshtml" />
+    <Content Include="Views\DogPicker\ShowDogRec.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

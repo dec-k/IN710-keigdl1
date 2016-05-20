@@ -17,7 +17,14 @@ namespace MVCIntroduction.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult ChooseDogPref()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChooseDogPref(bool GoodWithChildren, bool Drools, ELength CoatLength, ESize Size, EScale ActivityLevel, EScale SheddingLevel, E)
         {
             return View();
         }
